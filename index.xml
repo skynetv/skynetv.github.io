@@ -5,28 +5,28 @@
     <link>https://prime167.github.io/</link>
     <description>Recent content on 一个程序员的blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en</language>
     <lastBuildDate>Wed, 10 Jul 2019 17:32:42 +0800</lastBuildDate>
     
 	<atom:link href="https://prime167.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hello World</title>
-      <link>https://prime167.github.io/posts/helloworld/</link>
-      <pubDate>Wed, 10 Jul 2019 17:32:42 +0800</pubDate>
+      <title>关于</title>
+      <link>https://prime167.github.io/about/</link>
+      <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
       
-      <guid>https://prime167.github.io/posts/helloworld/</guid>
-      <description>是的，我又开博了。 博客也开了不少了，从最开始的 Windows Live Spaces 到blogspot、wordpress、CSDN、blogcn。希望这次能够坚持下来，不求每天都写，但求每一篇都言之有物。 本博客是托管在Github</description>
+      <guid>https://prime167.github.io/about/</guid>
+      <description>NullReferenceException</description>
     </item>
     
     <item>
-      <title>关于</title>
-      <link>https://prime167.github.io/about/</link>
-      <pubDate>Sat, 29 Dec 2018 20:24:28 +0800</pubDate>
+      <title>Hello World</title>
+      <link>https://prime167.github.io/post/helloworld/</link>
+      <pubDate>Wed, 10 Jul 2019 17:32:42 +0800</pubDate>
       
-      <guid>https://prime167.github.io/about/</guid>
-      <description>Hugo 官方主页: https://gohugo.io/ Hugo的安装方式有两种，一种是直接下载编译好的Hugo二进制文件。如果只是使用Hugo推荐用这种方式。另一种方式是获取Hugo的源码，自己编译。由于各种不可预料的网络问题，第二种方式不</description>
+      <guid>https://prime167.github.io/post/helloworld/</guid>
+      <description>&lt;p&gt;是的，我又开博了。&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -5,7 +5,7 @@
     <link>https://prime167.github.io/tags/hugo/</link>
     <description>Recent content in hugo on 一个程序员的blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en</language>
     <lastBuildDate>Wed, 10 Jul 2019 17:32:42 +0800</lastBuildDate>
     
 	<atom:link href="https://prime167.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
@@ -13,11 +13,11 @@
     
     <item>
       <title>Hello World</title>
-      <link>https://prime167.github.io/posts/helloworld/</link>
+      <link>https://prime167.github.io/post/helloworld/</link>
       <pubDate>Wed, 10 Jul 2019 17:32:42 +0800</pubDate>
       
-      <guid>https://prime167.github.io/posts/helloworld/</guid>
-      <description>是的，我又开博了。 博客也开了不少了，从最开始的 Windows Live Spaces 到blogspot、wordpress、CSDN、blogcn。希望这次能够坚持下来，不求每天都写，但求每一篇都言之有物。 本博客是托管在Github</description>
+      <guid>https://prime167.github.io/post/helloworld/</guid>
+      <description>&lt;p&gt;是的，我又开博了。&lt;/p&gt;</description>
     </item>
     
   </channel>
