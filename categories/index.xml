@@ -6,9 +6,19 @@
     <description>Recent content in Categories on 一个程序员的blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
+    <lastBuildDate>Wed, 10 Jul 2019 17:32:42 +0800</lastBuildDate>
     
 	<atom:link href="https://prime167.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>blog</title>
+      <link>https://prime167.github.io/categories/blog/</link>
+      <pubDate>Wed, 10 Jul 2019 17:32:42 +0800</pubDate>
+      
+      <guid>https://prime167.github.io/categories/blog/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

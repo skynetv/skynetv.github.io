@@ -6,9 +6,28 @@
     <description>Recent content in Tags on 一个程序员的blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
+    <lastBuildDate>Wed, 10 Jul 2019 17:32:42 +0800</lastBuildDate>
     
 	<atom:link href="https://prime167.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>hugo</title>
+      <link>https://prime167.github.io/tags/hugo/</link>
+      <pubDate>Wed, 10 Jul 2019 17:32:42 +0800</pubDate>
+      
+      <guid>https://prime167.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>meta</title>
+      <link>https://prime167.github.io/tags/meta/</link>
+      <pubDate>Wed, 10 Jul 2019 17:32:42 +0800</pubDate>
+      
+      <guid>https://prime167.github.io/tags/meta/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
