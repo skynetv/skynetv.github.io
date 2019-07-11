@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>一个程序员的blog</title>
-    <link>https://prime167.github.io/</link>
-    <description>Recent content on 一个程序员的blog</description>
+    <title>Posts on 一个程序员的blog</title>
+    <link>https://prime167.github.io/post/</link>
+    <description>Recent content in Posts on 一个程序员的blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 10 Jul 2019 17:32:42 +0800</lastBuildDate>
     
-        <atom:link href="https://prime167.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://prime167.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,10 +17,7 @@
       <pubDate>Wed, 10 Jul 2019 17:32:42 +0800</pubDate>
       
       <guid>https://prime167.github.io/post/helloworld/</guid>
-      
-        <description>&lt;p&gt;测试&lt;/p&gt;
-</description>
-      
+      <description>测试</description>
     </item>
     
   </channel>
