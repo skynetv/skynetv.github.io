@@ -1,27 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>一个程序员的blog on 一个程序员的blog</title>
+    <title>一个程序员的blog</title>
     <link>https://prime167.github.io/</link>
-    <description>Recent content in 一个程序员的blog on 一个程序员的blog</description>
+    <description>Recent content on 一个程序员的blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 10 Jul 2019 17:32:42 +0800</lastBuildDate>
-    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://prime167.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Hello World</title>
-      <link>https://prime167.github.io/post/helloworld/</link>
+      <link>https://prime167.github.io/posts/helloworld/</link>
       <pubDate>Wed, 10 Jul 2019 17:32:42 +0800</pubDate>
       
-      <guid>https://prime167.github.io/post/helloworld/</guid>
-      <description>&lt;p&gt;是的，我又开博了&lt;/p&gt;
-
-&lt;p&gt;博客也开了不少了，从最开始的 Windows Live Spaces 到blogspot、wordpress、CSDN、blogcn。希望这次能够坚持下来，不求每天都写，但求每一篇都言之有物。&lt;/p&gt;
-
-&lt;p&gt;本博客是托管在Github Pages上的静态页面，生成引擎用的是golang写的hugo，配置还在不断完善，下一篇写一些配置过程&lt;/p&gt;
-
-&lt;p&gt;我是一个程序员，主要使用C#语言，所以这个博客的内容会以编程为主，还有读书和跑步。&lt;/p&gt;
-</description>
+      <guid>https://prime167.github.io/posts/helloworld/</guid>
+      <description>是的，我又开博了。 博客也开了不少了，从最开始的 Windows Live Spaces 到blogspot、wordpress、CSDN、blogcn。希望这次能够坚持下来，不求每天都写，但求每一篇都言之有物。 本博客是托管在Github</description>
+    </item>
+    
+    <item>
+      <title>关于</title>
+      <link>https://prime167.github.io/about/</link>
+      <pubDate>Sat, 29 Dec 2018 20:24:28 +0800</pubDate>
+      
+      <guid>https://prime167.github.io/about/</guid>
+      <description>Hugo 官方主页: https://gohugo.io/ Hugo的安装方式有两种，一种是直接下载编译好的Hugo二进制文件。如果只是使用Hugo推荐用这种方式。另一种方式是获取Hugo的源码，自己编译。由于各种不可预料的网络问题，第二种方式不</description>
     </item>
     
   </channel>

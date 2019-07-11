@@ -1,102 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
-    <url>
-      <loc>https://prime167.github.io/categories/</loc>
-      
-      <lastmod>2019-07-10T17:32:42+08:00</lastmod>
-      
-      
-      
-      <priority>0</priority>
-      
-      
-    </url>
+  <url>
+    <loc>https://prime167.github.io/categories/</loc>
+    <lastmod>2019-07-10T17:32:42+08:00</lastmod>
+    <priority>0</priority>
+  </url>
   
-    <url>
-      <loc>https://prime167.github.io/post/helloworld/</loc>
-      
-      <lastmod>2019-07-10T17:32:42+08:00</lastmod>
-      
-      
-      <changefreq>weekly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
+  <url>
+    <loc>https://prime167.github.io/posts/helloworld/</loc>
+    <lastmod>2019-07-10T17:32:42+08:00</lastmod>
+  </url>
   
-    <url>
-      <loc>https://prime167.github.io/post/</loc>
-      
-      <lastmod>2019-07-10T17:32:42+08:00</lastmod>
-      
-      
-      
-      <priority>0</priority>
-      
-      
-    </url>
+  <url>
+    <loc>https://prime167.github.io/posts/</loc>
+    <lastmod>2019-07-10T17:32:42+08:00</lastmod>
+    <priority>0</priority>
+  </url>
   
-    <url>
-      <loc>https://prime167.github.io/tags/</loc>
-      
-      <lastmod>2019-07-10T17:32:42+08:00</lastmod>
-      
-      
-      
-      <priority>0</priority>
-      
-      
-    </url>
+  <url>
+    <loc>https://prime167.github.io/tags/</loc>
+    <lastmod>2019-07-10T17:32:42+08:00</lastmod>
+    <priority>0</priority>
+  </url>
   
-    <url>
-      <loc>https://prime167.github.io/categories/blog/</loc>
-      
-      <lastmod>2019-07-10T17:32:42+08:00</lastmod>
-      
-      
-      
-      <priority>0</priority>
-      
-      
-    </url>
+  <url>
+    <loc>https://prime167.github.io/categories/blog/</loc>
+    <lastmod>2019-07-10T17:32:42+08:00</lastmod>
+    <priority>0</priority>
+  </url>
   
-    <url>
-      <loc>https://prime167.github.io/tags/hugo/</loc>
-      
-      <lastmod>2019-07-10T17:32:42+08:00</lastmod>
-      
-      
-      
-      <priority>0</priority>
-      
-      
-    </url>
+  <url>
+    <loc>https://prime167.github.io/tags/hugo/</loc>
+    <lastmod>2019-07-10T17:32:42+08:00</lastmod>
+    <priority>0</priority>
+  </url>
   
-    <url>
-      <loc>https://prime167.github.io/tags/meta/</loc>
-      
-      <lastmod>2019-07-10T17:32:42+08:00</lastmod>
-      
-      
-      
-      <priority>0</priority>
-      
-      
-    </url>
+  <url>
+    <loc>https://prime167.github.io/tags/meta/</loc>
+    <lastmod>2019-07-10T17:32:42+08:00</lastmod>
+    <priority>0</priority>
+  </url>
   
-    <url>
-      <loc>https://prime167.github.io/</loc>
-      
-      <lastmod>2019-07-10T17:32:42+08:00</lastmod>
-      
-      
-      
-      <priority>0</priority>
-      
-      
-    </url>
+  <url>
+    <loc>https://prime167.github.io/</loc>
+    <lastmod>2019-07-10T17:32:42+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/about/</loc>
+    <lastmod>2018-12-29T20:24:28+08:00</lastmod>
+  </url>
   
 </urlset>
