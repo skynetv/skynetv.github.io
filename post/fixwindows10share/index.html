@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>一个程序员的blog</title>
+  <title>解决WinCE6.0无法访问Win10共享文件夹问题 - 一个程序员的blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Codest" /><meta name="description" content="Hugo theme even example site." /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="Codest" /><meta name="description" content="公司主要是用WinCE6.0做嵌入式开发，有时需要把文件发送到PC机器，但最近有一台1803的Win10总是报&amp;rdquo;error 53 找不到网络路径&amp;rdquo;的错误。
+" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,9 +27,7 @@
 <meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
 
 
-<link rel="canonical" href="https://prime167.github.io/" />
-  <link href="https://prime167.github.io/index.xml" rel="alternate" type="application/rss+xml" title="一个程序员的blog" />
-  <link href="https://prime167.github.io/index.xml" rel="feed" type="application/rss+xml" title="一个程序员的blog" />
+<link rel="canonical" href="https://prime167.github.io/post/fixwindows10share/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -40,19 +39,27 @@
 <link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
 
-<meta property="og:title" content="一个程序员的blog" />
-<meta property="og:description" content="Hugo theme even example site." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://prime167.github.io/" />
+<meta property="og:title" content="解决WinCE6.0无法访问Win10共享文件夹问题" />
+<meta property="og:description" content="公司主要是用WinCE6.0做嵌入式开发，有时需要把文件发送到PC机器，但最近有一台1803的Win10总是报&rdquo;error 53 找不到网络路径&rdquo;的错误。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://prime167.github.io/post/fixwindows10share/" />
+<meta property="article:published_time" content="2019-07-11T17:40:12&#43;08:00"/>
+<meta property="article:modified_time" content="2019-07-11T17:40:12&#43;08:00"/>
 
-<meta property="og:updated_time" content="2019-07-11T17:40:12&#43;08:00"/>
+<meta itemprop="name" content="解决WinCE6.0无法访问Win10共享文件夹问题">
+<meta itemprop="description" content="公司主要是用WinCE6.0做嵌入式开发，有时需要把文件发送到PC机器，但最近有一台1803的Win10总是报&rdquo;error 53 找不到网络路径&rdquo;的错误。">
 
-<meta itemprop="name" content="一个程序员的blog">
-<meta itemprop="description" content="Hugo theme even example site.">
 
+<meta itemprop="datePublished" content="2019-07-11T17:40:12&#43;08:00" />
+<meta itemprop="dateModified" content="2019-07-11T17:40:12&#43;08:00" />
+<meta itemprop="wordCount" content="209">
+
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="一个程序员的blog"/>
-<meta name="twitter:description" content="Hugo theme even example site."/>
+<meta name="twitter:title" content="解决WinCE6.0无法访问Win10共享文件夹问题"/>
+<meta name="twitter:description" content="公司主要是用WinCE6.0做嵌入式开发，有时需要把文件发送到PC机器，但最近有一台1803的Win10总是报&rdquo;error 53 找不到网络路径&rdquo;的错误。"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -116,59 +123,75 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          <section id="posts" class="posts">
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/fixwindows10share/">解决WinCE6.0无法访问Win10共享文件夹问题</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-07-11 </span>
-      
-        <span class="more-meta"> 209 words </span>
-        <span class="more-meta"> 1 min read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">解决WinCE6.0无法访问Win10共享文件夹问题</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-07-11 </span>
+        
+          <span class="more-meta"> 209 words </span>
+          <span class="more-meta"> 1 min read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+    <div class="post-content">
       <p>公司主要是用WinCE6.0做嵌入式开发，有时需要把文件发送到PC机器，但最近有一台1803的Win10总是报&rdquo;error 53 找不到网络路径&rdquo;的错误。</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/fixwindows10share/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/helloworld/">Hello World</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-07-10 </span>
-      <div class="post-category">
-          <a href="/categories/blog/"> blog </a>
-          </div>
-        <span class="more-meta"> 192 words </span>
-        <span class="more-meta"> 1 min read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>是的，我又开博了。</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/helloworld/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
+<p>解决过程：</p>
 
-    </section>
+<ul>
+<li>TCP/IP NetBIOS Helper 服务已开启</li>
+<li>网卡属性里的 “Microsoft 网络客户端” 存在并勾选</li>
+<li>网卡属性里的 “Microsoft 网络的文件和打印机共享” 存在并勾选</li>
+</ul>
+
+<p>最后定位到原因：SMB 1.0/CIFS 共享文件支持功能没有开启，这是一很老的文件共享协议，漏洞很多，默认是关闭的。</p>
+
+<p><img src="/images/smbv1.png" alt="smbv1" /></p>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Codest</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-07-11
+        
+    </span>
+  </p>
   
-  <nav class="pagination">
-    
-    
-  </nav>
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/helloworld/">
+            <span class="next-text nav-default">Hello World</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
         </div>
         
+  
+  
+
+  
 
       </div>
     </main>

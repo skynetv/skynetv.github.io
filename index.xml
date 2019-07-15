@@ -6,7 +6,7 @@
     <description>Recent content on 一个程序员的blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 10 Jul 2019 17:32:42 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jul 2019 17:40:12 +0800</lastBuildDate>
     
 	<atom:link href="https://prime167.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -18,6 +18,15 @@
       
       <guid>https://prime167.github.io/about/</guid>
       <description>NullReferenceException</description>
+    </item>
+    
+    <item>
+      <title>解决WinCE6.0无法访问Win10共享文件夹问题</title>
+      <link>https://prime167.github.io/post/fixwindows10share/</link>
+      <pubDate>Thu, 11 Jul 2019 17:40:12 +0800</pubDate>
+      
+      <guid>https://prime167.github.io/post/fixwindows10share/</guid>
+      <description>&lt;p&gt;公司主要是用WinCE6.0做嵌入式开发，有时需要把文件发送到PC机器，但最近有一台1803的Win10总是报&amp;rdquo;error 53 找不到网络路径&amp;rdquo;的错误。&lt;/p&gt;</description>
     </item>
     
     <item>
