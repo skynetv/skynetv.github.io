@@ -52,7 +52,7 @@
 
 <meta itemprop="datePublished" content="2019-07-26T14:05:29&#43;08:00" />
 <meta itemprop="dateModified" content="2019-07-26T14:05:29&#43;08:00" />
-<meta itemprop="wordCount" content="1189">
+<meta itemprop="wordCount" content="1182">
 
 
 
@@ -133,7 +133,7 @@
         <div class="post-category">
             <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
             </div>
-          <span class="more-meta"> 1189 words </span>
+          <span class="more-meta"> 1182 words </span>
           <span class="more-meta"> 3 mins read </span>
         
       </div>
@@ -230,7 +230,6 @@
 </span><span class="lnt">35
 </span><span class="lnt">36
 </span><span class="lnt">37
-</span><span class="lnt">38
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">$ # 先初始化一个 repo
@@ -257,7 +256,6 @@ $ git worktree add ../projectX-dev dev
 $ #从现有远程分支新建一个worktree
 $ git fetch
 $ git worktree add ../projectX-hotfix1 hotfix1
-$ git worktree add ../projectX-feature-hotfix2 origin/hotfix2
 
 $ # 新建分支并添加worktree，最后的master为基础commit-ish，如果不指定，则默认为HEAD
 $ git worktree add -b feature-A ../projectX-feature-A master
@@ -319,9 +317,11 @@ $ git worktree prune</pre></td></tr></table>
 
 <h2 id="参考链接">参考链接</h2>
 
-<p><a href="https://git-scm.com/docs/git-worktree/">git-worktree - Manage multiple working trees</a></p>
+<ol>
+<li><p><a href="https://git-scm.com/docs/git-worktree/">git-worktree - Manage multiple working trees</a></p></li>
 
-<p><a href="https://github.blog/2015-07-29-git-2-5-including-multiple-worktrees-and-triangular-workflows/">Git 2.5, including multiple worktrees and triangular workflows</a></p>
+<li><p><a href="https://github.blog/2015-07-29-git-2-5-including-multiple-worktrees-and-triangular-workflows/">Git 2.5, including multiple worktrees and triangular workflows</a></p></li>
+</ol>
     </div>
 
     <div class="post-copyright">
