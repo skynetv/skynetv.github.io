@@ -52,7 +52,7 @@
 
 <meta itemprop="datePublished" content="2019-07-26T14:05:29&#43;08:00" />
 <meta itemprop="dateModified" content="2019-07-26T14:05:29&#43;08:00" />
-<meta itemprop="wordCount" content="1182">
+<meta itemprop="wordCount" content="1214">
 
 
 
@@ -133,7 +133,7 @@
         <div class="post-category">
             <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
             </div>
-          <span class="more-meta"> 1182 words </span>
+          <span class="more-meta"> 1214 words </span>
           <span class="more-meta"> 3 mins read </span>
         
       </div>
@@ -230,6 +230,9 @@
 </span><span class="lnt">35
 </span><span class="lnt">36
 </span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
 </span></pre></td>
 <td class="lntd">
 <pre class="chroma">$ # 先初始化一个 repo
@@ -252,6 +255,9 @@ $ git push
 $ # 从现有本地分支新建一个worktree
 $ git checkout master
 $ git worktree add ../projectX-dev dev 
+
+$ # 从现有tag新建一个worktree
+$ git worktree add ../projectX-v0.1 v0.1 
 
 $ #从现有远程分支新建一个worktree
 $ git fetch
@@ -309,7 +315,7 @@ $ git worktree prune</pre></td></tr></table>
 <h2 id="总结">总结</h2>
 
 <p>本篇，我们学习了使用 <em>worktree</em> 进行多分枝并行开发的方法和优点，包括但不限于：
-* 可以快速进行多分枝并行开发
+* 可以快速进行多分枝并行开发、测试
 * 提交可以在同一个repo中共享
 * 和再次克隆项目相比，节省了硬盘空间
 * 方便分支间的比较和文件操作
