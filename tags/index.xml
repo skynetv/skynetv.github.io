@@ -6,10 +6,37 @@
     <description>Recent content in Tags on 一个程序员的blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 11 Jul 2019 17:40:12 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 26 Jul 2019 14:05:29 +0800</lastBuildDate>
     
 	<atom:link href="https://prime167.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>git</title>
+      <link>https://prime167.github.io/tags/git/</link>
+      <pubDate>Fri, 26 Jul 2019 14:05:29 +0800</pubDate>
+      
+      <guid>https://prime167.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git worktree</title>
+      <link>https://prime167.github.io/tags/git-worktree/</link>
+      <pubDate>Fri, 26 Jul 2019 14:05:29 +0800</pubDate>
+      
+      <guid>https://prime167.github.io/tags/git-worktree/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scm</title>
+      <link>https://prime167.github.io/tags/scm/</link>
+      <pubDate>Fri, 26 Jul 2019 14:05:29 +0800</pubDate>
+      
+      <guid>https://prime167.github.io/tags/scm/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>wince</title>

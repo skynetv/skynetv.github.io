@@ -10,36 +10,61 @@
   
   <url>
     <loc>https://prime167.github.io/categories/</loc>
-    <lastmod>2019-07-11T17:40:12+08:00</lastmod>
+    <lastmod>2019-07-26T14:05:29+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://prime167.github.io/post/</loc>
-    <lastmod>2019-07-11T17:40:12+08:00</lastmod>
+    <lastmod>2019-07-26T14:05:29+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://prime167.github.io/tags/</loc>
-    <lastmod>2019-07-11T17:40:12+08:00</lastmod>
+    <lastmod>2019-07-26T14:05:29+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://prime167.github.io/categories/windows/</loc>
-    <lastmod>2019-07-11T17:40:12+08:00</lastmod>
+    <loc>https://prime167.github.io/tags/git/</loc>
+    <lastmod>2019-07-26T14:05:29+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://prime167.github.io/tags/wince/</loc>
-    <lastmod>2019-07-11T17:40:12+08:00</lastmod>
+    <loc>https://prime167.github.io/tags/git-worktree/</loc>
+    <lastmod>2019-07-26T14:05:29+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/post/git-worktree-usage/</loc>
+    <lastmod>2019-07-26T14:05:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/tags/scm/</loc>
+    <lastmod>2019-07-26T14:05:29+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://prime167.github.io/</loc>
+    <lastmod>2019-07-26T14:05:29+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/categories/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2019-07-26T14:05:29+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/tags/wince/</loc>
     <lastmod>2019-07-11T17:40:12+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -51,14 +76,14 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/fixwindows10share/</loc>
+    <loc>https://prime167.github.io/post/fix-windows10-share/</loc>
     <lastmod>2019-07-11T17:40:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/helloworld/</loc>
+    <loc>https://prime167.github.io/post/hello-world/</loc>
     <lastmod>2019-07-10T17:32:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
