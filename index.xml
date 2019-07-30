@@ -21,7 +21,7 @@
     </item>
     
     <item>
-      <title>c# 编译错误 cs1612：无法修改“xxx”的返回值，因为它不是变量</title>
+      <title>C# 编译错误 CS1612：无法修改“xxx”的返回值，因为它不是变量</title>
       <link>https://prime167.github.io/post/csharp-error-cs1612/</link>
       <pubDate>Tue, 30 Jul 2019 15:51:59 +0800</pubDate>
       
