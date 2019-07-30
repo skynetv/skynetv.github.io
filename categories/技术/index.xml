@@ -6,10 +6,19 @@
     <description>Recent content in 技术 on 静静地坐着</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 26 Jul 2019 14:57:43 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jul 2019 15:51:59 +0800</lastBuildDate>
     
 	<atom:link href="https://prime167.github.io/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>c# 编译错误 cs1612：无法修改“xxx”的返回值，因为它不是变量</title>
+      <link>https://prime167.github.io/post/csharp-error-cs1612/</link>
+      <pubDate>Tue, 30 Jul 2019 15:51:59 +0800</pubDate>
+      
+      <guid>https://prime167.github.io/post/csharp-error-cs1612/</guid>
+      <description>先上一段代码： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 using System; namespace Cs1612Demo { class Program { static void Main(string[] args) { Player p = new Player(); p.ShowLocation(); p.Location.x = 6; // 报错 CS1612 p.Location.y = 2; // 报</description>
+    </item>
     
     <item>
       <title>关于填坑</title>
