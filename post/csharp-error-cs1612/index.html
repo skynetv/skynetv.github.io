@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-07-30T15:51:59&#43;08:00" />
 <meta itemprop="dateModified" content="2019-07-30T15:51:59&#43;08:00" />
-<meta itemprop="wordCount" content="835">
+<meta itemprop="wordCount" content="826">
 
 
 
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
             </div>
-          <span class="more-meta"> 835 words </span>
+          <span class="more-meta"> 826 words </span>
           <span class="more-meta"> 2 mins read </span>
         
       </div>
@@ -261,9 +261,9 @@
 <p>消除错误的方法：</p>
 
 <ol>
-<li><p>将Point改为Class，这样p.Location 是_location的引用，可对其修复。但由于Point是c#的内置struct，这种方法并大多数情况下并不可行。</p></li>
+<li><p>将Point改为class，这样p.Location 是_location的引用，可对其修复。但由于Point是 C#的内置类型，这种方法并大多数情况下并不可行。</p></li>
 
-<li><p>如前所诉，return _location返回的是一个临时副本，对其修改没意义。那我们就赋给一个变量，修改后再赋回去：</p>
+<li><p>如前所述，return _location返回的是一个临时副本，对其修改没意义。那我们就先把它赋给一个变量，修改后再赋回去：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="lnt">1
@@ -332,9 +332,9 @@
         <span class="p">{</span>
             <span class="n">Player</span> <span class="n">p</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Player</span><span class="p">();</span>
             <span class="n">p</span><span class="p">.</span><span class="n">ShowLocation</span><span class="p">();</span>
-            <span class="n">p</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">x</span> <span class="p">=</span> <span class="m">6</span><span class="p">;</span> <span class="c1">// 报错 CS1612
-</span><span class="c1"></span>            <span class="n">p</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">y</span> <span class="p">=</span> <span class="m">2</span><span class="p">;</span> <span class="c1">// 报错 CS1612
-</span><span class="c1"></span>            <span class="n">p</span><span class="p">.</span><span class="n">ShowLocation</span><span class="p">();</span>
+            <span class="n">p</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">x</span> <span class="p">=</span> <span class="m">6</span><span class="p">;</span>
+            <span class="n">p</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">y</span> <span class="p">=</span> <span class="m">2</span><span class="p">;</span>
+            <span class="n">p</span><span class="p">.</span><span class="n">ShowLocation</span><span class="p">();</span>
         <span class="p">}</span>
     <span class="p">}</span>
 
