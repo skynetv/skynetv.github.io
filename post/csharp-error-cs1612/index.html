@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-07-30T15:51:59&#43;08:00" />
 <meta itemprop="dateModified" content="2019-07-30T15:51:59&#43;08:00" />
-<meta itemprop="wordCount" content="882">
+<meta itemprop="wordCount" content="879">
 
 
 
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
             </div>
-          <span class="more-meta"> 882 words </span>
+          <span class="more-meta"> 879 words </span>
           <span class="more-meta"> 2 mins read </span>
         
       </div>
@@ -191,6 +191,9 @@
 </span><span class="lnt">30
 </span><span class="lnt">31
 </span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
@@ -203,10 +206,13 @@
         <span class="p">{</span>
             <span class="n">Player</span> <span class="n">p</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Player</span><span class="p">();</span>
             <span class="n">p</span><span class="p">.</span><span class="n">ShowLocation</span><span class="p">();</span>
-            <span class="n">p</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">x</span> <span class="p">=</span> <span class="m">6</span><span class="p">;</span> <span class="c1">// 报错 CS1612
-</span><span class="c1"></span>            <span class="n">p</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">y</span> <span class="p">=</span> <span class="m">2</span><span class="p">;</span> <span class="c1">// 报错 CS1612
+            <span class="n">p</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">x</span> <span class="p">=</span> <span class="m">6</span><span class="p">;</span> <span class="c1">// CS1612
+</span><span class="c1"></span>            <span class="n">p</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">y</span> <span class="p">=</span> <span class="m">2</span><span class="p">;</span> <span class="c1">// CS1612
 </span><span class="c1"></span>            <span class="n">p</span><span class="p">.</span><span class="n">ShowLocation</span><span class="p">();</span>
-        <span class="p">}</span>
+            <span class="n">List</span><span class="p">&lt;</span><span class="n">Point</span><span class="p">&gt;</span> <span class="n">_locations</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Point</span><span class="p">&gt;();</span>
+            <span class="c1">// add..
+</span><span class="c1"></span>            <span class="n">_locations</span><span class="p">[</span><span class="m">0</span><span class="p">].</span><span class="n">x</span> <span class="p">=</span> <span class="m">3</span><span class="p">;</span><span class="c1">// CS1612
+</span><span class="c1"></span>        <span class="p">}</span>
     <span class="p">}</span>
 
     <span class="k">struct</span> <span class="nc">Point</span>
@@ -234,44 +240,36 @@
 
 <p><em>错误 CS1612  无法修改“Player.Location”的返回值，因为它不是变量</em></p>
 
-<p>在Player类中，自动属性是语法糖，</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="n">Point</span> <span class="n">Location</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div>
-<p>编译器会展开为：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="n">Point</span> <span class="n">_location</span><span class="p">;</span>
-<span class="k">public</span> <span class="n">Point</span> <span class="n">Location</span> <span class="p">{</span> <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_location</span><span class="p">;</span> <span class="p">}</span> <span class="k">set</span> <span class="p">{</span> <span class="n">_location</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span> <span class="p">}</span> <span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div>
-<p>在Main方法中，因为Point是个结构体即值类型, 所以Location的get方法返回的是_location的副本，而不是_location的引用。由于这个副本不保存在任何变量中，所以修改值并不会保存回_locaion变量，赋值没有意义。所以CS1612是说Player.Location是一个方法，不是变量。</p>
+<p><em>错误 CS1612  无法修改“List<Point>.this[init]”的返回值，因为它不是变量</em></p>
+
+<p>属性的get方法和List的索引返回的是Location的副本，而不是Location的引用。由于这个副本不保存在任何变量中，所以修改值并不会保存回Location变量，赋值没有意义。</p>
 
 <p>消除错误的方法：</p>
 
 <ol>
-<li><p>将Point改为class，这样p.Location 是_location的引用，可对其修复。但由于Point是 C#的内置类型，这种方法并大多数情况下并不可行。</p></li>
+<li><p>将Point改为class。但由于Point是 C#的内置类型，这种方法并大多数情况下并不可行。</p></li>
+
+<li><p>去掉 *{ get; set; } *将Location 改为public field，这也不推荐。Property较之Field有很多优点</p>
+
+<ul>
+<li>封装底层field</li>
+<li>set中可以包含验证逻辑</li>
+<li>field不能用于绑定</li>
+</ul></li>
 
 <li><p>如前所述，return _location返回的是一个临时副本，对其修改没意义。那我们就先把它赋给一个变量，修改后再赋回去：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="c1">//p.Location.x = 6; // 报错 CS1612
@@ -280,6 +278,10 @@
 <span class="n">location</span><span class="p">.</span><span class="n">x</span> <span class="p">=</span> <span class="m">6</span><span class="p">;</span>
 <span class="n">location</span><span class="p">.</span><span class="n">y</span> <span class="p">=</span> <span class="m">2</span><span class="p">;</span>
 <span class="n">p</span><span class="p">.</span><span class="n">Location</span> <span class="p">=</span> <span class="n">location</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">temp</span> <span class="p">=</span> <span class="n">_locations</span><span class="p">[</span><span class="m">0</span><span class="p">];</span>
+<span class="n">temp</span><span class="p">.</span><span class="n">x</span> <span class="p">=</span> <span class="m">3</span><span class="p">;</span>
+<span class="n">_locations</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">=</span> <span class="n">temp</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
