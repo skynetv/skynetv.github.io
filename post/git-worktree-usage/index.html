@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-07-26T14:05:29&#43;08:00" />
 <meta itemprop="dateModified" content="2019-07-26T14:05:29&#43;08:00" />
-<meta itemprop="wordCount" content="1214">
+<meta itemprop="wordCount" content="1209">
 
 
 
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
             </div>
-          <span class="more-meta"> 约 1214 字 </span>
+          <span class="more-meta"> 约 1209 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
         
       </div>
@@ -166,10 +166,10 @@
 <p>正常情况下，我们用 <strong>git init</strong> 或者 <strong>git clone</strong> 命令 新建一个repo，目录内有一个 .git文件夹 和我们要跟踪的文件，该目录就是我们的 <em>工作目录</em> <em>working directory</em> ，也就是 <em>working tree</em> 。我们要切换分支时，就用 <strong>checkout</strong> 命令：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">git checkout hotfix-2</pre></td></tr></table>
+<pre class="chroma"><code class="language-bash" data-lang="bash">git checkout hotfix-2</code></pre></td></tr></table>
 </div>
 </div>
 <p>但是随着时间的推移，我们的repo越来越庞大，切换分支变得越来昂贵：</p>
@@ -192,7 +192,7 @@
 <h2 id="使用方法">使用方法</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -232,11 +232,11 @@
 </span><span class="lnt">38
 </span><span class="lnt">39
 </span><span class="lnt">40
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">$ # 先初始化一个 repo
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ <span class="c1"># 先初始化一个 repo</span>
 $ mkdir projectX
-$ cd projectX
+$ <span class="nb">cd</span> projectX
 $ touch readme.md
 $ git init
 $ git add .
@@ -244,36 +244,36 @@ $ git commit -m init
 $ git remote add origin https://github.com/prime167/projectX.git
 $ git push
 
-$ # 初始化 dev 分支
+$ <span class="c1"># 初始化 dev 分支</span>
 $ git checkout -b dev
 $ touch a.cs
 $ git add .
-$ git commit -m &#34;add a.cs&#34;
+$ git commit -m <span class="s2">&#34;add a.cs&#34;</span>
 $ git push
 
-$ # 从现有本地分支新建一个worktree
+$ <span class="c1"># 从现有本地分支新建一个worktree</span>
 $ git checkout master
 $ git worktree add ../projectX-dev dev 
 
-$ # 从现有tag新建一个worktree
+$ <span class="c1"># 从现有tag新建一个worktree</span>
 $ git worktree add ../projectX-v0.1 v0.1 
 
-$ #从现有远程分支新建一个worktree
+$ <span class="c1">#从现有远程分支新建一个worktree</span>
 $ git fetch
 $ git worktree add ../projectX-hotfix1 hotfix1
 
-$ # 新建分支并添加worktree，最后的master为基础commit-ish，如果不指定，则默认为HEAD
+$ <span class="c1"># 新建分支并添加worktree，最后的master为基础commit-ish，如果不指定，则默认为HEAD</span>
 $ git worktree add -b feature-A ../projectX-feature-A master
 
-$ #列出worktree
+$ <span class="c1">#列出worktree</span>
 $ git worktree list
 
-$ # 移动worktree (git 2.17 新增)
+$ <span class="c1"># 移动worktree (git 2.17 新增)</span>
 $ git worktree move ../projectX-feature-hotfix2 ../projectX-hotfix2 
 
-$ # 删除worktree的话，直接删除目录即可 
+$ <span class="c1"># 删除worktree的话，直接删除目录即可</span> 
 $ rm -rf ../projectX-hotfix2
-$ git worktree prune</pre></td></tr></table>
+$ git worktree prune</code></pre></td></tr></table>
 </div>
 </div>
 <h2 id="技术细节">技术细节</h2>
@@ -284,20 +284,20 @@ $ git worktree prune</pre></td></tr></table>
 <li><p>在版本库的 .git/worktrees 下新建一个目录projectX-Dev, <em>gitdir</em> 文件指向worktree内的 <em>.git</em> 文件</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code class="language-nohighlight" data-lang="nohighlight"><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">D:/git/projectX-dev/.git</pre></td></tr></table>
+<pre class="chroma"><code class="language-nohighlight" data-lang="nohighlight">D:/git/projectX-dev/.git</code></pre></td></tr></table>
 </div>
 </div></li>
 
 <li><p>新建一个与ProjectX平级的的projectX目录，包括dev分支的内容和一个 <em>.git</em> 文件，内容为</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code class="language-nohighlight" data-lang="nohighlight"><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">gitdir: D:/git/projectX/.git/worktrees/projectX-dev</pre></td></tr></table>
+<pre class="chroma"><code class="language-nohighlight" data-lang="nohighlight">gitdir: D:/git/projectX/.git/worktrees/projectX-dev</code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -313,20 +313,23 @@ $ git worktree prune</pre></td></tr></table>
 
 <h2 id="总结">总结</h2>
 
-<p>本篇，我们学习了使用 <em>worktree</em> 进行多分枝并行开发的方法和优点，包括但不限于：
-* 可以快速进行多分枝并行开发、测试
-* 提交可以在同一个repo中共享
-* 和再次克隆项目相比，节省了硬盘空间
-* 方便分支间的比较和文件操作
-* 避免忘记切换分支造成的拷错 dll或者exe的尴尬。</p>
+<p>本篇，我们学习了使用 <em>worktree</em> 进行多分枝并行开发的方法和优点，包括但不限于：</p>
+
+<ul>
+<li>可以快速进行多分枝并行开发、测试</li>
+<li>提交可以在同一个repo中共享</li>
+<li>和再次克隆项目相比，节省了硬盘空间</li>
+<li>方便分支间的比较和文件操作</li>
+<li>避免忘记切换分支造成的拷错 dll或者exe的尴尬。</li>
+</ul>
 
 <h2 id="参考链接">参考链接</h2>
 
 <ol>
-<li><p><a href="https://git-scm.com/docs/git-worktree/">git-worktree - Manage multiple working trees</a></p></li>
-
-<li><p><a href="https://github.blog/2015-07-29-git-2-5-including-multiple-worktrees-and-triangular-workflows/">Git 2.5, including multiple worktrees and triangular workflows</a></p></li>
+<li><a href="https://git-scm.com/docs/git-worktree/">git-worktree - Manage multiple working trees</a></li>
 </ol>
+
+<p>2.<a href="https://github.blog/2015-07-29-git-2-5-including-multiple-worktrees-and-triangular-workflows/">Git 2.5, including multiple worktrees and triangular workflows</a></p>
     </div>
 
     <div class="post-copyright">

@@ -192,10 +192,10 @@
 <p>在 <em>E:\Data\blog</em> 下运行</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">hugo new site myBlog</pre></td></tr></table>
+<pre class="chroma"><code class="language-bash" data-lang="bash">hugo new site myBlog</code></pre></td></tr></table>
 </div>
 </div>
 <p>会在 <em>E:\Data\blog</em> 下生成目录 <em>myBlog</em></p>
@@ -218,7 +218,7 @@
 <p>用notepad++或者vscode打开config.toml,根据注释修改一些必要的设置:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
+<pre class="chroma"><code class="language-toml" data-lang="toml"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -268,58 +268,58 @@
 </span><span class="lnt">48
 </span><span class="lnt">49
 </span><span class="lnt">50
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">baseURL = &#34;https://xxxxxx.github.io&#34;
-languageCode = &#34;zh-cn&#34;
-defaultContentLanguage = &#34;zh-cn&#34;                             # en / zh-cn / ... (This field determines which i18n file to use)
-title = &#34;我的博客&#34;
-preserveTaxonomyNames = true
-enableRobotsTXT = true
-enableEmoji = true
-theme = &#34;even&#34;
-enableGitInfo = false # use git commit log to generate lastmod record # 可根据 Git 中的提交生成最近更新记录。
+<pre class="chroma"><code class="language-toml" data-lang="toml"><span class="nx">baseURL</span> <span class="p">=</span> <span class="s2">&#34;https://xxxxxx.github.io&#34;</span>
+<span class="nx">languageCode</span> <span class="p">=</span> <span class="s2">&#34;zh-cn&#34;</span>
+<span class="nx">defaultContentLanguage</span> <span class="p">=</span> <span class="s2">&#34;zh-cn&#34;</span>                             <span class="c"># en / zh-cn / ... (This field determines which i18n file to use)</span>
+<span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;我的博客&#34;</span>
+<span class="nx">preserveTaxonomyNames</span> <span class="p">=</span> <span class="kc">true</span>
+<span class="nx">enableRobotsTXT</span> <span class="p">=</span> <span class="kc">true</span>
+<span class="nx">enableEmoji</span> <span class="p">=</span> <span class="kc">true</span>
+<span class="nx">theme</span> <span class="p">=</span> <span class="s2">&#34;even&#34;</span>
+<span class="nx">enableGitInfo</span> <span class="p">=</span> <span class="kc">false</span> <span class="c"># use git commit log to generate lastmod record # 可根据 Git 中的提交生成最近更新记录。</span>
 
-# Syntax highlighting by Chroma. NOTE: Don&#39;t enable `highlightInClient` and `chroma` at the same time!
-pygmentsOptions = &#34;linenos=table&#34;
-pygmentsCodefences = true
-pygmentsUseClasses = true
-pygmentsCodefencesGuessSyntax = true
+<span class="c"># Syntax highlighting by Chroma. NOTE: Don&#39;t enable `highlightInClient` and `chroma` at the same time!</span>
+<span class="nx">pygmentsOptions</span> <span class="p">=</span> <span class="s2">&#34;linenos=table&#34;</span>
+<span class="nx">pygmentsCodefences</span> <span class="p">=</span> <span class="kc">true</span>
+<span class="nx">pygmentsUseClasses</span> <span class="p">=</span> <span class="kc">true</span>
+<span class="nx">pygmentsCodefencesGuessSyntax</span> <span class="p">=</span> <span class="kc">true</span>
 
-hasCJKLanguage = true     # has chinese/japanese/korean ? # 自动检测是否包含 中文\日文\韩文
-paginate = 5                                              # 首页每页显示的文章数
-disqusShortname = &#34;&#34;      # disqus_shortname
-googleAnalytics = &#34;&#34;      # UA-XXXXXXXX-X
-copyright = &#34;&#34;            # default: author.name ↓        # 默认为下面配置的author.name ↓
+<span class="nx">hasCJKLanguage</span> <span class="p">=</span> <span class="kc">true</span>     <span class="c"># has chinese/japanese/korean ? # 自动检测是否包含 中文\日文\韩文</span>
+<span class="nx">paginate</span> <span class="p">=</span> <span class="mi">5</span>                                              <span class="c"># 首页每页显示的文章数</span>
+<span class="nx">disqusShortname</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>      <span class="c"># disqus_shortname</span>
+<span class="nx">googleAnalytics</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>      <span class="c"># UA-XXXXXXXX-X</span>
+<span class="nx">copyright</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>            <span class="c"># default: author.name ↓        # 默认为下面配置的author.name ↓</span>
 
-[author]                  # essential                     # 必需
-  name = &#34;Codest&#34;
+<span class="p">[</span><span class="nx">author</span><span class="p">]</span>                  <span class="c"># essential                     # 必需</span>
+  <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Codest&#34;</span>
 
-[sitemap]                 # essential                     # 必需
-  changefreq = &#34;weekly&#34;
-  priority = 0.5
-  filename = &#34;sitemap.xml&#34;
+<span class="p">[</span><span class="nx">sitemap</span><span class="p">]</span>                 <span class="c"># essential                     # 必需</span>
+  <span class="nx">changefreq</span> <span class="p">=</span> <span class="s2">&#34;weekly&#34;</span>
+  <span class="nx">priority</span> <span class="p">=</span> <span class="mf">0.5</span>
+  <span class="nx">filename</span> <span class="p">=</span> <span class="s2">&#34;sitemap.xml&#34;</span>
 
-[[menu.main]]             # config your menu              # 配置目录
-  name = &#34;主页&#34;
-  weight = 10
-  identifier = &#34;home&#34;
-  url = &#34;/&#34;
-[[menu.main]]
-  name = &#34;归档&#34;
-  weight = 20
-  identifier = &#34;archives&#34;
-  url = &#34;/post/&#34;
-[[menu.main]]
-  name = &#34;标签&#34;
-  weight = 30
-  identifier = &#34;tags&#34;
-  url = &#34;/tags/&#34;
-[[menu.main]]
-  name = &#34;类别&#34;
-  weight = 40
-  identifier = &#34;categories&#34;
-  url = &#34;/categories/&#34;</pre></td></tr></table>
+<span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>             <span class="c"># config your menu              # 配置目录</span>
+  <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;主页&#34;</span>
+  <span class="nx">weight</span> <span class="p">=</span> <span class="mi">10</span>
+  <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;home&#34;</span>
+  <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/&#34;</span>
+<span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+  <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;归档&#34;</span>
+  <span class="nx">weight</span> <span class="p">=</span> <span class="mi">20</span>
+  <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;archives&#34;</span>
+  <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/post/&#34;</span>
+<span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+  <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;标签&#34;</span>
+  <span class="nx">weight</span> <span class="p">=</span> <span class="mi">30</span>
+  <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;tags&#34;</span>
+  <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/tags/&#34;</span>
+<span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+  <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;类别&#34;</span>
+  <span class="nx">weight</span> <span class="p">=</span> <span class="mi">40</span>
+  <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;categories&#34;</span>
+  <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/categories/&#34;</span></code></pre></td></tr></table>
 </div>
 </div>
 <h2 id="添加新文章">添加新文章</h2>
@@ -340,60 +340,60 @@ copyright = &#34;&#34;            # default: author.name ↓        # 默认为�
 <p>用vscode打开myBlog文件夹，编辑hell-world.md</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code class="language-toml" data-lang="toml"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">---
-title: &#34;Hello World&#34;
-date: 2019-08-07T16:26:41+08:00
-draft: true
----
-在下面接着用markdown写就可以了</pre></td></tr></table>
+<pre class="chroma"><code class="language-toml" data-lang="toml"><span class="err">---</span>
+<span class="nx">title</span><span class="err">:</span> <span class="s2">&#34;Hello World&#34;</span>
+<span class="nx">date</span><span class="err">:</span> <span class="ld">2019-08-07T16:26:41+08:00</span>
+<span class="nx">draft</span><span class="err">:</span> <span class="kc">true</span>
+<span class="err">---</span>
+<span class="nx">在下面接着用markdown写就可以了</span></code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="设置tag">设置tag</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code class="language-toml" data-lang="toml"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">---
-title: &#34;Hello World&#34;
-date: 2019-08-07T16:26:41+08:00
-draft: true
-tags: [&#34;git&#34;,&#34;git worktree&#34;, &#34;scm&#34;]
----</pre></td></tr></table>
+<pre class="chroma"><code class="language-toml" data-lang="toml"><span class="err">---</span>
+<span class="nx">title</span><span class="err">:</span> <span class="s2">&#34;Hello World&#34;</span>
+<span class="nx">date</span><span class="err">:</span> <span class="ld">2019-08-07T16:26:41+08:00</span>
+<span class="nx">draft</span><span class="err">:</span> <span class="kc">true</span>
+<span class="nx">tags</span><span class="err">:</span> <span class="p">[</span><span class="s2">&#34;git&#34;</span><span class="p">,</span><span class="s2">&#34;git worktree&#34;</span><span class="p">,</span> <span class="s2">&#34;scm&#34;</span><span class="p">]</span>
+<span class="err">---</span></code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="设置分类">设置分类</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code class="language-toml" data-lang="toml"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
 </span><span class="lnt">7
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">---
-title: &#34;git worktree 命令的使用&#34;
-date: 2019-07-26T14:05:29+08:00
-draft: false
-tags: [&#34;git&#34;,&#34;git worktree&#34;, &#34;scm&#34;]
-categories: [&#34;技术&#34;]
----</pre></td></tr></table>
+<pre class="chroma"><code class="language-toml" data-lang="toml"><span class="err">---</span>
+<span class="nx">title</span><span class="err">:</span> <span class="s2">&#34;git worktree 命令的使用&#34;</span>
+<span class="nx">date</span><span class="err">:</span> <span class="ld">2019-07-26T14:05:29+08:00</span>
+<span class="nx">draft</span><span class="err">:</span> <span class="kc">false</span>
+<span class="nx">tags</span><span class="err">:</span> <span class="p">[</span><span class="s2">&#34;git&#34;</span><span class="p">,</span><span class="s2">&#34;git worktree&#34;</span><span class="p">,</span> <span class="s2">&#34;scm&#34;</span><span class="p">]</span>
+<span class="nx">categories</span><span class="err">:</span> <span class="p">[</span><span class="s2">&#34;技术&#34;</span><span class="p">]</span>
+<span class="err">---</span></code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="设置文章摘要">设置文章摘要</h3>
