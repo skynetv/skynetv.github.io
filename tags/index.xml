@@ -6,10 +6,28 @@
     <description>Recent content in Tags on 静静地坐着</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 07 Aug 2019 16:36:46 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 16 Aug 2019 16:36:27 +0800</lastBuildDate>
     
 	<atom:link href="https://prime167.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>csharp</title>
+      <link>https://prime167.github.io/tags/csharp/</link>
+      <pubDate>Fri, 16 Aug 2019 16:36:27 +0800</pubDate>
+      
+      <guid>https://prime167.github.io/tags/csharp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>struct</title>
+      <link>https://prime167.github.io/tags/struct/</link>
+      <pubDate>Fri, 16 Aug 2019 16:36:27 +0800</pubDate>
+      
+      <guid>https://prime167.github.io/tags/struct/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>hugo</title>
@@ -35,15 +53,6 @@
       <pubDate>Tue, 30 Jul 2019 15:51:59 +0800</pubDate>
       
       <guid>https://prime167.github.io/tags/cs1612/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>csharp</title>
-      <link>https://prime167.github.io/tags/csharp/</link>
-      <pubDate>Tue, 30 Jul 2019 15:51:59 +0800</pubDate>
-      
-      <guid>https://prime167.github.io/tags/csharp/</guid>
       <description></description>
     </item>
     
