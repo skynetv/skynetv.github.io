@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-08-16T16:36:27&#43;08:00" />
 <meta itemprop="dateModified" content="2019-08-16T16:36:27&#43;08:00" />
-<meta itemprop="wordCount" content="1581">
+<meta itemprop="wordCount" content="1593">
 
 
 
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
             </div>
-          <span class="more-meta"> 约 1581 字 </span>
+          <span class="more-meta"> 约 1593 字 </span>
           <span class="more-meta"> 预计阅读 4 分钟 </span>
         
       </div>
@@ -545,6 +545,7 @@
 </span><span class="lnt">20
 </span><span class="lnt">21
 </span><span class="lnt">22
+</span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="kt">double</span> <span class="n">CalculateReadonlyIn</span><span class="p">(</span><span class="k">in</span> <span class="n">ReadonlyPoint3D</span> <span class="n">point1</span><span class="p">,</span><span class="k">in</span> <span class="n">ReadonlyPoint3D</span> <span class="n">point2</span><span class="p">)</span>
@@ -557,8 +558,9 @@
 <span class="p">}</span>
 
 <span class="k">readonly</span> <span class="k">struct</span> <span class="nc">ReadonlyPoint3D</span>
-<span class="p">{</span>  
-    <span class="k">public</span> <span class="kt">double</span> <span class="n">X</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span>  <span class="p">}</span>
+<span class="p">{</span>
+    <span class="c1">// 所有字段必须是只读的
+</span><span class="c1"></span>    <span class="k">public</span> <span class="kt">double</span> <span class="n">X</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span>  <span class="p">}</span>
     <span class="k">public</span> <span class="kt">double</span> <span class="n">Y</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span>  <span class="p">}</span>
     <span class="k">public</span> <span class="kt">double</span> <span class="n">Z</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span>  <span class="p">}</span>
 
