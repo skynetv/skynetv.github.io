@@ -9,25 +9,14 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/categories/</loc>
-    <lastmod>2019-08-16T16:36:27+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/post/</loc>
-    <lastmod>2019-08-16T16:36:27+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/tags/</loc>
-    <lastmod>2019-08-16T16:36:27+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://prime167.github.io/post/csharp-struct-parameter/</loc>
+    <lastmod>2019-08-16T16:36:27+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/categories/</loc>
     <lastmod>2019-08-16T16:36:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -36,25 +25,57 @@
   <url>
     <loc>https://prime167.github.io/tags/csharp/</loc>
     <lastmod>2019-08-16T16:36:27+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/post/</loc>
+    <lastmod>2019-08-16T16:36:27+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://prime167.github.io/tags/struct/</loc>
     <lastmod>2019-08-16T16:36:27+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/tags/</loc>
+    <lastmod>2019-08-16T16:36:27+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://prime167.github.io/categories/%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2019-08-16T16:36:27+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://prime167.github.io/</loc>
     <lastmod>2019-08-16T16:36:27+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/categories/blog/</loc>
+    <lastmod>2019-08-07T16:36:46+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/tags/hugo/</loc>
+    <lastmod>2019-08-07T16:36:46+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -65,21 +86,10 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/categories/blog/</loc>
-    <lastmod>2019-08-07T16:36:46+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/tags/hugo/</loc>
-    <lastmod>2019-08-07T16:36:46+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://prime167.github.io/tags/meta/</loc>
     <lastmod>2019-08-07T16:36:46+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -92,13 +102,15 @@
   <url>
     <loc>https://prime167.github.io/tags/cs1612/</loc>
     <lastmod>2019-07-30T15:51:59+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://prime167.github.io/tags/bug/</loc>
     <lastmod>2019-07-26T14:57:43+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -111,13 +123,15 @@
   <url>
     <loc>https://prime167.github.io/tags/git/</loc>
     <lastmod>2019-07-26T14:05:29+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://prime167.github.io/tags/git-worktree/</loc>
     <lastmod>2019-07-26T14:05:29+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -130,19 +144,22 @@
   <url>
     <loc>https://prime167.github.io/tags/scm/</loc>
     <lastmod>2019-07-26T14:05:29+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://prime167.github.io/tags/wince/</loc>
     <lastmod>2019-07-11T17:40:12+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://prime167.github.io/tags/%E5%85%B1%E4%BA%AB%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2019-07-11T17:40:12+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
