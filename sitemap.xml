@@ -9,14 +9,63 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/csharp-struct-parameter/</loc>
-    <lastmod>2019-08-16T16:36:27+08:00</lastmod>
+    <loc>https://prime167.github.io/tags/.net/</loc>
+    <lastmod>2019-09-06T12:55:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://prime167.github.io/categories/</loc>
+    <lastmod>2019-09-06T12:55:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/post/</loc>
+    <lastmod>2019-09-06T12:55:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/tags/</loc>
+    <lastmod>2019-09-06T12:55:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/tags/thread/</loc>
+    <lastmod>2019-09-06T12:55:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/categories/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2019-09-06T12:55:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/post/2019-9-6-dotnet-safe-ui-app/</loc>
+    <lastmod>2019-09-06T12:55:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/</loc>
+    <lastmod>2019-09-06T12:55:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/post/csharp-struct-parameter/</loc>
     <lastmod>2019-08-16T16:36:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -30,35 +79,7 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/</loc>
-    <lastmod>2019-08-16T16:36:27+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://prime167.github.io/tags/struct/</loc>
-    <lastmod>2019-08-16T16:36:27+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/tags/</loc>
-    <lastmod>2019-08-16T16:36:27+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/categories/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2019-08-16T16:36:27+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/</loc>
     <lastmod>2019-08-16T16:36:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
