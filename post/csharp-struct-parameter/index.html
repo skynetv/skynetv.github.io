@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-08-16T16:36:27&#43;08:00" />
 <meta itemprop="dateModified" content="2019-08-16T16:36:27&#43;08:00" />
-<meta itemprop="wordCount" content="1599">
+<meta itemprop="wordCount" content="1630">
 
 
 
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
             </div>
-          <span class="more-meta"> 约 1599 字 </span>
+          <span class="more-meta"> 约 1630 字 </span>
           <span class="more-meta"> 预计阅读 4 分钟 </span>
         
       </div>
@@ -606,7 +606,7 @@
 <h2 id="总结">总结</h2>
 
 <ul>
-<li>对于较大的struct，用in关键字进行传递提高性能同时表明方法的意图：引用传递，无法修改传入的值</li>
+<li>对于较大的struct(微软建议32位下大于 4 bytes， 64位下大于 8 bytes)，用in关键字进行传递提高性能同时表明方法的意图：引用传递，无法修改传入的值</li>
 <li>用in传参时一定要配readonly struct，以避免性能损失。</li>
 </ul>
 
