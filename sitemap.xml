@@ -30,6 +30,13 @@
   </url>
   
   <url>
+    <loc>https://prime167.github.io/tags/csharp/</loc>
+    <lastmod>2019-09-23T17:21:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://prime167.github.io/post/</loc>
     <lastmod>2019-09-23T17:21:55+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -80,13 +87,6 @@
   
   <url>
     <loc>https://prime167.github.io/post/csharp-struct-parameter/</loc>
-    <lastmod>2019-08-16T16:36:27+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/tags/csharp/</loc>
     <lastmod>2019-08-16T16:36:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
