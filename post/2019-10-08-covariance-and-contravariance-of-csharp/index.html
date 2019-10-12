@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-10-08T10:09:44&#43;08:00" />
 <meta itemprop="dateModified" content="2019-10-08T10:09:44&#43;08:00" />
-<meta itemprop="wordCount" content="385">
+<meta itemprop="wordCount" content="685">
 
 
 
@@ -132,8 +132,8 @@
         <div class="post-category">
             <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
             </div>
-          <span class="more-meta"> 约 385 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
+          <span class="more-meta"> 约 685 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
         
       </div>
     </header>
@@ -146,6 +146,10 @@
 <li>
 <ul>
 <li><a href="#概念">概念</a></li>
+<li><a href="#数组的协变">数组的协变</a></li>
+<li><a href="#非泛型委托的协变和逆变">非泛型委托的协变和逆变</a></li>
+<li><a href="#泛型委托的协变和逆变">泛型委托的协变和逆变</a></li>
+<li><a href="#泛型接口的协变和逆变">泛型接口的协变和逆变</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -183,6 +187,30 @@
 <p>逆变和协变描述了具有继承关系的类型，通过类型构造器映射到另一范畴时所具有的继承关系。
 保持原继承关系的为协变，继承关系反转的为逆变。</p>
 </blockquote>
+
+<h2 id="数组的协变">数组的协变</h2>
+
+<p>如上所述，C#从一开始就支持数组类型的协变，但这不是类型安全的:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="kt">object</span><span class="p">[]</span> <span class="n">objs</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">string</span><span class="p">[</span><span class="m">2</span><span class="p">];</span>
+<span class="n">obj</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="p">=</span> <span class="m">3</span><span class="p">;</span> <span class="c1">// ArrayTypeMismatchException
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>因为运行时，objs[]的类型是string[],无法存储int型。所以回抛出异常。这个从Java中抄来的特性，被Eric Lippert 列为<a href="http://www.informit.com/articles/article.aspx?p=2425867">10大最糟糕特性</a>之首，实践中应避免使用。</p>
+
+<h2 id="非泛型委托的协变和逆变">非泛型委托的协变和逆变</h2>
+
+<p>.NET Framework 3.5 引入了变体支持，用于在 C# 中匹配所有委托的方法签名和委托类型。 这表明不仅可以将具有匹配签名的方法分配给委托，还可以将返回派生程度较大的派生类型的方法分配给委托（协变），或者如果方法所接受参数的派生类型所具有的派生程度小于委托类型指定的程度（逆变），也可将其分配给委托。</p>
+
+<h2 id="泛型委托的协变和逆变">泛型委托的协变和逆变</h2>
+
+<h2 id="泛型接口的协变和逆变">泛型接口的协变和逆变</h2>
     </div>
 
     <div class="post-copyright">
