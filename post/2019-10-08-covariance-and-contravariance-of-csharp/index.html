@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-10-08T10:09:44&#43;08:00" />
 <meta itemprop="dateModified" content="2019-10-08T10:09:44&#43;08:00" />
-<meta itemprop="wordCount" content="685">
+<meta itemprop="wordCount" content="2067">
 
 
 
@@ -132,8 +132,8 @@
         <div class="post-category">
             <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
             </div>
-          <span class="more-meta"> 约 685 字 </span>
-          <span class="more-meta"> 预计阅读 2 分钟 </span>
+          <span class="more-meta"> 约 2067 字 </span>
+          <span class="more-meta"> 预计阅读 5 分钟 </span>
         
       </div>
     </header>
@@ -147,9 +147,15 @@
 <ul>
 <li><a href="#概念">概念</a></li>
 <li><a href="#数组的协变">数组的协变</a></li>
-<li><a href="#非泛型委托的协变和逆变">非泛型委托的协变和逆变</a></li>
-<li><a href="#泛型委托的协变和逆变">泛型委托的协变和逆变</a></li>
-<li><a href="#泛型接口的协变和逆变">泛型接口的协变和逆变</a></li>
+<li><a href="#型委托的可变性">型委托的可变性</a></li>
+<li><a href="#泛型中的可变性">泛型中的可变性</a>
+<ul>
+<li><a href="#泛型集合">泛型集合</a></li>
+<li><a href="#泛型委托">泛型委托</a></li>
+</ul></li>
+<li><a href="#泛型接口">泛型接口</a></li>
+<li><a href="#注意">注意</a></li>
+<li><a href="#扩展阅读">扩展阅读</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -170,7 +176,7 @@
 </code></pre></td></tr></table>
 </div>
 </div>
-<p>上面的代码在C#中是合法的。相信大家也经常这么使用，其实这就是协变。
+<p>上面的代码在C#中是合法的，其实这就是协变。
 因为string继承自object，所以string是object的子类型，记作 string ≦ object。</p>
 
 <p>而oject的数组类型Object[]，是由object构造出来的一种新的类型,可以认为是一种构造类型，记f(object)，那么我们可以这么来描述协变和逆变：</p>
@@ -185,7 +191,7 @@
 
 <blockquote>
 <p>逆变和协变描述了具有继承关系的类型，通过类型构造器映射到另一范畴时所具有的继承关系。
-保持原继承关系的为协变，继承关系反转的为逆变。</p>
+保持原继承关系的为<strong>协变</strong>，继承关系反转的为<strong>逆变</strong> 。</p>
 </blockquote>
 
 <h2 id="数组的协变">数组的协变</h2>
@@ -198,19 +204,354 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="kt">object</span><span class="p">[]</span> <span class="n">objs</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">string</span><span class="p">[</span><span class="m">2</span><span class="p">];</span>
-<span class="n">obj</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="p">=</span> <span class="m">3</span><span class="p">;</span> <span class="c1">// ArrayTypeMismatchException
+<span class="n">obj</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="p">=</span> <span class="m">3</span><span class="p">;</span> <span class="c1">// 运行时异常 ArrayTypeMismatchException
 </span></code></pre></td></tr></table>
 </div>
 </div>
 <p>因为运行时，objs[]的类型是string[],无法存储int型。所以回抛出异常。这个从Java中抄来的特性，被Eric Lippert 列为<a href="http://www.informit.com/articles/article.aspx?p=2425867">10大最糟糕特性</a>之首，实践中应避免使用。</p>
 
-<h2 id="非泛型委托的协变和逆变">非泛型委托的协变和逆变</h2>
+<h2 id="型委托的可变性">型委托的可变性</h2>
 
-<p>.NET Framework 3.5 引入了变体支持，用于在 C# 中匹配所有委托的方法签名和委托类型。 这表明不仅可以将具有匹配签名的方法分配给委托，还可以将返回派生程度较大的派生类型的方法分配给委托（协变），或者如果方法所接受参数的派生类型所具有的派生程度小于委托类型指定的程度（逆变），也可将其分配给委托。</p>
+<p>C# 2.0 引入了委托的变体支持，用于在 C# 中匹配所有委托的方法签名和委托类型。 这表明不仅可以将具有匹配签名的方法分配给委托，还可以将返回派生程度较大的派生类型的方法分配给委托（协变），或者如果方法所接受参数的派生类型所具有的派生程度小于委托类型指定的程度（逆变），也可将其分配给委托。即 <strong>对参数的逆变性和对返回值的协变性</strong></p>
 
-<h2 id="泛型委托的协变和逆变">泛型委托的协变和逆变</h2>
+<p>举例说明：</p>
 
-<h2 id="泛型接口的协变和逆变">泛型接口的协变和逆变</h2>
+<p>定义如下继承关系</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">L1</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">L2</span> <span class="p">:</span> <span class="n">L1</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">L3</span> <span class="p">:</span> <span class="n">L2</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>定义一个委托</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">delegate</span> <span class="n">L1</span> <span class="n">SampleDelegate</span><span class="p">(</span><span class="n">L3</span> <span class="n">t</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>使用：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="c1">// 将签名完全匹配的方法赋值给委托，无需转换
+</span><span class="c1"></span><span class="n">SampleDelegate</span> <span class="n">d1</span> <span class="p">=</span> <span class="n">RL1PL3</span><span class="p">;</span>
+
+<span class="c1">// 将一个返回值的派生程度更大（协变），参数值的派生程度更小（逆变）的方法赋值给委托
+</span><span class="c1"></span><span class="n">SampleDelegate</span> <span class="n">d2</span> <span class="p">=</span> <span class="n">RL2PL2</span><span class="p">;</span>
+
+<span class="c1">// 方法返回值派生程度继续变大，参数值的派生程度继续变小
+</span><span class="c1"></span><span class="n">SampleDelegate</span> <span class="n">dNonGenericConversion1</span> <span class="p">=</span> <span class="n">RL3PL1</span><span class="p">;</span>
+
+<span class="c1">// 一个委托就可以适用于全部返回值、参数组合
+</span><span class="c1">// 使代码更通用
+</span><span class="c1"></span><span class="n">SampleDelegate</span> <span class="n">sd1</span> <span class="p">=</span> <span class="n">RL1PL1</span><span class="p">;</span>
+<span class="n">SampleDelegate</span> <span class="n">sd2</span> <span class="p">=</span> <span class="n">RL1PL2</span><span class="p">;</span>
+<span class="n">SampleDelegate</span> <span class="n">sd3</span> <span class="p">=</span> <span class="n">RL1PL3</span><span class="p">;</span>
+<span class="n">SampleDelegate</span> <span class="n">sd4</span> <span class="p">=</span> <span class="n">RL2PL1</span><span class="p">;</span>
+<span class="n">SampleDelegate</span> <span class="n">sd5</span> <span class="p">=</span> <span class="n">RL2PL2</span><span class="p">;</span>
+<span class="n">SampleDelegate</span> <span class="n">sd6</span> <span class="p">=</span> <span class="n">RL2PL3</span><span class="p">;</span>
+<span class="n">SampleDelegate</span> <span class="n">sd7</span> <span class="p">=</span> <span class="n">RL3PL1</span><span class="p">;</span>
+<span class="n">SampleDelegate</span> <span class="n">sd8</span> <span class="p">=</span> <span class="n">RL3PL2</span><span class="p">;</span>
+<span class="n">SampleDelegate</span> <span class="n">sd9</span> <span class="p">=</span> <span class="n">RL3PL3</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>逆变为什么是类型安全的？</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="n">Action</span><span class="p">&lt;</span><span class="n">Base</span><span class="p">&gt;</span> <span class="n">b</span> <span class="p">=</span> <span class="p">(</span><span class="n">target</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">target</span><span class="p">.</span><span class="n">GetType</span><span class="p">().</span><span class="n">Name</span><span class="p">);</span> <span class="p">};</span>
+<span class="n">Action</span><span class="p">&lt;</span><span class="n">Derived</span><span class="p">&gt;</span> <span class="n">d</span> <span class="p">=</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">d</span><span class="p">(</span><span class="k">new</span> <span class="n">Derived</span><span class="p">());</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>由于 lambda 表达式与其自身所分配到的委托相匹配，因此定义了一个方法，此方法采用一个类型 Base 的参数且没有返回值。 可以将结果委托分配给类型类型 Action<Derived> 的变量，因为 T 委托的类型参数 Action<T> 是逆变类型参数。 由于 T 指定了一个参数类型，因此该代码是类型安全代码。 在调用类型 Action<Base> 的委托（就像它是类型 Action<Derived>的委托一样）时，其参数必须属于类型 Derived。 始终可以将此实参安全地传递给基础方法，因为该方法的形参属于类型 Base。</p>
+
+<h2 id="泛型中的可变性">泛型中的可变性</h2>
+
+<h3 id="泛型集合">泛型集合</h3>
+
+<p>C# 不支持泛型集合。考虑下面的代码:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="n">List</span><span class="p">&lt;</span><span class="n">Giraffe</span><span class="p">&gt;</span> <span class="n">giraffes</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Giraffe</span><span class="p">&gt;();</span>
+<span class="n">giraffes</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span> <span class="n">Giraffe</span><span class="p">());</span>
+<span class="c1">//List&lt;Animal&gt; animals = giraffes; // 编译错误
+</span><span class="c1">//animals.Add(new Lion()); // Aargh!
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>如果第3行是合法的，那么第4行也是合法,但animails的实际类型是List<Giraffe>，你不可能把Lion添加到里面。</p>
+
+<h3 id="泛型委托">泛型委托</h3>
+
+<p>对于委托</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">delegate</span> <span class="n">R</span> <span class="n">SampleGenericDelegate</span><span class="p">&lt;</span><span class="n">P</span><span class="p">,</span> <span class="n">R</span><span class="p">&gt;(</span><span class="n">P</span> <span class="n">a</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>类似非泛型委托,9种函数组合，一个委托就够了：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="n">SampleGenericDelegate</span><span class="p">&lt;</span><span class="n">L3</span><span class="p">,</span> <span class="n">L1</span><span class="p">&gt;</span> <span class="n">dg1</span> <span class="p">=</span> <span class="n">RL1PL1</span><span class="p">;</span>
+<span class="n">SampleGenericDelegate</span><span class="p">&lt;</span><span class="n">L3</span><span class="p">,</span> <span class="n">L1</span><span class="p">&gt;</span> <span class="n">dg2</span> <span class="p">=</span> <span class="n">RL1PL2</span><span class="p">;</span>
+<span class="n">SampleGenericDelegate</span><span class="p">&lt;</span><span class="n">L3</span><span class="p">,</span> <span class="n">L1</span><span class="p">&gt;</span> <span class="n">dg3</span> <span class="p">=</span> <span class="n">RL1PL3</span><span class="p">;</span>
+<span class="n">SampleGenericDelegate</span><span class="p">&lt;</span><span class="n">L3</span><span class="p">,</span> <span class="n">L1</span><span class="p">&gt;</span> <span class="n">dg4</span> <span class="p">=</span> <span class="n">RL2PL1</span><span class="p">;</span>
+<span class="n">SampleGenericDelegate</span><span class="p">&lt;</span><span class="n">L3</span><span class="p">,</span> <span class="n">L1</span><span class="p">&gt;</span> <span class="n">dg5</span> <span class="p">=</span> <span class="n">RL2PL2</span><span class="p">;</span>
+<span class="n">SampleGenericDelegate</span><span class="p">&lt;</span><span class="n">L3</span><span class="p">,</span> <span class="n">L1</span><span class="p">&gt;</span> <span class="n">dg6</span> <span class="p">=</span> <span class="n">RL2PL3</span><span class="p">;</span>
+<span class="n">SampleGenericDelegate</span><span class="p">&lt;</span><span class="n">L3</span><span class="p">,</span> <span class="n">L1</span><span class="p">&gt;</span> <span class="n">dg7</span> <span class="p">=</span> <span class="n">RL3PL1</span><span class="p">;</span>
+<span class="n">SampleGenericDelegate</span><span class="p">&lt;</span><span class="n">L3</span><span class="p">,</span> <span class="n">L1</span><span class="p">&gt;</span> <span class="n">dg8</span> <span class="p">=</span> <span class="n">RL3PL2</span><span class="p">;</span>
+<span class="n">SampleGenericDelegate</span><span class="p">&lt;</span><span class="n">L3</span><span class="p">,</span> <span class="n">L1</span><span class="p">&gt;</span> <span class="n">dg9</span> <span class="p">=</span> <span class="n">RL3PL3</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>C# 4.0 使用 <strong>in</strong> 和 <strong>out</strong> 来限定泛型委托中参数的可变性：
+* <a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/out-generic-modifier">out</a>： 对于泛型类型参数，out 关键字指定该类型参数是协变的。 可以在泛型接口和委托中使用 out 关键字。（ 来源）
+* <a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/in-generic-modifier">in</a>：对于泛型类型参数，in 关键字指定该类型参数是逆变的。 可以在泛型接口和委托中使用 in 关键字。 （ 来源）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">delegate</span> <span class="n">TResult</span> <span class="n">SampleGenericDelegate</span><span class="p">&lt;</span><span class="k">in</span> <span class="n">TP</span><span class="p">,</span> <span class="k">out</span> <span class="n">TResult</span><span class="p">&gt;(</span><span class="n">TP</span> <span class="n">a</span><span class="p">);</span>
+<span class="k">public</span> <span class="k">delegate</span> <span class="n">T</span> <span class="n">SampleGenericDelegate1</span><span class="p">&lt;</span><span class="k">out</span> <span class="n">T</span><span class="p">&gt;();</span>
+<span class="k">delegate</span> <span class="k">void</span> <span class="n">Action</span><span class="p">&lt;</span><span class="k">in</span> <span class="n">T</span><span class="p">&gt;(</span><span class="n">T</span> <span class="n">t</span><span class="p">);</span>
+<span class="k">delegate</span> <span class="n">TResult</span> <span class="n">Func</span><span class="p">&lt;</span><span class="k">out</span> <span class="n">TResult</span><span class="p">&gt;();</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="泛型接口">泛型接口</h2>
+
+<p>.NET framework 4.0 使用 <strong>in</strong> 和 <strong>out</strong> 来定义接口的可变性，在这之前都是不可变的。</p>
+
+<ul>
+<li><strong>in</strong>  限定类型参数只能用于参数，即<strong>逆变</strong></li>
+<li><strong>out</strong> 限定类型参数只能用于返回值，即<strong>协变</strong></li>
+</ul>
+
+<p>内置的一些接口：</p>
+
+<ul>
+<li>public interface IEnumerable<out T></li>
+<li>public interface IEnumerator<out T></li>
+<li>public interface IQueryable<out T></li>
+
+<li><p>public interface IGrouping<out TKey,out TElement></p></li>
+
+<li><p>public interface IComparable<in T></p></li>
+
+<li><p>public interface IComparer<in T></p></li>
+</ul>
+
+<p>举例</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">listL3</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+<span class="n">IEnumerable</span><span class="p">&lt;</span><span class="kt">object</span><span class="p">&gt;</span> <span class="n">lis</span> <span class="p">=</span> <span class="n">listL3</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>因为 IEnumerable 是只读的，无法和List<T>一样添加元素，所以此处是类型安全的。</p>
+
+<p>实现一个通用的Comparer (<a href="https://docs.microsoft.com/en-us/dotnet/standard/generics/covariance-and-contravariance">来源</a>)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+
+<span class="k">abstract</span> <span class="k">class</span> <span class="nc">Shape</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">virtual</span> <span class="kt">double</span> <span class="n">Area</span> <span class="p">{</span> <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="m">0</span><span class="p">;</span> <span class="p">}}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Circle</span> <span class="p">:</span> <span class="n">Shape</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="kt">double</span> <span class="n">r</span><span class="p">;</span>
+    <span class="k">public</span> <span class="n">Circle</span><span class="p">(</span><span class="kt">double</span> <span class="n">radius</span><span class="p">)</span> <span class="p">{</span> <span class="n">r</span> <span class="p">=</span> <span class="n">radius</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">double</span> <span class="n">Radius</span> <span class="p">{</span> <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">r</span><span class="p">;</span> <span class="p">}}</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="kt">double</span> <span class="n">Area</span> <span class="p">{</span> <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">Math</span><span class="p">.</span><span class="n">PI</span> <span class="p">*</span> <span class="n">r</span> <span class="p">*</span> <span class="n">r</span><span class="p">;</span> <span class="p">}}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">ShapeAreaComparer</span> <span class="p">:</span> <span class="n">System</span><span class="p">.</span><span class="n">Collections</span><span class="p">.</span><span class="n">Generic</span><span class="p">.</span><span class="n">IComparer</span><span class="p">&lt;</span><span class="n">Shape</span><span class="p">&gt;</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">IComparer</span><span class="p">&lt;</span><span class="n">Shape</span><span class="p">&gt;.</span><span class="n">Compare</span><span class="p">(</span><span class="n">Shape</span> <span class="n">a</span><span class="p">,</span> <span class="n">Shape</span> <span class="n">b</span><span class="p">)</span> 
+    <span class="p">{</span> 
+        <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="k">return</span> <span class="n">b</span> <span class="p">==</span> <span class="k">null</span> <span class="p">?</span> <span class="m">0</span> <span class="p">:</span> <span class="p">-</span><span class="m">1</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">b</span> <span class="p">==</span> <span class="k">null</span> <span class="p">?</span> <span class="m">1</span> <span class="p">:</span> <span class="n">a</span><span class="p">.</span><span class="n">Area</span><span class="p">.</span><span class="n">CompareTo</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">Area</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="k">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// You can pass ShapeAreaComparer, which implements IComparer&lt;Shape&gt;,
+</span><span class="c1"></span>        <span class="c1">// even though the constructor for SortedSet&lt;Circle&gt; expects 
+</span><span class="c1"></span>        <span class="c1">// IComparer&lt;Circle&gt;, because type parameter T of IComparer&lt;T&gt; is
+</span><span class="c1"></span>        <span class="c1">// contravariant.
+</span><span class="c1"></span>        <span class="c1">// SortedSet&lt;Circle&gt; 的构造函数需要IComparer&lt;Circle&gt;，但仍然可以传入是实现IComparer&lt;Shape&gt;的ShapeAreaComparer
+</span><span class="c1"></span>        <span class="n">SortedSet</span><span class="p">&lt;</span><span class="n">Circle</span><span class="p">&gt;</span> <span class="n">circlesByArea</span> <span class="p">=</span> 
+            <span class="k">new</span> <span class="n">SortedSet</span><span class="p">&lt;</span><span class="n">Circle</span><span class="p">&gt;(</span><span class="k">new</span> <span class="n">ShapeAreaComparer</span><span class="p">())</span> 
+                <span class="p">{</span> <span class="k">new</span> <span class="n">Circle</span><span class="p">(</span><span class="m">7.2</span><span class="p">),</span> <span class="k">new</span> <span class="n">Circle</span><span class="p">(</span><span class="m">100</span><span class="p">),</span> <span class="k">null</span><span class="p">,</span> <span class="k">new</span> <span class="n">Circle</span><span class="p">(.</span><span class="m">01</span><span class="p">)</span> <span class="p">};</span>
+
+        <span class="k">foreach</span> <span class="p">(</span><span class="n">Circle</span> <span class="n">c</span> <span class="k">in</span> <span class="n">circlesByArea</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">c</span> <span class="p">==</span> <span class="k">null</span> <span class="p">?</span> <span class="s">&#34;null&#34;</span> <span class="p">:</span> <span class="s">&#34;Circle with area &#34;</span> <span class="p">+</span> <span class="n">c</span><span class="p">.</span><span class="n">Area</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/* This code example produces the following output:
+</span><span class="cm">
+</span><span class="cm">null
+</span><span class="cm">Circle with area 0.000314159265358979
+</span><span class="cm">Circle with area 162.860163162095
+</span><span class="cm">Circle with area 31415.9265358979
+</span><span class="cm"> */</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="注意">注意</h2>
+
+<ul>
+<li>协变逆变是针对构造类型的，注意和赋值兼容的区别</li>
+<li>协变逆变适用于引用类型，不支持值类型</li>
+<li>在 .NET Framework 4 中，Variant 类型参数仅限于泛型接口和泛型委托类型。</li>
+</ul>
+
+<h2 id="扩展阅读">扩展阅读</h2>
+
+<ul>
+<li><p><a href="https://devblogs.microsoft.com/csharpfaq/covariance-and-contravariance-faq/">Covariance and Contravariance FAQ</a></p></li>
+
+<li><p><a href="http://tomasp.net/blog/variance-explained.aspx/">The theory behind covariance and contravariance in C# 4</a></p></li>
+
+<li><p><a href="https://weblogs.asp.net/dixin/understanding-csharp-features-8-covariance-and-contravariance">Understanding C# Features (8) Covariance and Contravariance</a></p></li>
+</ul>
     </div>
 
     <div class="post-copyright">
