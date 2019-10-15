@@ -9,69 +9,6 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/2019-10-08-covariance-and-contravariance-of-csharp/</loc>
-    <lastmod>2019-10-08T10:09:44+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/categories/</loc>
-    <lastmod>2019-10-08T10:09:44+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/tags/contravariance/</loc>
-    <lastmod>2019-10-08T10:09:44+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/tags/covariance/</loc>
-    <lastmod>2019-10-08T10:09:44+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/tags/csharp/</loc>
-    <lastmod>2019-10-08T10:09:44+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/post/</loc>
-    <lastmod>2019-10-08T10:09:44+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/tags/</loc>
-    <lastmod>2019-10-08T10:09:44+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/categories/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2019-10-08T10:09:44+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/</loc>
-    <lastmod>2019-10-08T10:09:44+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://prime167.github.io/tags/.net/</loc>
     <lastmod>2019-09-23T17:21:55+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -86,7 +23,49 @@
   </url>
   
   <url>
+    <loc>https://prime167.github.io/categories/</loc>
+    <lastmod>2019-09-23T17:21:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/tags/csharp/</loc>
+    <lastmod>2019-09-23T17:21:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/post/</loc>
+    <lastmod>2019-09-23T17:21:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/tags/</loc>
+    <lastmod>2019-09-23T17:21:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://prime167.github.io/tags/timer/</loc>
+    <lastmod>2019-09-23T17:21:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/categories/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2019-09-23T17:21:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/</loc>
     <lastmod>2019-09-23T17:21:55+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
