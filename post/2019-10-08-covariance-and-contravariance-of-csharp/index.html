@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-10-08T10:09:44&#43;08:00" />
 <meta itemprop="dateModified" content="2019-10-08T10:09:44&#43;08:00" />
-<meta itemprop="wordCount" content="2170">
+<meta itemprop="wordCount" content="2258">
 
 
 
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
             </div>
-          <span class="more-meta"> 约 2170 字 </span>
+          <span class="more-meta"> 约 2258 字 </span>
           <span class="more-meta"> 预计阅读 5 分钟 </span>
         
       </div>
@@ -444,15 +444,60 @@
 <li><p>public interface IEqualityComparer<in T></p></li>
 </ul>
 
-<p>举例</p>
+<p>举例
+最常见的：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="lnt">1
 </span><span class="lnt">2
+</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">listL3</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="c1">// 协变
+</span><span class="c1"></span><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">listL3</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
 <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="kt">object</span><span class="p">&gt;</span> <span class="n">lis</span> <span class="p">=</span> <span class="n">listL3</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>方法的参数使用IEnumerable<Base>编写更通用的方法:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">PrintFullName</span><span class="p">(</span><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Person</span><span class="p">&gt;</span> <span class="n">persons</span><span class="p">)</span>
+    <span class="p">{</span>
+        
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// 协变
+</span><span class="c1"></span>        <span class="n">List</span><span class="p">&lt;</span><span class="n">Teacher</span><span class="p">&gt;</span> <span class="n">employees</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Teacher</span><span class="p">&gt;();</span>
+        <span class="n">PrintFullName</span><span class="p">(</span><span class="n">employees</span><span class="p">);</span>
+        
+        <span class="c1">// 协变
+</span><span class="c1"></span>        <span class="n">List</span><span class="p">&lt;</span><span class="n">Student</span><span class="p">&gt;</span> <span class="n">students</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Student</span><span class="p">&gt;();</span>
+        <span class="n">PrintFullName</span><span class="p">(</span><span class="n">students</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div>
