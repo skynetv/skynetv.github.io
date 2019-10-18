@@ -458,7 +458,25 @@
     </footer>
   </article>
         </div>
-        
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2019-08-07 16:36:46 \x2b0800 CST',
+        title: 'Hugo 配置记录',
+        link: decodeURI(location.href),
+        desc: '\x3cp\x3e新博客配置的七七八八了，记录一下过程和未解决问题。\x3c\/p\x3e',
+        owner: 'prime167',
+        repo: 'BlogComment',
+        oauth: {
+          client_id: '94967ffcea37f5eaca4f',
+          client_secret: '1309527d5ec98a1c41396b0c33c62af391e4a087'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
 
   
 
@@ -488,7 +506,6 @@
 
   <span class="copyright-year">
     &copy; 
-    2017 - 
     2019
     <span class="heart">
       <i class="iconfont icon-heart"></i>

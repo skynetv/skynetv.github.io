@@ -673,7 +673,25 @@
     </footer>
   </article>
         </div>
-        
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2019-10-08 10:09:44 \x2b0800 CST',
+        title: 'C# 的协变和逆变',
+        link: decodeURI(location.href),
+        desc: '\x3cp\x3e协变和逆变的概念存在于许多计算机语言中，本文主要讲C#中的协变和逆变\x3c\/p\x3e',
+        owner: 'prime167',
+        repo: 'BlogComment',
+        oauth: {
+          client_id: '94967ffcea37f5eaca4f',
+          client_secret: '1309527d5ec98a1c41396b0c33c62af391e4a087'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
 
   
 
@@ -703,7 +721,6 @@
 
   <span class="copyright-year">
     &copy; 
-    2017 - 
     2019
     <span class="heart">
       <i class="iconfont icon-heart"></i>
