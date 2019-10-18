@@ -22,91 +22,91 @@
     
     <item>
       <title>C# 的协变和逆变</title>
-      <link>https://prime167.github.io/post/2019-10-08-covariance-and-contravariance-of-csharp/</link>
+      <link>https://prime167.github.io/post/2019/10/08/covariance-and-contravariance-of-csharp/</link>
       <pubDate>Tue, 08 Oct 2019 10:09:44 +0800</pubDate>
       
-      <guid>https://prime167.github.io/post/2019-10-08-covariance-and-contravariance-of-csharp/</guid>
+      <guid>https://prime167.github.io/post/2019/10/08/covariance-and-contravariance-of-csharp/</guid>
       <description>&lt;p&gt;协变和逆变的概念存在于许多计算机语言中，本文主要讲C#中的协变和逆变&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>.NET 中的 timer</title>
-      <link>https://prime167.github.io/post/2019-09-23-dotnet-timers/</link>
+      <link>https://prime167.github.io/post/2019/09/23/dotnet-timers/</link>
       <pubDate>Mon, 23 Sep 2019 17:21:55 +0800</pubDate>
       
-      <guid>https://prime167.github.io/post/2019-09-23-dotnet-timers/</guid>
+      <guid>https://prime167.github.io/post/2019/09/23/dotnet-timers/</guid>
       <description>&lt;p&gt;今天简单介绍一下 .NET framework中的timer&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>编写线程安全的UI程序</title>
-      <link>https://prime167.github.io/post/2019-09-06-dotnet-safe-ui-app/</link>
+      <link>https://prime167.github.io/post/2019/09/06/dotnet-safe-ui-app/</link>
       <pubDate>Fri, 06 Sep 2019 12:55:14 +0800</pubDate>
       
-      <guid>https://prime167.github.io/post/2019-09-06-dotnet-safe-ui-app/</guid>
+      <guid>https://prime167.github.io/post/2019/09/06/dotnet-safe-ui-app/</guid>
       <description>&lt;p&gt;本篇讲一下如何编写线程安全的Winform 程序&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>c# 传递结构体参数的那些事儿</title>
-      <link>https://prime167.github.io/post/2019-08-16-csharp-struct-parameter/</link>
+      <link>https://prime167.github.io/post/2019/08/16/csharp-struct-parameter/</link>
       <pubDate>Fri, 16 Aug 2019 16:36:27 +0800</pubDate>
       
-      <guid>https://prime167.github.io/post/2019-08-16-csharp-struct-parameter/</guid>
+      <guid>https://prime167.github.io/post/2019/08/16/csharp-struct-parameter/</guid>
       <description>&lt;p&gt;今天来说一下C#中传递结构体参数的演化&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Hugo 配置记录</title>
-      <link>https://prime167.github.io/post/2019-08-07-hugo-setup/</link>
+      <link>https://prime167.github.io/post/2019/08/07/hugo-setup/</link>
       <pubDate>Wed, 07 Aug 2019 16:36:46 +0800</pubDate>
       
-      <guid>https://prime167.github.io/post/2019-08-07-hugo-setup/</guid>
+      <guid>https://prime167.github.io/post/2019/08/07/hugo-setup/</guid>
       <description>&lt;p&gt;新博客配置的七七八八了，记录一下过程和未解决问题。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>C# 编译错误 CS1612：无法修改“xxx”的返回值，因为它不是变量</title>
-      <link>https://prime167.github.io/post/2019-07-30-csharp-error-cs1612/</link>
+      <link>https://prime167.github.io/post/2019/07/30/csharp-error-cs1612/</link>
       <pubDate>Tue, 30 Jul 2019 15:51:59 +0800</pubDate>
       
-      <guid>https://prime167.github.io/post/2019-07-30-csharp-error-cs1612/</guid>
+      <guid>https://prime167.github.io/post/2019/07/30/csharp-error-cs1612/</guid>
       <description>&lt;p&gt;看似简单的问题，背后涉及了很多基础知识。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>关于填坑</title>
-      <link>https://prime167.github.io/post/2019-07-26-about-fix-bugs/</link>
+      <link>https://prime167.github.io/post/2019/07/26/about-fix-bugs/</link>
       <pubDate>Fri, 26 Jul 2019 14:57:43 +0800</pubDate>
       
-      <guid>https://prime167.github.io/post/2019-07-26-about-fix-bugs/</guid>
+      <guid>https://prime167.github.io/post/2019/07/26/about-fix-bugs/</guid>
       <description>&lt;p&gt;寓言一则&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>git worktree 命令的使用</title>
-      <link>https://prime167.github.io/post/2019-07-26-git-worktree-usage/</link>
+      <link>https://prime167.github.io/post/2019/07/26/git-worktree-usage/</link>
       <pubDate>Fri, 26 Jul 2019 14:05:29 +0800</pubDate>
       
-      <guid>https://prime167.github.io/post/2019-07-26-git-worktree-usage/</guid>
+      <guid>https://prime167.github.io/post/2019/07/26/git-worktree-usage/</guid>
       <description>&lt;p&gt;使用 git worktree &lt;strong&gt;同时&lt;/strong&gt; 签出多个分支，提高开发效率，节省磁盘空间。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>解决WinCE6.0无法访问Win10共享文件夹问题</title>
-      <link>https://prime167.github.io/post/2019-07-11-fix-windows10-share/</link>
+      <link>https://prime167.github.io/post/2019/07/11/fix-windows10-share/</link>
       <pubDate>Thu, 11 Jul 2019 17:40:12 +0800</pubDate>
       
-      <guid>https://prime167.github.io/post/2019-07-11-fix-windows10-share/</guid>
+      <guid>https://prime167.github.io/post/2019/07/11/fix-windows10-share/</guid>
       <description>&lt;p&gt;公司主要是用WinCE6.0做嵌入式开发，有时需要把文件发送到PC机器，但最近有一台1803的Win10总是报&amp;rdquo;error 53 找不到网络路径&amp;rdquo;的错误。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Hello World</title>
-      <link>https://prime167.github.io/post/2019-07-10-hello-world/</link>
+      <link>https://prime167.github.io/post/2019/07/10/hello-world/</link>
       <pubDate>Wed, 10 Jul 2019 17:32:42 +0800</pubDate>
       
-      <guid>https://prime167.github.io/post/2019-07-10-hello-world/</guid>
+      <guid>https://prime167.github.io/post/2019/07/10/hello-world/</guid>
       <description>&lt;p&gt;新博客开张。&lt;/p&gt;</description>
     </item>
     
