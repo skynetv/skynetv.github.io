@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-08-07T16:36:46&#43;08:00" />
 <meta itemprop="dateModified" content="2019-08-07T16:36:46&#43;08:00" />
-<meta itemprop="wordCount" content="1177">
+<meta itemprop="wordCount" content="1546">
 
 
 
@@ -132,8 +132,8 @@
         <div class="post-category">
             <a href="/categories/blog/"> blog </a>
             </div>
-          <span class="more-meta"> 约 1177 字 </span>
-          <span class="more-meta"> 预计阅读 3 分钟 </span>
+          <span class="more-meta"> 约 1546 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
         
       </div>
     </header>
@@ -143,7 +143,7 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
 <ul>
-<li>
+<li><a href="#更新记录">更新记录</a>
 <ul>
 <li><a href="#注册github">注册GitHub</a></li>
 <li><a href="#创建博客-repo">创建博客 repo</a></li>
@@ -151,6 +151,7 @@
 <li><a href="#创建blog">创建blog</a></li>
 <li><a href="#设置主题">设置主题</a></li>
 <li><a href="#基本配置">基本配置</a></li>
+<li><a href="#配置gitment评论系统">配置Gitment评论系统</a></li>
 <li><a href="#添加新文章">添加新文章</a></li>
 <li><a href="#编辑">编辑</a>
 <ul>
@@ -172,6 +173,13 @@
   </div>
     <div class="post-content">
       <p>新博客配置的七七八八了，记录一下过程和未解决问题。</p>
+
+<h1 id="更新记录">更新记录</h1>
+
+<ul>
+<li>2019/8/7    配置完成</li>
+<li>2019/10/18 添加Gitmen评论系统</li>
+</ul>
 
 <h2 id="注册github">注册GitHub</h2>
 
@@ -327,6 +335,38 @@
   <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/categories/&#34;</span></code></pre></td></tr></table>
 </div>
 </div>
+<h2 id="配置gitment评论系统">配置Gitment评论系统</h2>
+
+<p>event 主题继承了Gitment的配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-toml" data-lang="toml"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-toml" data-lang="toml"><span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">gitment</span><span class="p">]</span>          <span class="c"># Gitment is a comment system based on GitHub issues. see https://github.com/imsun/gitment</span>
+  <span class="nx">owner</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>              <span class="c"># 你的 GitHub ID</span>
+  <span class="nx">repo</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>               <span class="c"># 保存评论的repo</span>
+  <span class="nx">clientId</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>           <span class="c"># 你的 client ID</span>
+  <span class="nx">clientSecret</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>       <span class="c"># 你的 client secret</span></code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>创建保存评论的repo，例如 BlogComment</li>
+<li>注册一个新的 OAuth Application</li>
+</ul>
+
+<p><a href="https://github.com/settings/applications/new">点击此处</a> 注册一个新的 OAuth Application。callback URL 填你当前blog地址，例如我的是 <a href="https://prime167.github.io/">https://prime167.github.io/</a> 其他项目随意填写。点击注册应用后会得到一个 client ID 和一个 client secret。
+* 填入toml配置
+* 初始化</p>
+
+<p>页面发布后，你需要访问页面并使用你的 GitHub 账号登录（请确保你的账号是第二步所填 repo 的 owner），点击初始化按钮。之后其他用户即可在该页面发表评论。</p>
+
+<p>通过查看repo可以发现，评论是以issue的方式保存的，初始化就是创建以文章标题为名的issue，他人在博客文章下的评论会保存在对应issue里</p>
+
 <h2 id="添加新文章">添加新文章</h2>
 
 <p>运行</p>
