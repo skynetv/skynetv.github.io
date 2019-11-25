@@ -9,29 +9,64 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/2019/11/21/dotnet-knowledge/</loc>
-    <lastmod>2019-11-21T19:56:45+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/post/</loc>
-    <lastmod>2019-11-21T19:56:45+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/</loc>
-    <lastmod>2019-11-21T19:56:45+08:00</lastmod>
+    <loc>https://prime167.github.io/categories/blog/</loc>
+    <lastmod>2019-11-25T13:36:46+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://prime167.github.io/categories/</loc>
-    <lastmod>2019-10-23T18:49:11+08:00</lastmod>
+    <lastmod>2019-11-25T13:36:46+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/tags/hugo/</loc>
+    <lastmod>2019-11-25T13:36:46+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/post/2019/08/07/hugo-setup/</loc>
+    <lastmod>2019-11-25T13:36:46+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/tags/meta/</loc>
+    <lastmod>2019-11-25T13:36:46+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/post/</loc>
+    <lastmod>2019-11-25T13:36:46+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/tags/</loc>
+    <lastmod>2019-11-25T13:36:46+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/</loc>
+    <lastmod>2019-11-25T13:36:46+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/post/2019/11/21/dotnet-knowledge/</loc>
+    <lastmod>2019-11-21T19:56:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -45,13 +80,6 @@
   
   <url>
     <loc>https://prime167.github.io/post/2019/10/23/config-firefox/</loc>
-    <lastmod>2019-10-23T18:49:11+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/tags/</loc>
     <lastmod>2019-10-23T18:49:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -151,34 +179,6 @@
   <url>
     <loc>https://prime167.github.io/tags/struct/</loc>
     <lastmod>2019-08-16T16:36:27+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/categories/blog/</loc>
-    <lastmod>2019-08-07T16:36:46+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/tags/hugo/</loc>
-    <lastmod>2019-08-07T16:36:46+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/post/2019/08/07/hugo-setup/</loc>
-    <lastmod>2019-08-07T16:36:46+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/tags/meta/</loc>
-    <lastmod>2019-08-07T16:36:46+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
