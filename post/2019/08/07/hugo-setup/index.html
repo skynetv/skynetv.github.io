@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-08-07T16:36:46&#43;08:00" />
 <meta itemprop="dateModified" content="2019-08-07T16:36:46&#43;08:00" />
-<meta itemprop="wordCount" content="1546">
+<meta itemprop="wordCount" content="1716">
 
 
 
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/blog/"> blog </a>
             </div>
-          <span class="more-meta"> 约 1546 字 </span>
+          <span class="more-meta"> 约 1716 字 </span>
           <span class="more-meta"> 预计阅读 4 分钟 </span>
         
       </div>
@@ -161,6 +161,7 @@
 <li><a href="#本地预览">本地预览</a></li>
 </ul></li>
 <li><a href="#发布">发布</a></li>
+<li><a href="#添加-nojekyll-文件">添加 .nojekyll 文件</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -461,6 +462,10 @@
 <h2 id="发布">发布</h2>
 
 <p>文章写完检查无误后，把 <em>draft:true</em> 改成 *draft:false*，命令行预先hugo,生成静态页面到public文件。把这个文件夹push到一开始创建的GitHub repo，文章就发布了。</p>
+
+<h2 id="添加-nojekyll-文件">添加 .nojekyll 文件</h2>
+
+<p>今天(2019-11-25)突然发现&rdquo;.net&rdquo; tag在github page上展现为404页面，本地hugo服务器正常，其他tag正常，把相关文章的 <em>.net</em> tag改为NET，NET 页面可以正常显示，改回 <em>.net</em> 又显示为404。得出结论为Github page的问题，解决方法：在根目录添加名为.nojekyll的文件即可</p>
     </div>
 
     <div class="post-copyright">
