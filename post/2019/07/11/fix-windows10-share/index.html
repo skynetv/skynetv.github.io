@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Codest" /><meta name="description" content="公司主要是用WinCE6.0做嵌入式开发，有时需要把文件发送到PC机器，但最近有一台1803的Win10总是报&amp;rdquo;error 53 找不到网络路径&amp;rdquo;的错误。
+<meta name="author" content="Codest" /><meta name="description" content="公司主要是用WinCE6.0做嵌入式开发，有时需要把文件发送到PC机器，但最近有一台1803的Win10总是报&amp;quot;error 53 找不到网络路径&amp;quot;的错误。
 " /><meta name="keywords" content="Hugo, theme, even" />
 
 
@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.2 with theme even" />
+<meta name="generator" content="Hugo 0.60.0 with theme even" />
 
 
 <link rel="canonical" href="https://prime167.github.io/post/2019/07/11/fix-windows10-share/" />
@@ -40,25 +40,22 @@
 
 
 <meta property="og:title" content="解决WinCE6.0无法访问Win10共享文件夹问题" />
-<meta property="og:description" content="公司主要是用WinCE6.0做嵌入式开发，有时需要把文件发送到PC机器，但最近有一台1803的Win10总是报&rdquo;error 53 找不到网络路径&rdquo;的错误。" />
+<meta property="og:description" content="公司主要是用WinCE6.0做嵌入式开发，有时需要把文件发送到PC机器，但最近有一台1803的Win10总是报&quot;error 53 找不到网络路径&quot;的错误。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://prime167.github.io/post/2019/07/11/fix-windows10-share/" />
 <meta property="article:published_time" content="2019-07-11T17:40:12+08:00" />
 <meta property="article:modified_time" content="2019-07-11T17:40:12+08:00" />
 <meta itemprop="name" content="解决WinCE6.0无法访问Win10共享文件夹问题">
-<meta itemprop="description" content="公司主要是用WinCE6.0做嵌入式开发，有时需要把文件发送到PC机器，但最近有一台1803的Win10总是报&rdquo;error 53 找不到网络路径&rdquo;的错误。">
-
-
+<meta itemprop="description" content="公司主要是用WinCE6.0做嵌入式开发，有时需要把文件发送到PC机器，但最近有一台1803的Win10总是报&quot;error 53 找不到网络路径&quot;的错误。">
 <meta itemprop="datePublished" content="2019-07-11T17:40:12&#43;08:00" />
 <meta itemprop="dateModified" content="2019-07-11T17:40:12&#43;08:00" />
-<meta itemprop="wordCount" content="209">
+<meta itemprop="wordCount" content="207">
 
 
 
-<meta itemprop="keywords" content="wince,共享配置," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="wince,共享配置," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="解决WinCE6.0无法访问Win10共享文件夹问题"/>
-<meta name="twitter:description" content="公司主要是用WinCE6.0做嵌入式开发，有时需要把文件发送到PC机器，但最近有一台1803的Win10总是报&rdquo;error 53 找不到网络路径&rdquo;的错误。"/>
+<meta name="twitter:description" content="公司主要是用WinCE6.0做嵌入式开发，有时需要把文件发送到PC机器，但最近有一台1803的Win10总是报&quot;error 53 找不到网络路径&quot;的错误。"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -132,7 +129,7 @@
         <div class="post-category">
             <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
             </div>
-          <span class="more-meta"> 约 209 字 </span>
+          <span class="more-meta"> 约 207 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
@@ -141,7 +138,7 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
-    
+    <nav id="TableOfContents"></nav>
   </div>
 </div>
   <div class="post-outdated">
@@ -150,19 +147,15 @@
     </div>
   </div>
     <div class="post-content">
-      <p>公司主要是用WinCE6.0做嵌入式开发，有时需要把文件发送到PC机器，但最近有一台1803的Win10总是报&rdquo;error 53 找不到网络路径&rdquo;的错误。</p>
-
+      <p>公司主要是用WinCE6.0做嵌入式开发，有时需要把文件发送到PC机器，但最近有一台1803的Win10总是报&quot;error 53 找不到网络路径&quot;的错误。</p>
 <p>解决过程：</p>
-
 <ul>
 <li>TCP/IP NetBIOS Helper 服务已开启</li>
 <li>网卡属性里的 “Microsoft 网络客户端” 存在并勾选</li>
 <li>网卡属性里的 “Microsoft 网络的文件和打印机共享” 存在并勾选</li>
 </ul>
-
 <p>最后定位到原因：<a href="https://www.anquanke.com/post/id/97002">SMB</a> 1.0/CIFS 共享文件支持功能没有开启，这是一很老的网络共享协议，漏洞很多，默认是关闭的。</p>
-
-<p><img src="/images/smbv1.png" alt="smbv1" /></p>
+<p><img src="/images/smbv1.png" alt="smbv1"></p>
     </div>
 
     <div class="post-copyright">
@@ -208,7 +201,7 @@
         id: '2019-07-11 17:40:12 \x2b0800 CST',
         title: '解决WinCE6.0无法访问Win10共享文件夹问题',
         link: decodeURI(location.href),
-        desc: '\x3cp\x3e公司主要是用WinCE6.0做嵌入式开发，有时需要把文件发送到PC机器，但最近有一台1803的Win10总是报\x26rdquo;error 53 找不到网络路径\x26rdquo;的错误。\x3c\/p\x3e',
+        desc: '\x3cp\x3e公司主要是用WinCE6.0做嵌入式开发，有时需要把文件发送到PC机器，但最近有一台1803的Win10总是报\x26quot;error 53 找不到网络路径\x26quot;的错误。\x3c\/p\x3e',
         owner: 'prime167',
         repo: 'BlogComment',
         oauth: {

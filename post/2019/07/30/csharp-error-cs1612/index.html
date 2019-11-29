@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.2 with theme even" />
+<meta name="generator" content="Hugo 0.60.0 with theme even" />
 
 
 <link rel="canonical" href="https://prime167.github.io/post/2019/07/30/csharp-error-cs1612/" />
@@ -47,16 +47,13 @@
 <meta property="article:modified_time" content="2019-07-30T15:51:59+08:00" />
 <meta itemprop="name" content="C# 编译错误 CS1612：无法修改“xxx”的返回值，因为它不是变量">
 <meta itemprop="description" content="看似简单的问题，背后涉及了很多基础知识。">
-
-
 <meta itemprop="datePublished" content="2019-07-30T15:51:59&#43;08:00" />
 <meta itemprop="dateModified" content="2019-07-30T15:51:59&#43;08:00" />
-<meta itemprop="wordCount" content="899">
+<meta itemprop="wordCount" content="896">
 
 
 
-<meta itemprop="keywords" content="csharp,CS1612," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="csharp,CS1612," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="C# 编译错误 CS1612：无法修改“xxx”的返回值，因为它不是变量"/>
 <meta name="twitter:description" content="看似简单的问题，背后涉及了很多基础知识。"/>
 
@@ -132,7 +129,7 @@
         <div class="post-category">
             <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
             </div>
-          <span class="more-meta"> 约 899 字 </span>
+          <span class="more-meta"> 约 896 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         
       </div>
@@ -142,14 +139,11 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#代码">代码</a></li>
-<li><a href="#分析">分析</a></li>
-<li><a href="#参考链接">参考链接</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">代码</a></li>
+    <li><a href="#heading1">分析</a></li>
+    <li><a href="#heading2">参考链接</a></li>
+  </ul>
 </nav>
   </div>
 </div>
@@ -160,11 +154,10 @@
   </div>
     <div class="post-content">
       <p>看似简单的问题，背后涉及了很多基础知识。</p>
-
-<h2 id="代码">代码</h2>
+<h2 id="heading">代码</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -207,16 +200,16 @@
 <span class="p">{</span>
     <span class="k">class</span> <span class="nc">Program</span>
     <span class="p">{</span>
-        <span class="k">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+        <span class="k">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[</span><span class="p">]</span> <span class="n">args</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="n">Player</span> <span class="n">p</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Player</span><span class="p">();</span>
-            <span class="n">p</span><span class="p">.</span><span class="n">ShowLocation</span><span class="p">();</span>
+            <span class="n">Player</span> <span class="n">p</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Player</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+            <span class="n">p</span><span class="p">.</span><span class="n">ShowLocation</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
             <span class="n">p</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">x</span> <span class="p">=</span> <span class="m">6</span><span class="p">;</span> <span class="c1">// CS1612
 </span><span class="c1"></span>            <span class="n">p</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">y</span> <span class="p">=</span> <span class="m">2</span><span class="p">;</span> <span class="c1">// CS1612
-</span><span class="c1"></span>            <span class="n">p</span><span class="p">.</span><span class="n">ShowLocation</span><span class="p">();</span>
-            <span class="n">List</span><span class="p">&lt;</span><span class="n">Point</span><span class="p">&gt;</span> <span class="n">_locations</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Point</span><span class="p">&gt;();</span>
+</span><span class="c1"></span>            <span class="n">p</span><span class="p">.</span><span class="n">ShowLocation</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+            <span class="n">List</span><span class="p">&lt;</span><span class="n">Point</span><span class="p">&gt;</span> <span class="n">_locations</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Point</span><span class="p">&gt;</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
             <span class="c1">// add..
-</span><span class="c1"></span>            <span class="n">_locations</span><span class="p">[</span><span class="m">0</span><span class="p">].</span><span class="n">x</span> <span class="p">=</span> <span class="m">3</span><span class="p">;</span><span class="c1">// CS1612
+</span><span class="c1"></span>            <span class="n">_locations</span><span class="p">[</span><span class="m">0</span><span class="p">]</span><span class="p">.</span><span class="n">x</span> <span class="p">=</span> <span class="m">3</span><span class="p">;</span><span class="c1">// CS1612
 </span><span class="c1"></span>        <span class="p">}</span>
     <span class="p">}</span>
 
@@ -230,49 +223,38 @@
     <span class="p">{</span>
         <span class="k">public</span> <span class="n">Point</span> <span class="n">Location</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
 
-        <span class="k">public</span> <span class="k">void</span> <span class="n">ShowLocation</span><span class="p">()</span>
+        <span class="k">public</span> <span class="k">void</span> <span class="n">ShowLocation</span><span class="p">(</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">Location</span><span class="p">.</span><span class="n">x</span> <span class="p">+</span> <span class="s">&#34;,&#34;</span> <span class="p">+</span> <span class="n">Location</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">Location</span><span class="p">.</span><span class="n">x</span> <span class="p">+</span> <span class="s">&#34;,&#34;</span> <span class="p">+</span> <span class="n">Location</span><span class="p">.</span><span class="n">y</span><span class="p">)</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-<h2 id="分析">分析</h2>
-
+</div><h2 id="heading1">分析</h2>
 <p>上面的代码不会通过编译，错误为：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-nohighlight" data-lang="nohighlight"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-nohighlight" data-lang="nohighlight">*错误    CS161    无法修改“Player.Location”的返回值，因为它不是变量*
+<pre><code class="language-nohighlight" data-lang="nohighlight">*错误    CS161    无法修改“Player.Location”的返回值，因为它不是变量*
 
-*错误    CS1612    无法修改“List&lt;Point&gt;.this[init]”的返回值，因为它不是变量*</code></pre></td></tr></table>
-</div>
-</div>
-<p>属性的get方法和List的索引返回的是Location的副本，而不是Location的引用。由于这个副本不保存在任何变量中，所以修改值并不会保存回Location变量，赋值没有意义。</p>
-
+*错误    CS1612    无法修改“List&lt;Point&gt;.this[init]”的返回值，因为它不是变量*
+</code></pre><p>属性的get方法和List的索引返回的是Location的副本，而不是Location的引用。由于这个副本不保存在任何变量中，所以修改值并不会保存回Location变量，赋值没有意义。</p>
 <p>消除错误的方法：</p>
-
 <ol>
-<li><p>将Point改为class。但由于Point是 C#的内置类型，这种方法并大多数情况下并不可行。</p></li>
-
-<li><p>去掉 *{ get; set; } *将Location 改为public field，这也不推荐。Property较之Field有很多优点</p>
-
+<li>
+<p>将Point改为class。但由于Point是 C#的内置类型，这种方法并大多数情况下并不可行。</p>
+</li>
+<li>
+<p>去掉 *{ get; set; } *将Location 改为public field，这也不推荐。Property较之Field有很多优点</p>
 <ul>
 <li>封装底层field</li>
 <li>set中可以包含验证逻辑</li>
 <li>field不能用于绑定</li>
-</ul></li>
-
-<li><p>如前所述，return _location返回的是一个临时副本，对其修改没意义。那我们就先把它赋给一个变量，修改后再赋回去：</p>
+</ul>
+</li>
+<li>
+<p>如前所述，return _location返回的是一个临时副本，对其修改没意义。那我们就先把它赋给一个变量，修改后再赋回去：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -284,24 +266,24 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="c1">//p.Location.x = 6; // 报错 CS1612
-</span><span class="c1">//p.Location.y = 2; // 报错 CS1612
-</span><span class="c1"></span><span class="kt">var</span> <span class="n">location</span> <span class="p">=</span> <span class="n">p</span><span class="p">.</span><span class="n">Location</span><span class="p">;</span>
-<span class="n">location</span><span class="p">.</span><span class="n">x</span> <span class="p">=</span> <span class="m">6</span><span class="p">;</span>
-<span class="n">location</span><span class="p">.</span><span class="n">y</span> <span class="p">=</span> <span class="m">2</span><span class="p">;</span>
-<span class="n">p</span><span class="p">.</span><span class="n">Location</span> <span class="p">=</span> <span class="n">location</span><span class="p">;</span>
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"> <span class="c1">//p.Location.x = 6; // 报错 CS1612
+</span><span class="c1"></span> <span class="c1">//p.Location.y = 2; // 报错 CS1612
+</span><span class="c1"></span> <span class="kt">var</span> <span class="n">location</span> <span class="p">=</span> <span class="n">p</span><span class="p">.</span><span class="n">Location</span><span class="p">;</span>
+ <span class="n">location</span><span class="p">.</span><span class="n">x</span> <span class="p">=</span> <span class="m">6</span><span class="p">;</span>
+ <span class="n">location</span><span class="p">.</span><span class="n">y</span> <span class="p">=</span> <span class="m">2</span><span class="p">;</span>
+ <span class="n">p</span><span class="p">.</span><span class="n">Location</span> <span class="p">=</span> <span class="n">location</span><span class="p">;</span>
 
-<span class="kt">var</span> <span class="n">temp</span> <span class="p">=</span> <span class="n">_locations</span><span class="p">[</span><span class="m">0</span><span class="p">];</span>
-<span class="n">temp</span><span class="p">.</span><span class="n">x</span> <span class="p">=</span> <span class="m">3</span><span class="p">;</span>
-<span class="n">_locations</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">=</span> <span class="n">temp</span><span class="p">;</span>
+ <span class="kt">var</span> <span class="n">temp</span> <span class="p">=</span> <span class="n">_locations</span><span class="p">[</span><span class="m">0</span><span class="p">]</span><span class="p">;</span>
+ <span class="n">temp</span><span class="p">.</span><span class="n">x</span> <span class="p">=</span> <span class="m">3</span><span class="p">;</span>
+ <span class="n">_locations</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">=</span> <span class="n">temp</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
-
-<li><p>有的struct很大，为了避免按值传递带来的性能损耗，C# 7.0新增了ref returns，允许开发者返回值类型的引用，并直接对其修改：</p>
+<li>
+<p>有的struct很大，为了避免按值传递带来的性能损耗，C# 7.0新增了ref returns，允许开发者返回值类型的引用，并直接对其修改：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -338,52 +320,46 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
 
-<span class="k">namespace</span> <span class="nn">Cs1612Demo</span>
-<span class="p">{</span>
-    <span class="k">class</span> <span class="nc">Program</span>
-    <span class="p">{</span>
-        <span class="k">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">Player</span> <span class="n">p</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Player</span><span class="p">();</span>
-            <span class="n">p</span><span class="p">.</span><span class="n">ShowLocation</span><span class="p">();</span>
-            <span class="n">p</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">x</span> <span class="p">=</span> <span class="m">6</span><span class="p">;</span>
-            <span class="n">p</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">y</span> <span class="p">=</span> <span class="m">2</span><span class="p">;</span>
-            <span class="n">p</span><span class="p">.</span><span class="n">ShowLocation</span><span class="p">();</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+ <span class="k">namespace</span> <span class="nn">Cs1612Demo</span>
+ <span class="p">{</span>
+     <span class="k">class</span> <span class="nc">Program</span>
+     <span class="p">{</span>
+         <span class="k">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[</span><span class="p">]</span> <span class="n">args</span><span class="p">)</span>
+         <span class="p">{</span>
+             <span class="n">Player</span> <span class="n">p</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Player</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+             <span class="n">p</span><span class="p">.</span><span class="n">ShowLocation</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+             <span class="n">p</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">x</span> <span class="p">=</span> <span class="m">6</span><span class="p">;</span>
+             <span class="n">p</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">y</span> <span class="p">=</span> <span class="m">2</span><span class="p">;</span>
+             <span class="n">p</span><span class="p">.</span><span class="n">ShowLocation</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+         <span class="p">}</span>
+     <span class="p">}</span>
 
-    <span class="k">struct</span> <span class="nc">Point</span>
-    <span class="p">{</span>
-        <span class="k">public</span> <span class="kt">float</span> <span class="n">x</span><span class="p">;</span>
-        <span class="k">public</span> <span class="kt">float</span> <span class="n">y</span><span class="p">;</span>
-    <span class="p">}</span>
+     <span class="k">struct</span> <span class="nc">Point</span>
+     <span class="p">{</span>
+         <span class="k">public</span> <span class="kt">float</span> <span class="n">x</span><span class="p">;</span>
+         <span class="k">public</span> <span class="kt">float</span> <span class="n">y</span><span class="p">;</span>
+     <span class="p">}</span>
 
-    <span class="k">class</span> <span class="nc">Player</span>
-    <span class="p">{</span>
-        <span class="n">Point</span> <span class="n">_location</span><span class="p">;</span>
+     <span class="k">class</span> <span class="nc">Player</span>
+     <span class="p">{</span>
+         <span class="n">Point</span> <span class="n">_location</span><span class="p">;</span>
 
-        <span class="k">public</span> <span class="k">ref</span> <span class="n">Point</span> <span class="n">Location</span> <span class="p">{</span> <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="k">ref</span> <span class="n">_location</span><span class="p">;</span> <span class="p">}</span> <span class="p">}</span>
+         <span class="k">public</span> <span class="k">ref</span> <span class="n">Point</span> <span class="n">Location</span> <span class="p">{</span> <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="k">ref</span> <span class="n">_location</span><span class="p">;</span> <span class="p">}</span> <span class="p">}</span>
 
-        <span class="k">public</span> <span class="k">void</span> <span class="n">ShowLocation</span><span class="p">()</span>
-        <span class="p">{</span>
-            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">Location</span><span class="p">.</span><span class="n">x</span> <span class="p">+</span> <span class="s">&#34;,&#34;</span> <span class="p">+</span> <span class="n">Location</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+         <span class="k">public</span> <span class="k">void</span> <span class="n">ShowLocation</span><span class="p">(</span><span class="p">)</span>
+         <span class="p">{</span>
+             <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">Location</span><span class="p">.</span><span class="n">x</span> <span class="p">+</span> <span class="s">&#34;,&#34;</span> <span class="p">+</span> <span class="n">Location</span><span class="p">.</span><span class="n">y</span><span class="p">)</span><span class="p">;</span>
+         <span class="p">}</span>
+     <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
-
 <p>这样，返回的就是_location 的引用，可以像上面改成class一样修改了。注意这里需要去掉setter，否则会报错误&rdquo; <em>CS8147    按引用返回的属性不能有 set 访问器</em> &ldquo;。因为返回的是引用，可以任意修改，也就没有必要保留set访问器了。</p>
-
-<h2 id="参考链接">参考链接</h2>
-
+<h2 id="heading2">参考链接</h2>
 <p><a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/cs1612">Compiler Error CS1612</a></p>
-
 <p><a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/ref-returns">Ref returns and ref locals</a></p>
-
-<p><a href="https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-7">What&rsquo;s new in C# 7.0</a></p>
-
+<p><a href="https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-7">What's new in C# 7.0</a></p>
 <p><a href="https://blogs.msdn.microsoft.com/mazhou/2017/12/12/c-7-series-part-7-ref-returns/">C# 7 Series, Part 7: Ref Returns</a></p>
     </div>
 

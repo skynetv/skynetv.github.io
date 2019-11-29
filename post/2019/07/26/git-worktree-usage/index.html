@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.2 with theme even" />
+<meta name="generator" content="Hugo 0.60.0 with theme even" />
 
 
 <link rel="canonical" href="https://prime167.github.io/post/2019/07/26/git-worktree-usage/" />
@@ -47,16 +47,13 @@
 <meta property="article:modified_time" content="2019-07-26T14:05:29+08:00" />
 <meta itemprop="name" content="git worktree 命令的使用">
 <meta itemprop="description" content="使用 git worktree 同时 签出多个分支，提高开发效率，节省磁盘空间。">
-
-
 <meta itemprop="datePublished" content="2019-07-26T14:05:29&#43;08:00" />
 <meta itemprop="dateModified" content="2019-07-26T14:05:29&#43;08:00" />
-<meta itemprop="wordCount" content="1177">
+<meta itemprop="wordCount" content="1175">
 
 
 
-<meta itemprop="keywords" content="git,git worktree,scm," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="git,git worktree,scm," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="git worktree 命令的使用"/>
 <meta name="twitter:description" content="使用 git worktree 同时 签出多个分支，提高开发效率，节省磁盘空间。"/>
 
@@ -132,7 +129,7 @@
         <div class="post-category">
             <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
             </div>
-          <span class="more-meta"> 约 1177 字 </span>
+          <span class="more-meta"> 约 1175 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
         
       </div>
@@ -142,17 +139,14 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#概念">概念</a></li>
-<li><a href="#使用方法">使用方法</a></li>
-<li><a href="#技术细节">技术细节</a></li>
-<li><a href="#限制">限制</a></li>
-<li><a href="#总结">总结</a></li>
-<li><a href="#参考链接">参考链接</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">概念</a></li>
+    <li><a href="#heading1">使用方法</a></li>
+    <li><a href="#heading2">技术细节</a></li>
+    <li><a href="#heading3">限制</a></li>
+    <li><a href="#heading4">总结</a></li>
+    <li><a href="#heading5">参考链接</a></li>
+  </ul>
 </nav>
   </div>
 </div>
@@ -163,41 +157,33 @@
   </div>
     <div class="post-content">
       <p>使用 git worktree <strong>同时</strong> 签出多个分支，提高开发效率，节省磁盘空间。</p>
-
-<h2 id="概念">概念</h2>
-
+<h2 id="heading">概念</h2>
 <p>git 最强大也最为人称道的就是它的分支功能，现在也有了很多成熟的分支模型，比如常用的master/dev/feature/hotfix 模型。</p>
-
 <p>正常情况下，我们用 <strong>git init</strong> 或者 <strong>git clone</strong> 命令 新建一个repo，目录内有一个 .git文件夹 和我们要跟踪的文件，该目录就是我们的 <em>工作目录</em> <em>working directory</em> ，也就是 <em>working tree</em> 。我们要切换分支时，就用 <strong>checkout</strong> 命令：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">git checkout hotfix-2</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-bash" data-lang="bash">git checkout hotfix-2
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>但是随着时间的推移，我们的repo越来越庞大，切换分支变得越来昂贵：</p>
-
+</div><p>但是随着时间的推移，我们的repo越来越庞大，切换分支变得越来昂贵：</p>
 <ul>
 <li>git checkout 命令本身需要处理很多的文件，导致很大的磁盘IO开销</li>
 <li>IDE 需要重新索引项目文件，特别是两个分支之间差别很大时。</li>
 <li>跑耗时的单元测试，无法切换分支，只能等着。</li>
 </ul>
-
 <p>虽然我们也可以通过克隆多份，每一份checkout不同的分支的方式来解决上面列出的问题，但这会引入新的问题：</p>
-
 <ul>
 <li>占用较多的磁盘空间，因为每一份克隆都有一个.git 文件夹。</li>
 <li>为了保持多个克隆间的同步，需要在不同的文件夹拉取相同的变更很多次。</li>
 </ul>
-
 <p>针对这些问题，git在2.5 版中加入了 <em>worktree</em> 子命令,这样就可以把一个或多个分支checkout到单独的文件夹，但这些文件夹是关联到现有的版本库的，他们共享一个.git 文件夹。</p>
-
-<h2 id="使用方法">使用方法</h2>
+<h2 id="heading1">使用方法</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -278,48 +264,29 @@ git worktree move ../projectX-feature-hotfix2 ../projectX-hotfix2
 
 <span class="c1"># 删除worktree的话，直接删除目录即可</span>
 rm -rf ../projectX-hotfix2
-git worktree prune</code></pre></td></tr></table>
+git worktree prune
+</code></pre></td></tr></table>
 </div>
-</div>
-<h2 id="技术细节">技术细节</h2>
-
+</div><h2 id="heading2">技术细节</h2>
 <p>以 git worktree add ../projectX-dev dev 为例：</p>
-
 <ul>
-<li><p>在版本库的 .git/worktrees 下新建一个目录projectX-Dev, <em>gitdir</em> 文件指向worktree内的 <em>.git</em> 文件</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-nohighlight" data-lang="nohighlight"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-nohighlight" data-lang="nohighlight">D:/git/projectX-dev/.git</code></pre></td></tr></table>
-</div>
-</div></li>
-
-<li><p>新建一个与ProjectX平级的的projectX目录，包括dev分支的内容和一个 <em>.git</em> 文件，内容为</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-nohighlight" data-lang="nohighlight"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-nohighlight" data-lang="nohighlight">gitdir: D:/git/projectX/.git/worktrees/projectX-dev</code></pre></td></tr></table>
-</div>
-</div></li>
+<li>
+<p>在版本库的 .git/worktrees 下新建一个目录projectX-Dev, <em>gitdir</em> 文件指向worktree内的 <em>.git</em> 文件</p>
+<pre><code class="language-nohighlight" data-lang="nohighlight">D:/git/projectX-dev/.git
+</code></pre></li>
+<li>
+<p>新建一个与ProjectX平级的的projectX目录，包括dev分支的内容和一个 <em>.git</em> 文件，内容为</p>
+<pre><code class="language-nohighlight" data-lang="nohighlight">gitdir: D:/git/projectX/.git/worktrees/projectX-dev
+</code></pre></li>
 </ul>
-
 <p>git worktree move ../projectX-Dev ../projectX-Dev1 命令只会更改 <em>gitdir</em> 的内容到新位置，其目录名并不会更改；相应的，worktree内的 <em>.git</em> 文件的内容也不会更改。所以以后手动改了worktree的目录名后，如果没有强迫症的话只改 <em>gitdir</em> 的内容就可以了。</p>
-
-<h2 id="限制">限制</h2>
-
+<h2 id="heading3">限制</h2>
 <ul>
 <li>一个分支不能同时迁出到多个worktree</li>
 <li>对子模块的支持不完整</li>
 </ul>
-
-<h2 id="总结">总结</h2>
-
+<h2 id="heading4">总结</h2>
 <p>本篇，我们学习了使用 <em>worktree</em> 进行多分枝并行开发的方法和优点，包括但不限于：</p>
-
 <ul>
 <li>可以快速进行多分枝并行开发、测试</li>
 <li>提交可以在同一个repo中共享</li>
@@ -327,13 +294,10 @@ git worktree prune</code></pre></td></tr></table>
 <li>方便分支间的比较和文件操作</li>
 <li>避免忘记切换分支造成的拷错 dll或者exe的尴尬。</li>
 </ul>
-
-<h2 id="参考链接">参考链接</h2>
-
+<h2 id="heading5">参考链接</h2>
 <ol>
 <li><a href="https://git-scm.com/docs/git-worktree/">git-worktree - Manage multiple working trees</a></li>
 </ol>
-
 <p>2.<a href="https://github.blog/2015-07-29-git-2-5-including-multiple-worktrees-and-triangular-workflows/">Git 2.5, including multiple worktrees and triangular workflows</a></p>
     </div>
 
