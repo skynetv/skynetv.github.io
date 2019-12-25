@@ -10,21 +10,70 @@
   
   <url>
     <loc>https://prime167.github.io/categories/</loc>
-    <lastmod>2019-12-16T17:01:06+08:00</lastmod>
+    <lastmod>2019-12-23T17:43:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://prime167.github.io/post/</loc>
-    <lastmod>2019-12-16T17:01:06+08:00</lastmod>
+    <lastmod>2019-12-23T17:43:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/tags/search/</loc>
+    <lastmod>2019-12-23T17:43:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://prime167.github.io/tags/</loc>
-    <lastmod>2019-12-16T17:01:06+08:00</lastmod>
+    <lastmod>2019-12-23T17:43:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/tags/windows-10/</loc>
+    <lastmod>2019-12-23T17:43:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/post/2019/12/23/fix-win10-search/</loc>
+    <lastmod>2019-12-23T17:43:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/categories/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2019-12-23T17:43:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/</loc>
+    <lastmod>2019-12-23T17:43:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/tags/nuget/</loc>
+    <lastmod>2019-12-20T14:39:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/post/2019/12/20/local-nuget-server/</loc>
+    <lastmod>2019-12-20T14:39:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -37,21 +86,7 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/categories/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2019-12-16T17:01:06+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://prime167.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
-    <lastmod>2019-12-16T17:01:06+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/</loc>
     <lastmod>2019-12-16T17:01:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

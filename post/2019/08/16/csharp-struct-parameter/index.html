@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.0 with theme even" />
+<meta name="generator" content="Hugo 0.61.0 with theme even" />
 
 
 <link rel="canonical" href="https://prime167.github.io/post/2019/08/16/csharp-struct-parameter/" />
@@ -49,7 +49,7 @@
 <meta itemprop="description" content="今天来说一下C#中传递结构体参数的演化">
 <meta itemprop="datePublished" content="2019-08-16T16:36:27&#43;08:00" />
 <meta itemprop="dateModified" content="2019-08-16T16:36:27&#43;08:00" />
-<meta itemprop="wordCount" content="1572">
+<meta itemprop="wordCount" content="1636">
 
 
 
@@ -129,7 +129,7 @@
         <div class="post-category">
             <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
             </div>
-          <span class="more-meta"> 约 1572 字 </span>
+          <span class="more-meta"> 约 1636 字 </span>
           <span class="more-meta"> 预计阅读 4 分钟 </span>
         
       </div>
@@ -144,9 +144,9 @@
     <li><a href="#ref-">ref 传递</a></li>
     <li><a href="#out-">out 传递</a></li>
     <li><a href="#in-">in 传递</a></li>
-    <li><a href="#heading1">解决方法</a></li>
-    <li><a href="#heading2">总结</a></li>
-    <li><a href="#heading3">参考</a></li>
+    <li><a href="#heading-1">解决方法</a></li>
+    <li><a href="#heading-2">总结</a></li>
+    <li><a href="#heading-3">参考</a></li>
   </ul>
 </nav>
   </div>
@@ -257,7 +257,28 @@
 </code></pre></td></tr></table>
 </div>
 </div><p>IL代码, 注意参数类型是Point3D&amp;，即传递的是地址</p>
-<pre><code class="language-msil" data-lang="msil">.method public hidebysig
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">.method public hidebysig
         instance float64 CalculateRef (
             valuetype Point3D&amp; point1,
             valuetype Point3D&amp; point2
@@ -274,7 +295,9 @@
         IL_0000: ldarg.1
         ...
     } // end of method Program::CalculateRef
-</code></pre><h2 id="out-">out 传递</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="out-">out 传递</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -292,7 +315,29 @@
 </code></pre></td></tr></table>
 </div>
 </div><p>IL 代码, 除了类型是Point3D&amp;，前面还有[out]</p>
-<pre><code class="language-il" data-lang="il">.method public hidebysig
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">.method public hidebysig
         instance float64 CalculateOut (
             [out] valuetype Point3D&amp; point1
         ) cil managed
@@ -310,7 +355,9 @@
         IL_0026: ldc.r8 0.0
         IL_002f: ret
     } // end of method Program::CalculateOut
-</code></pre><p>但有时候我们不想让调用者修改我们的变量，<em>ref</em> 和 <em>out</em> 就无能为力了。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>但有时候我们不想让调用者修改我们的变量，<em>ref</em> 和 <em>out</em> 就无能为力了。</p>
 <h2 id="in-">in 传递</h2>
 <p>作为 <em>ref</em> 和 <em>out</em> 的补充，C# 7.2对in关键字进行了扩展，允许传参时用<em>in</em>关键字修饰，以表明设计意图：变量按照引用方式传递，但是不允许方法对变量进行修改。</p>
 <div class="highlight"><div class="chroma">
@@ -389,7 +436,40 @@
 </div>
 </div><p>每个变量都生成了防御性副本(defensive copy)。</p>
 <p>IL代码</p>
-<pre><code class="language-il" data-lang="il"> .method public hidebysig
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"> .method public hidebysig
         instance float64 CalculateIn (
             [in] valuetype Point3D&amp; point1,
             [in] valuetype Point3D&amp; point2
@@ -418,9 +498,11 @@
         IL_0007: ldloca.s 2
         IL_0009: call instance float64 Point3D::get_X()
         IL_000e: ldarg.2
-</code></pre><p>除了和<strong>out</strong>类似的 <em>[in] valuetype Point3D&amp;</em> ，还添加了 <strong>IsReadOnlyAttribute</strong>，</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>除了和<strong>out</strong>类似的 <em>[in] valuetype Point3D&amp;</em> ，还添加了 <strong>IsReadOnlyAttribute</strong>，</p>
 <p><em>IL_0001: ldobj Point3D</em> 这条语句也表明会生成变量副本。</p>
-<h2 id="heading1">解决方法</h2>
+<h2 id="heading-1">解决方法</h2>
 <p>为了解决in传递可能带来的性能问题，C# 7.2 同时添加了 <strong>readonly struct</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -496,12 +578,12 @@
 </code></pre></td></tr></table>
 </div>
 </div><p>没有创建防御性副本。</p>
-<h2 id="heading2">总结</h2>
+<h2 id="heading-2">总结</h2>
 <ul>
 <li>对于较大的struct(大于IntPtr.Size, 32位下大于 4 bytes， 64位下大于 8 bytes)，用in关键字进行传递提高性能同时表明方法的意图：引用传递，无法修改传入的值</li>
 <li>用in传参时一定要配readonly struct，以避免性能损失。</li>
 </ul>
-<h2 id="heading3">参考</h2>
+<h2 id="heading-3">参考</h2>
 <p><a href="https://docs.microsoft.com/en-us/dotnet/csharp/write-safe-efficient-code">Write safe and efficient C# code</a></p>
 <p><a href="https://devblogs.microsoft.com/premier-developer/avoiding-struct-and-readonly-reference-performance-pitfalls-with-errorprone-net/">Avoiding struct and readonly reference performance pitfalls with ErrorProne.NET</a></p>
 <p><a href="https://devblogs.microsoft.com/premier-developer/the-in-modifier-and-the-readonly-structs-in-c/">The ‘in’-modifier and the readonly structs in C#</a></p>

@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.0 with theme even" />
+<meta name="generator" content="Hugo 0.61.0 with theme even" />
 
 
 <link rel="canonical" href="https://prime167.github.io/post/2019/07/30/csharp-error-cs1612/" />
@@ -49,7 +49,7 @@
 <meta itemprop="description" content="看似简单的问题，背后涉及了很多基础知识。">
 <meta itemprop="datePublished" content="2019-07-30T15:51:59&#43;08:00" />
 <meta itemprop="dateModified" content="2019-07-30T15:51:59&#43;08:00" />
-<meta itemprop="wordCount" content="896">
+<meta itemprop="wordCount" content="899">
 
 
 
@@ -129,7 +129,7 @@
         <div class="post-category">
             <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
             </div>
-          <span class="more-meta"> 约 896 字 </span>
+          <span class="more-meta"> 约 899 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         
       </div>
@@ -141,8 +141,8 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#heading">代码</a></li>
-    <li><a href="#heading1">分析</a></li>
-    <li><a href="#heading2">参考链接</a></li>
+    <li><a href="#heading-1">分析</a></li>
+    <li><a href="#heading-2">参考链接</a></li>
   </ul>
 </nav>
   </div>
@@ -231,12 +231,21 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="heading1">分析</h2>
+</div><h2 id="heading-1">分析</h2>
 <p>上面的代码不会通过编译，错误为：</p>
-<pre><code class="language-nohighlight" data-lang="nohighlight">*错误    CS161    无法修改“Player.Location”的返回值，因为它不是变量*
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">*错误    CS161    无法修改“Player.Location”的返回值，因为它不是变量*
 
 *错误    CS1612    无法修改“List&lt;Point&gt;.this[init]”的返回值，因为它不是变量*
-</code></pre><p>属性的get方法和List的索引返回的是Location的副本，而不是Location的引用。由于这个副本不保存在任何变量中，所以修改值并不会保存回Location变量，赋值没有意义。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>属性的get方法和List的索引返回的是Location的副本，而不是Location的引用。由于这个副本不保存在任何变量中，所以修改值并不会保存回Location变量，赋值没有意义。</p>
 <p>消除错误的方法：</p>
 <ol>
 <li>
@@ -356,7 +365,7 @@
 </div></li>
 </ol>
 <p>这样，返回的就是_location 的引用，可以像上面改成class一样修改了。注意这里需要去掉setter，否则会报错误&rdquo; <em>CS8147    按引用返回的属性不能有 set 访问器</em> &ldquo;。因为返回的是引用，可以任意修改，也就没有必要保留set访问器了。</p>
-<h2 id="heading2">参考链接</h2>
+<h2 id="heading-2">参考链接</h2>
 <p><a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/cs1612">Compiler Error CS1612</a></p>
 <p><a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/ref-returns">Ref returns and ref locals</a></p>
 <p><a href="https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-7">What's new in C# 7.0</a></p>
