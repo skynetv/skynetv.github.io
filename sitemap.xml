@@ -9,6 +9,13 @@
   </url>
   
   <url>
+    <loc>https://prime167.github.io/tags/.net/</loc>
+    <lastmod>2019-12-24T11:50:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://prime167.github.io/categories/</loc>
     <lastmod>2019-12-24T11:50:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -37,7 +44,7 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/2019/12/20/local-nuget-server/</loc>
+    <loc>https://prime167.github.io/post/2019/12/25/local-nuget-server/</loc>
     <lastmod>2019-12-24T11:50:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -179,13 +186,6 @@
   <url>
     <loc>https://prime167.github.io/tags/csharp/</loc>
     <lastmod>2019-10-08T10:09:44+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/tags/.net/</loc>
-    <lastmod>2019-09-23T17:21:55+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
