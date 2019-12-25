@@ -49,7 +49,7 @@
 <meta itemprop="description" content="昨天在公司局域网搭建了一个nuget服务器，记录一下过程">
 <meta itemprop="datePublished" content="2019-12-24T11:50:58&#43;08:00" />
 <meta itemprop="dateModified" content="2019-12-24T11:50:58&#43;08:00" />
-<meta itemprop="wordCount" content="1638">
+<meta itemprop="wordCount" content="1653">
 
 
 
@@ -129,7 +129,7 @@
         <div class="post-category">
             <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
             </div>
-          <span class="more-meta"> 约 1638 字 </span>
+          <span class="more-meta"> 约 1653 字 </span>
           <span class="more-meta"> 预计阅读 4 分钟 </span>
         
       </div>
@@ -506,6 +506,15 @@ nuget config -Set DefaultPushSource=http://192.168.13.96:9006/nuget
 <pre class="chroma"><code class="language-shell" data-lang="shell">nuget setapikey yourapikey -source http://192.168.13.96:9006/nuget -configfile nuget.config
 
 nuget config -Set <span class="nv">DefaultPushSource</span><span class="o">=</span>http://192.168.13.96:9006/nuget -configfile nuget.config
+</code></pre></td></tr></table>
+</div>
+</div><p>之后发布包，只需要执行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">nuget push packagename
 </code></pre></td></tr></table>
 </div>
 </div></li>
