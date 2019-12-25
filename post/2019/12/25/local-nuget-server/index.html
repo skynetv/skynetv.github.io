@@ -49,7 +49,7 @@
 <meta itemprop="description" content="昨天在公司局域网搭建了一个nuget服务器，记录一下过程">
 <meta itemprop="datePublished" content="2019-12-24T11:50:58&#43;08:00" />
 <meta itemprop="dateModified" content="2019-12-24T11:50:58&#43;08:00" />
-<meta itemprop="wordCount" content="1309">
+<meta itemprop="wordCount" content="1638">
 
 
 
@@ -129,8 +129,8 @@
         <div class="post-category">
             <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
             </div>
-          <span class="more-meta"> 约 1309 字 </span>
-          <span class="more-meta"> 预计阅读 3 分钟 </span>
+          <span class="more-meta"> 约 1638 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
         
       </div>
     </header>
@@ -159,6 +159,7 @@
       </ul>
     </li>
     <li><a href="#nuget-1">发布NuGet包</a></li>
+    <li><a href="#source">设置默认source</a></li>
     <li><a href="#heading-5">参考</a></li>
   </ul>
 </nav>
@@ -423,6 +424,91 @@ version 版本号(SemVer),如 1.0.0
 </div>
 </div></li>
 <li>NuGet Package Explorer</li>
+</ol>
+<h2 id="source">设置默认source</h2>
+<p>老是输入api key和 推送目的地址也是挺繁琐的，可以根据实际情况将配置添加到</p>
+<ol>
+<li>
+<p>用户级的nuget.config(%appdata%/nuget/nuget.config)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+<span class="nt">&lt;configuration</span><span class="nt">&gt;</span>
+<span class="nt">&lt;config</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&#34;defaultPushSource&#34;</span> <span class="na">value=</span><span class="s">&#34;http://192.168.13.96:9006/nuget&#34;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+<span class="nt">&lt;packageRestore</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&#34;enabled&#34;</span> <span class="na">value=</span><span class="s">&#34;True&#34;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&#34;automatic&#34;</span> <span class="na">value=</span><span class="s">&#34;True&#34;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/packageRestore&gt;</span>
+<span class="nt">&lt;activePackageSource</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&#34;nuget.org&#34;</span> <span class="na">value=</span><span class="s">&#34;https://api.nuget.org/v3/index.json&#34;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/activePackageSource&gt;</span>
+<span class="nt">&lt;packageSources</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&#34;nuget.org&#34;</span> <span class="na">value=</span><span class="s">&#34;https://api.nuget.org/v3/index.json&#34;</span> <span class="na">protocolVersion=</span><span class="s">&#34;3&#34;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&#34;nuget.org&#34;</span> <span class="na">value=</span><span class="s">&#34;https://www.nuget.org/api/v2/&#34;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&#34;local&#34;</span> <span class="na">value=</span><span class="s">&#34;http://192.168.13.96:9006/nuget&#34;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&#34;Microsoft Visual Studio Offline Packages&#34;</span> <span class="na">value=</span><span class="s">&#34;C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\&#34;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/packageSources&gt;</span>
+<span class="nt">&lt;apikeys</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&#34;http://192.168.13.96:9006/nuget&#34;</span> <span class="na">value=</span><span class="s">&#34;AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ05kAjZLg06Fp2kByyoGSQAAAAACAAAAAAAQZgAAAAEAACAAAADhe1QaKTEA1JzEKcUxrpKBUV8g0eMEN1qYmkPBex3JPAAAAAAOgAAAAAIAACAAAABVYU2JJIULSVYt7/pIytWRl6CWm6m/QsIyi+x+az8N3BAAAAAUEQGJoa8+exi85xKZcPW6QAAAAKMWHIZoaecy/NA+TfOIc1obyhgtnQVk2rv3RJkAva1D/+w5NrRlUMkzwVRkgSHffEexPPHVNbAnvad7N/HEF1c=&#34;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/apikeys&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>apikey 是加密的，需要通过命令行添加：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">nuget setapikey yourapikey -source http://192.168.13.96:9006/nuget
+
+nuget config -Set DefaultPushSource=http://192.168.13.96:9006/nuget
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>或者你既维护nuget.org上的公共包，又维护自己公司的私有包，那可以在两个包的解决方案下放不同的nuget.conifg, 里面设置相应的defaultPushSource 和apikey 即可(当前目录为解决方案文件夹)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">nuget setapikey yourapikey -source http://192.168.13.96:9006/nuget -configfile nuget.config
+
+nuget config -Set <span class="nv">DefaultPushSource</span><span class="o">=</span>http://192.168.13.96:9006/nuget -configfile nuget.config
+</code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <h2 id="heading-5">参考</h2>
 <ul>
