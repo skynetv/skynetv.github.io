@@ -6,7 +6,7 @@
     <description>Recent content on 静静地坐着</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 24 Dec 2019 11:50:58 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Dec 2019 14:56:42 +0800</lastBuildDate>
     
 	<atom:link href="https://prime167.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -18,6 +18,15 @@
       
       <guid>https://prime167.github.io/about/</guid>
       <description>NullReferenceException</description>
+    </item>
+    
+    <item>
+      <title>修改NuGet全局缓存路径</title>
+      <link>https://prime167.github.io/post/2019/12/26/nuget-change-global-cache-dir/</link>
+      <pubDate>Thu, 26 Dec 2019 14:56:42 +0800</pubDate>
+      
+      <guid>https://prime167.github.io/post/2019/12/26/nuget-change-global-cache-dir/</guid>
+      <description>&lt;p&gt;Nuget的全局缓存路径默认在&lt;/p&gt;</description>
     </item>
     
     <item>
