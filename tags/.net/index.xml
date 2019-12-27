@@ -17,7 +17,7 @@
       <pubDate>Thu, 26 Dec 2019 14:56:42 +0800</pubDate>
       
       <guid>https://prime167.github.io/post/2019/12/26/nuget-change-global-cache-dir/</guid>
-      <description>&lt;p&gt;Nuget的全局缓存路径默认在&lt;/p&gt;</description>
+      <description>&lt;p&gt;修改NuGet全局缓存路径&lt;/p&gt;</description>
     </item>
     
     <item>

@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Codest" /><meta name="description" content="Nuget的全局缓存路径默认在
+<meta name="author" content="Codest" /><meta name="description" content="修改NuGet全局缓存路径
 " /><meta name="keywords" content="Hugo, theme, even" />
 
 
@@ -40,22 +40,22 @@
 
 
 <meta property="og:title" content="修改NuGet全局缓存路径" />
-<meta property="og:description" content="Nuget的全局缓存路径默认在" />
+<meta property="og:description" content="修改NuGet全局缓存路径" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://prime167.github.io/post/2019/12/26/nuget-change-global-cache-dir/" />
 <meta property="article:published_time" content="2019-12-26T14:56:42+08:00" />
 <meta property="article:modified_time" content="2019-12-26T14:56:42+08:00" />
 <meta itemprop="name" content="修改NuGet全局缓存路径">
-<meta itemprop="description" content="Nuget的全局缓存路径默认在">
+<meta itemprop="description" content="修改NuGet全局缓存路径">
 <meta itemprop="datePublished" content="2019-12-26T14:56:42&#43;08:00" />
 <meta itemprop="dateModified" content="2019-12-26T14:56:42&#43;08:00" />
-<meta itemprop="wordCount" content="15">
+<meta itemprop="wordCount" content="280">
 
 
 
 <meta itemprop="keywords" content="nuget,.net," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="修改NuGet全局缓存路径"/>
-<meta name="twitter:description" content="Nuget的全局缓存路径默认在"/>
+<meta name="twitter:description" content="修改NuGet全局缓存路径"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,7 +129,7 @@
         <div class="post-category">
             <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
             </div>
-          <span class="more-meta"> 约 15 字 </span>
+          <span class="more-meta"> 约 280 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
@@ -138,11 +138,41 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#heading">通过环境变量</a></li>
+    <li><a href="#nugetconfig">修改用户nuget.config</a></li>
+  </ul>
+</nav>
   </div>
 </div>
     <div class="post-content">
-      <p>Nuget的全局缓存路径默认在</p>
+      <p>修改NuGet全局缓存路径</p>
+<p>Nuget的全局缓存路径默认在%userprofile%.nuget\packages 即C:\Users[your login name].nuget\packages。随着时间的推移，这个文件夹会占用大量的磁盘。可以通过配置把它移到其他的盘下：</p>
+<h2 id="heading">通过环境变量</h2>
+<p>添加新变量 <strong>NUGET_PACKAGES</strong> 值设置为新位置，如 &ldquo;D:\NugetCache&rdquo;。重启系统</p>
+<h2 id="nugetconfig">修改用户nuget.config</h2>
+<p>修改 %appdata%/nuget下的nuget.config</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+<span class="nt">&lt;configuration</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;config</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&#34;globalPackagesFolder&#34;</span> <span class="na">value=</span><span class="s">&#34;D:\NugetCache&#34;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/config&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>添加 <strong>globalPackagesFolder</strong> 节点</p>
+<p>环境变量的优先级较高，二者同时存在的话，前者会覆盖后者。</p>
     </div>
 
     <div class="post-copyright">
@@ -184,7 +214,7 @@
         id: '2019-12-26 14:56:42 \x2b0800 CST',
         title: '修改NuGet全局缓存路径',
         link: decodeURI(location.href),
-        desc: '\x3cp\x3eNuget的全局缓存路径默认在\x3c\/p\x3e',
+        desc: '\x3cp\x3e修改NuGet全局缓存路径\x3c\/p\x3e',
         owner: 'prime167',
         repo: 'BlogComment',
         oauth: {
