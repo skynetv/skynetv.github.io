@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>.net on 静静地坐着</title>
+    <title>.NET on 静静地坐着</title>
     <link>https://prime167.github.io/tags/.net/</link>
-    <description>Recent content in .net on 静静地坐着</description>
+    <description>Recent content in .NET on 静静地坐着</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 15 Jan 2020 14:40:15 +0800</lastBuildDate>
@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Intall Netfx4</title>
+      <title>在Windows 7 SP1 下离线安装 .NET Framework 4.8</title>
       <link>https://prime167.github.io/post/2020/01/15/intall-netfx4.x-offline/</link>
       <pubDate>Wed, 15 Jan 2020 14:40:15 +0800</pubDate>
       

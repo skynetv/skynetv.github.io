@@ -23,13 +23,6 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/2020/01/15/intall-netfx4.x-offline/</loc>
-    <lastmod>2020-01-15T14:40:15+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://prime167.github.io/post/</loc>
     <lastmod>2020-01-15T14:40:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -38,6 +31,13 @@
   
   <url>
     <loc>https://prime167.github.io/tags/</loc>
+    <lastmod>2020-01-15T14:40:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/post/2020/01/15/intall-netfx4.x-offline/</loc>
     <lastmod>2020-01-15T14:40:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
