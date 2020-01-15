@@ -6,10 +6,19 @@
     <description>Recent content in Tags on 静静地坐着</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 31 Dec 2019 11:39:51 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jan 2020 14:40:15 +0800</lastBuildDate>
     
 	<atom:link href="https://prime167.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>.net</title>
+      <link>https://prime167.github.io/tags/.net/</link>
+      <pubDate>Wed, 15 Jan 2020 14:40:15 +0800</pubDate>
+      
+      <guid>https://prime167.github.io/tags/.net/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>math</title>
@@ -17,15 +26,6 @@
       <pubDate>Tue, 31 Dec 2019 11:39:51 +0800</pubDate>
       
       <guid>https://prime167.github.io/tags/math/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>.NET</title>
-      <link>https://prime167.github.io/tags/.net/</link>
-      <pubDate>Thu, 26 Dec 2019 14:56:42 +0800</pubDate>
-      
-      <guid>https://prime167.github.io/tags/.net/</guid>
       <description></description>
     </item>
     

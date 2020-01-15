@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 静静地坐着</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 31 Dec 2019 11:39:51 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jan 2020 14:40:15 +0800</lastBuildDate>
     
 	<atom:link href="https://prime167.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Intall Netfx4</title>
+      <link>https://prime167.github.io/post/2020/01/15/intall-netfx4.x-offline/</link>
+      <pubDate>Wed, 15 Jan 2020 14:40:15 +0800</pubDate>
+      
+      <guid>https://prime167.github.io/post/2020/01/15/intall-netfx4.x-offline/</guid>
+      <description>&lt;p&gt;在未联网的计算机上安装.NET Framework 4.6.1, 4.6.2, 4.7, 4.8 可能会因为缺少根证书失败&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>一个有趣的不等式的证明</title>

@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>.NET on 静静地坐着</title>
+    <title>.net on 静静地坐着</title>
     <link>https://prime167.github.io/tags/.net/</link>
-    <description>Recent content in .NET on 静静地坐着</description>
+    <description>Recent content in .net on 静静地坐着</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 26 Dec 2019 14:56:42 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jan 2020 14:40:15 +0800</lastBuildDate>
     
 	<atom:link href="https://prime167.github.io/tags/.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Intall Netfx4</title>
+      <link>https://prime167.github.io/post/2020/01/15/intall-netfx4.x-offline/</link>
+      <pubDate>Wed, 15 Jan 2020 14:40:15 +0800</pubDate>
+      
+      <guid>https://prime167.github.io/post/2020/01/15/intall-netfx4.x-offline/</guid>
+      <description>&lt;p&gt;在未联网的计算机上安装.NET Framework 4.6.1, 4.6.2, 4.7, 4.8 可能会因为缺少根证书失败&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>修改NuGet全局缓存路径</title>

@@ -9,28 +9,56 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/categories/</loc>
-    <lastmod>2019-12-31T11:39:51+08:00</lastmod>
+    <loc>https://prime167.github.io/tags/.net/</loc>
+    <lastmod>2020-01-15T14:40:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://prime167.github.io/tags/math/</loc>
-    <lastmod>2019-12-31T11:39:51+08:00</lastmod>
+    <loc>https://prime167.github.io/categories/</loc>
+    <lastmod>2020-01-15T14:40:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/post/2020/01/15/intall-netfx4.x-offline/</loc>
+    <lastmod>2020-01-15T14:40:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://prime167.github.io/post/</loc>
-    <lastmod>2019-12-31T11:39:51+08:00</lastmod>
+    <lastmod>2020-01-15T14:40:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://prime167.github.io/tags/</loc>
+    <lastmod>2020-01-15T14:40:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/categories/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2020-01-15T14:40:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/</loc>
+    <lastmod>2020-01-15T14:40:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/tags/math/</loc>
     <lastmod>2019-12-31T11:39:51+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -51,20 +79,6 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/</loc>
-    <lastmod>2019-12-31T11:39:51+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/tags/.net/</loc>
-    <lastmod>2019-12-26T14:56:42+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://prime167.github.io/tags/nuget/</loc>
     <lastmod>2019-12-26T14:56:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -73,13 +87,6 @@
   
   <url>
     <loc>https://prime167.github.io/post/2019/12/26/nuget-change-global-cache-dir/</loc>
-    <lastmod>2019-12-26T14:56:42+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/categories/%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2019-12-26T14:56:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
