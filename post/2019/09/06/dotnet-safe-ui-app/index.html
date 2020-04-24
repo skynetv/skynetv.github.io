@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.61.0 with theme even" />
+<meta name="generator" content="Hugo 0.69.2 with theme even" />
 
 
 <link rel="canonical" href="https://prime167.github.io/post/2019/09/06/dotnet-safe-ui-app/" />
@@ -140,10 +140,10 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">有问题的代码</a></li>
-    <li><a href="#invokebegininvoke">使用Invoke/BeginInvoke</a></li>
-    <li><a href="#-synchronizationcontextsend--post">使用 SynchronizationContext.Send 或者 Post方法</a></li>
-    <li><a href="#heading-1">参考链接</a></li>
+    <li><a href="#有问题的代码">有问题的代码</a></li>
+    <li><a href="#使用invokebegininvoke">使用Invoke/BeginInvoke</a></li>
+    <li><a href="#使用-synchronizationcontextsend-或者-post方法">使用 SynchronizationContext.Send 或者 Post方法</a></li>
+    <li><a href="#参考链接">参考链接</a></li>
   </ul>
 </nav>
   </div>
@@ -155,7 +155,7 @@
   </div>
     <div class="post-content">
       <p>本篇讲一下如何编写线程安全的Winform 程序</p>
-<h2 id="heading">有问题的代码</h2>
+<h2 id="有问题的代码">有问题的代码</h2>
 <p>一个很简单的功能，Winform上实时显示当前时间：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -182,19 +182,19 @@
 <pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">Form1</span> <span class="p">:</span> <span class="n">Form</span>
 <span class="p">{</span>
     <span class="k">private</span> <span class="n">System</span><span class="p">.</span><span class="n">Threading</span><span class="p">.</span><span class="n">Timer</span> <span class="n">_timer</span><span class="p">;</span>
-    <span class="k">public</span> <span class="n">Form1</span><span class="p">(</span><span class="p">)</span>
+    <span class="k">public</span> <span class="n">Form1</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="n">InitializeComponent</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+        <span class="n">InitializeComponent</span><span class="p">();</span>
     <span class="p">}</span>
 
     <span class="k">private</span> <span class="k">void</span> <span class="n">Form1_Load</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">_timer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Threading</span><span class="p">.</span><span class="n">Timer</span><span class="p">(</span><span class="n">UpdateTime</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">2</span><span class="m">0</span><span class="p">)</span><span class="p">;</span>
+        <span class="n">_timer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Threading</span><span class="p">.</span><span class="n">Timer</span><span class="p">(</span><span class="n">UpdateTime</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">20</span><span class="p">);</span>
     <span class="p">}</span>
 
     <span class="k">private</span> <span class="k">void</span> <span class="n">UpdateTime</span><span class="p">(</span><span class="kt">object</span> <span class="n">state</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">lblTime</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&#34;hh:mm:ss&#34;</span><span class="p">)</span><span class="p">;</span>
+        <span class="n">lblTime</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&#34;hh:mm:ss&#34;</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -202,7 +202,7 @@
 </div><p>F5 运行，出错了：
 <img src="/images/2019-09-06-exception.png" alt="smbv1">
 这是因为System.Threading.Timer并不是在lblTimer所在的UI线程上运行，而是在线程池上运行。</p>
-<h2 id="invokebegininvoke">使用Invoke/BeginInvoke</h2>
+<h2 id="使用invokebegininvoke">使用Invoke/BeginInvoke</h2>
 <p>解放方法也很简答，用 Invoke() 或者 BeginInvoke()</p>
 <ul>
 <li>
@@ -254,25 +254,25 @@
 <span class="p">{</span>
     <span class="k">private</span> <span class="n">System</span><span class="p">.</span><span class="n">Threading</span><span class="p">.</span><span class="n">Timer</span> <span class="n">_timer</span><span class="p">;</span>
 
-    <span class="k">public</span> <span class="n">Form1</span><span class="p">(</span><span class="p">)</span>
+    <span class="k">public</span> <span class="n">Form1</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="n">InitializeComponent</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+        <span class="n">InitializeComponent</span><span class="p">();</span>
     <span class="p">}</span>
 
     <span class="k">private</span> <span class="k">void</span> <span class="n">Form1_Load</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">_timer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Threading</span><span class="p">.</span><span class="n">Timer</span><span class="p">(</span><span class="n">UpdateTime</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">2</span><span class="m">0</span><span class="p">)</span><span class="p">;</span>
+        <span class="n">_timer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Threading</span><span class="p">.</span><span class="n">Timer</span><span class="p">(</span><span class="n">UpdateTime</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">20</span><span class="p">);</span>
     <span class="p">}</span>
 
     <span class="k">private</span> <span class="k">void</span> <span class="n">UpdateTime</span><span class="p">(</span><span class="kt">object</span> <span class="n">state</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="k">try</span>
         <span class="p">{</span>
-            <span class="n">Invoke</span><span class="p">(</span><span class="k">new</span> <span class="n">MethodInvoker</span><span class="p">(</span><span class="p">(</span><span class="p">)</span> <span class="p">=</span><span class="p">&gt;</span>
+            <span class="n">Invoke</span><span class="p">(</span><span class="k">new</span> <span class="n">MethodInvoker</span><span class="p">(()</span> <span class="p">=&gt;</span>
             <span class="p">{</span>
-                <span class="n">lblTime</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&#34;hh:mm:ss&#34;</span><span class="p">)</span><span class="p">;</span>
+                <span class="n">lblTime</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&#34;hh:mm:ss&#34;</span><span class="p">);</span>
 
-            <span class="p">}</span><span class="p">)</span><span class="p">)</span><span class="p">;</span>
+            <span class="p">}));</span>
         <span class="p">}</span>
         <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="n">when</span> <span class="p">(</span><span class="n">e</span> <span class="k">is</span> <span class="n">ObjectDisposedException</span><span class="p">)</span>
         <span class="p">{</span>
@@ -281,12 +281,12 @@
 
     <span class="k">private</span> <span class="k">void</span> <span class="n">Form1_FormClosing</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">FormClosingEventArgs</span> <span class="n">e</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">_timer</span><span class="p">.</span><span class="n">Change</span><span class="p">(</span><span class="n">Timeout</span><span class="p">.</span><span class="n">Infinite</span><span class="p">,</span> <span class="n">Timeout</span><span class="p">.</span><span class="n">Infinite</span><span class="p">)</span><span class="p">;</span>
+        <span class="n">_timer</span><span class="p">.</span><span class="n">Change</span><span class="p">(</span><span class="n">Timeout</span><span class="p">.</span><span class="n">Infinite</span><span class="p">,</span> <span class="n">Timeout</span><span class="p">.</span><span class="n">Infinite</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="-synchronizationcontextsend--post">使用 SynchronizationContext.Send 或者 Post方法</h2>
+</div><h2 id="使用-synchronizationcontextsend-或者-post方法">使用 SynchronizationContext.Send 或者 Post方法</h2>
 <p>使用 SynchronizationContext 同步上下文， 它表示一个代码要执行的地方，不一定是一个线程，可能是多个线程，可能是一个CPU核心，也可能是一个网络上的主机。
 他有两个主要方法：</p>
 <ul>
@@ -335,31 +335,31 @@
     <span class="k">private</span> <span class="n">System</span><span class="p">.</span><span class="n">Threading</span><span class="p">.</span><span class="n">Timer</span> <span class="n">_timer</span><span class="p">;</span>
     <span class="k">private</span> <span class="k">readonly</span> <span class="n">SynchronizationContext</span> <span class="n">_context</span><span class="p">;</span>
 
-    <span class="k">public</span> <span class="n">Form1</span><span class="p">(</span><span class="p">)</span>
+    <span class="k">public</span> <span class="n">Form1</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="n">InitializeComponent</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-        <span class="n">_context</span> <span class="p">=</span> <span class="n">SynchronizationContext</span><span class="p">.</span><span class="n">Current</span> <span class="p">?</span><span class="p">?</span> <span class="k">new</span> <span class="n">SynchronizationContext</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+        <span class="n">InitializeComponent</span><span class="p">();</span>
+        <span class="n">_context</span> <span class="p">=</span> <span class="n">SynchronizationContext</span><span class="p">.</span><span class="n">Current</span> <span class="p">??</span> <span class="k">new</span> <span class="n">SynchronizationContext</span><span class="p">();</span>
     <span class="p">}</span>
 
     <span class="k">private</span> <span class="k">void</span> <span class="n">Form1_Load</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">_timer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Threading</span><span class="p">.</span><span class="n">Timer</span><span class="p">(</span><span class="n">UpdateTime</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">2</span><span class="m">0</span><span class="p">)</span><span class="p">;</span>
+        <span class="n">_timer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Threading</span><span class="p">.</span><span class="n">Timer</span><span class="p">(</span><span class="n">UpdateTime</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">20</span><span class="p">);</span>
     <span class="p">}</span>
 
     <span class="k">private</span> <span class="k">void</span> <span class="n">UpdateTime</span><span class="p">(</span><span class="kt">object</span> <span class="n">state</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="c1">//_context.Post(delegate { lblTime.Text = DateTime.Now.ToString(&#34;hh:mm:ss&#34;);}, null);
-</span><span class="c1"></span>        <span class="n">_context</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="k">delegate</span> <span class="p">{</span> <span class="n">lblTime</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&#34;hh:mm:ss&#34;</span><span class="p">)</span><span class="p">;</span> <span class="p">}</span><span class="p">,</span> <span class="k">null</span><span class="p">)</span><span class="p">;</span>
+</span><span class="c1"></span>        <span class="n">_context</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="k">delegate</span> <span class="p">{</span> <span class="n">lblTime</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&#34;hh:mm:ss&#34;</span><span class="p">);</span> <span class="p">},</span> <span class="k">null</span><span class="p">);</span>
     <span class="p">}</span>
 
     <span class="k">private</span> <span class="k">void</span> <span class="n">Form1_FormClosing</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">FormClosingEventArgs</span> <span class="n">e</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">_timer</span><span class="p">.</span><span class="n">Change</span><span class="p">(</span><span class="n">Timeout</span><span class="p">.</span><span class="n">Infinite</span><span class="p">,</span> <span class="n">Timeout</span><span class="p">.</span><span class="n">Infinite</span><span class="p">)</span><span class="p">;</span>
+        <span class="n">_timer</span><span class="p">.</span><span class="n">Change</span><span class="p">(</span><span class="n">Timeout</span><span class="p">.</span><span class="n">Infinite</span><span class="p">,</span> <span class="n">Timeout</span><span class="p">.</span><span class="n">Infinite</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="heading-1">参考链接</h2>
+</div><h2 id="参考链接">参考链接</h2>
 <ul>
 <li><a href="https://www.cnblogs.com/mqxs/p/4288644.html">https://www.cnblogs.com/mqxs/p/4288644.html</a></li>
 <li><a href="https://stackoverflow.com/a/18098557/65994">https://stackoverflow.com/a/18098557/65994</a></li>

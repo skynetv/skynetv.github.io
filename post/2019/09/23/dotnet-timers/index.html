@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.61.0 with theme even" />
+<meta name="generator" content="Hugo 0.69.2 with theme even" />
 
 
 <link rel="canonical" href="https://prime167.github.io/post/2019/09/23/dotnet-timers/" />
@@ -140,13 +140,13 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">概述</a></li>
+    <li><a href="#概述">概述</a></li>
     <li><a href="#systemwindowsformstimer">System.Windows.Forms.Timer</a></li>
     <li><a href="#systemwindowsthreadingdispatchertimer">System.Windows.Threading.DispatcherTimer</a></li>
     <li><a href="#systemthreadingtimer">System.Threading.Timer</a></li>
     <li><a href="#systemtimerstimer">System.Timers.Timer</a></li>
     <li><a href="#systemwebuitimer">System.Web.UI.Timer</a></li>
-    <li><a href="#heading-1">源码</a></li>
+    <li><a href="#源码">源码</a></li>
   </ul>
 </nav>
   </div>
@@ -158,7 +158,7 @@
   </div>
     <div class="post-content">
       <p>今天简单介绍一下 .NET framework中的timer</p>
-<h2 id="heading">概述</h2>
+<h2 id="概述">概述</h2>
 <p>目前，.NET framework中有如下几种 timer：</p>
 <ol>
 <li>System.Timers.Timer</li>
@@ -208,31 +208,31 @@
 <pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">Form1</span> <span class="p">:</span> <span class="n">Form</span>
 <span class="p">{</span>
     <span class="k">private</span> <span class="kt">int</span> <span class="n">_count</span><span class="p">;</span>
-    <span class="k">private</span> <span class="k">readonly</span> <span class="n">Timer</span> <span class="n">_timer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Timer</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-    <span class="k">private</span> <span class="k">readonly</span> <span class="n">Label</span> <span class="n">_lblCount</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Label</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">Timer</span> <span class="n">_timer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Timer</span><span class="p">();</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">Label</span> <span class="n">_lblCount</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Label</span><span class="p">();</span>
 
-    <span class="k">public</span> <span class="n">Form1</span><span class="p">(</span><span class="p">)</span>
+    <span class="k">public</span> <span class="n">Form1</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="n">InitializeComponent</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-        <span class="n">Size</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Size</span><span class="p">(</span><span class="m">4</span><span class="m">5</span><span class="m">0</span><span class="p">,</span> <span class="m">4</span><span class="m">5</span><span class="m">0</span><span class="p">)</span><span class="p">;</span>
-        <span class="n">Controls</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">_lblCount</span><span class="p">)</span><span class="p">;</span>
-        <span class="n">_lblCount</span><span class="p">.</span><span class="n">Location</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="m">2</span><span class="m">0</span><span class="m">0</span><span class="p">,</span> <span class="m">2</span><span class="m">0</span><span class="m">0</span><span class="p">)</span><span class="p">;</span>
-        <span class="n">_timer</span><span class="p">.</span><span class="n">Interval</span> <span class="p">=</span> <span class="m">1</span><span class="m">0</span><span class="m">0</span><span class="p">;</span>
-        <span class="n">_timer</span><span class="p">.</span><span class="n">Tick</span> <span class="p">+</span><span class="p">=</span> <span class="n">timer1_Tick</span><span class="p">;</span>
+        <span class="n">InitializeComponent</span><span class="p">();</span>
+        <span class="n">Size</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Size</span><span class="p">(</span><span class="m">450</span><span class="p">,</span> <span class="m">450</span><span class="p">);</span>
+        <span class="n">Controls</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">_lblCount</span><span class="p">);</span>
+        <span class="n">_lblCount</span><span class="p">.</span><span class="n">Location</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="m">200</span><span class="p">,</span> <span class="m">200</span><span class="p">);</span>
+        <span class="n">_timer</span><span class="p">.</span><span class="n">Interval</span> <span class="p">=</span> <span class="m">100</span><span class="p">;</span>
+        <span class="n">_timer</span><span class="p">.</span><span class="n">Tick</span> <span class="p">+=</span> <span class="n">timer1_Tick</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="k">private</span> <span class="k">void</span> <span class="n">Form1_Load</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">_timer</span><span class="p">.</span><span class="n">Start</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+        <span class="n">_timer</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
     <span class="p">}</span>
 
     <span class="k">private</span> <span class="k">void</span> <span class="n">timer1_Tick</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">_count</span><span class="p">+</span><span class="p">+</span><span class="p">;</span>
-        <span class="n">_lblCount</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">_count</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&#34;0000&#34;</span><span class="p">)</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">_count</span> <span class="p">&gt;</span><span class="p">=</span> <span class="m">3</span><span class="m">0</span><span class="p">)</span>
+        <span class="n">_count</span><span class="p">++;</span>
+        <span class="n">_lblCount</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">_count</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&#34;0000&#34;</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">_count</span> <span class="p">&gt;=</span> <span class="m">30</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="n">_timer</span><span class="p">.</span><span class="n">Stop</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+            <span class="n">_timer</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -283,28 +283,28 @@
 <pre class="chroma"><code class="language-csharp" data-lang="csharp"> <span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">MainWindow</span> <span class="p">:</span> <span class="n">Window</span>
 <span class="p">{</span>
     <span class="k">private</span> <span class="kt">int</span> <span class="n">_count</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
-    <span class="k">private</span> <span class="k">readonly</span> <span class="n">DispatcherTimer</span> <span class="n">_timer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DispatcherTimer</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">DispatcherTimer</span> <span class="n">_timer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DispatcherTimer</span><span class="p">();</span>
 
-    <span class="k">public</span> <span class="n">MainWindow</span><span class="p">(</span><span class="p">)</span>
+    <span class="k">public</span> <span class="n">MainWindow</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="n">InitializeComponent</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-        <span class="n">_timer</span><span class="p">.</span><span class="n">Interval</span> <span class="p">=</span> <span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromMilliseconds</span><span class="p">(</span><span class="m">1</span><span class="m">0</span><span class="m">0</span><span class="p">)</span><span class="p">;</span>
-        <span class="n">_timer</span><span class="p">.</span><span class="n">Tick</span> <span class="p">+</span><span class="p">=</span> <span class="n">_timer_Tick</span><span class="p">;</span>
+        <span class="n">InitializeComponent</span><span class="p">();</span>
+        <span class="n">_timer</span><span class="p">.</span><span class="n">Interval</span> <span class="p">=</span> <span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromMilliseconds</span><span class="p">(</span><span class="m">100</span><span class="p">);</span>
+        <span class="n">_timer</span><span class="p">.</span><span class="n">Tick</span> <span class="p">+=</span> <span class="n">_timer_Tick</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="k">private</span> <span class="k">void</span> <span class="n">_timer_Tick</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">_count</span><span class="p">+</span><span class="p">+</span><span class="p">;</span>
-        <span class="n">lblCount</span><span class="p">.</span><span class="n">Content</span> <span class="p">=</span> <span class="n">_count</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&#34;0000&#34;</span><span class="p">)</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">_count</span> <span class="p">&gt;</span><span class="p">=</span> <span class="m">3</span><span class="m">0</span><span class="p">)</span>
+        <span class="n">_count</span><span class="p">++;</span>
+        <span class="n">lblCount</span><span class="p">.</span><span class="n">Content</span> <span class="p">=</span> <span class="n">_count</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&#34;0000&#34;</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">_count</span> <span class="p">&gt;=</span> <span class="m">30</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="n">_timer</span><span class="p">.</span><span class="n">Stop</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+            <span class="n">_timer</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
         <span class="p">}</span>
     <span class="p">}</span>
 
     <span class="k">private</span> <span class="k">void</span> <span class="n">MainWindow_OnLoaded</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">_timer</span><span class="p">.</span><span class="n">Start</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+        <span class="n">_timer</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -356,32 +356,32 @@
 <span class="p">{</span>
     <span class="k">private</span> <span class="kt">int</span> <span class="n">_count</span><span class="p">;</span>
     <span class="k">private</span> <span class="n">System</span><span class="p">.</span><span class="n">Threading</span><span class="p">.</span><span class="n">Timer</span> <span class="n">_timer</span><span class="p">;</span>
-    <span class="k">private</span> <span class="k">readonly</span> <span class="n">Label</span> <span class="n">_lblCount</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Label</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">Label</span> <span class="n">_lblCount</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Label</span><span class="p">();</span>
     <span class="k">private</span> <span class="k">readonly</span> <span class="n">SynchronizationContext</span> <span class="n">_context</span><span class="p">;</span>
 
-    <span class="k">public</span> <span class="n">Form3</span><span class="p">(</span><span class="p">)</span>
+    <span class="k">public</span> <span class="n">Form3</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="n">InitializeComponent</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+        <span class="n">InitializeComponent</span><span class="p">();</span>
         <span class="n">_lblCount</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">&#34;0000&#34;</span><span class="p">;</span>
-        <span class="n">_context</span> <span class="p">=</span> <span class="n">SynchronizationContext</span><span class="p">.</span><span class="n">Current</span> <span class="p">?</span><span class="p">?</span> <span class="k">new</span> <span class="n">SynchronizationContext</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-        <span class="n">Size</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Size</span><span class="p">(</span><span class="m">4</span><span class="m">5</span><span class="m">0</span><span class="p">,</span><span class="m">4</span><span class="m">5</span><span class="m">0</span><span class="p">)</span><span class="p">;</span>
-        <span class="n">Controls</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">_lblCount</span><span class="p">)</span><span class="p">;</span>
-        <span class="n">_lblCount</span><span class="p">.</span><span class="n">Location</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="m">2</span><span class="m">0</span><span class="m">0</span><span class="p">,</span> <span class="m">2</span><span class="m">0</span><span class="m">0</span><span class="p">)</span><span class="p">;</span>
+        <span class="n">_context</span> <span class="p">=</span> <span class="n">SynchronizationContext</span><span class="p">.</span><span class="n">Current</span> <span class="p">??</span> <span class="k">new</span> <span class="n">SynchronizationContext</span><span class="p">();</span>
+        <span class="n">Size</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Size</span><span class="p">(</span><span class="m">450</span><span class="p">,</span><span class="m">450</span><span class="p">);</span>
+        <span class="n">Controls</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">_lblCount</span><span class="p">);</span>
+        <span class="n">_lblCount</span><span class="p">.</span><span class="n">Location</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="m">200</span><span class="p">,</span> <span class="m">200</span><span class="p">);</span>
     <span class="p">}</span>
 
     <span class="k">private</span> <span class="k">void</span> <span class="n">UpdateCount</span><span class="p">(</span><span class="kt">object</span> <span class="n">state</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">_count</span><span class="p">+</span><span class="p">+</span><span class="p">;</span>
-        <span class="n">_context</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="k">delegate</span> <span class="p">{</span> <span class="n">_lblCount</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">_count</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&#34;0000&#34;</span><span class="p">)</span><span class="p">;</span> <span class="p">}</span><span class="p">,</span> <span class="k">null</span><span class="p">)</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">_count</span> <span class="p">&gt;</span><span class="p">=</span> <span class="m">3</span><span class="m">0</span><span class="p">)</span>
+        <span class="n">_count</span><span class="p">++;</span>
+        <span class="n">_context</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="k">delegate</span> <span class="p">{</span> <span class="n">_lblCount</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">_count</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&#34;0000&#34;</span><span class="p">);</span> <span class="p">},</span> <span class="k">null</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">_count</span> <span class="p">&gt;=</span> <span class="m">30</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="n">_timer</span><span class="p">.</span><span class="n">Change</span><span class="p">(</span><span class="n">Timeout</span><span class="p">.</span><span class="n">Infinite</span><span class="p">,</span> <span class="n">Timeout</span><span class="p">.</span><span class="n">Infinite</span><span class="p">)</span><span class="p">;</span>
+            <span class="n">_timer</span><span class="p">.</span><span class="n">Change</span><span class="p">(</span><span class="n">Timeout</span><span class="p">.</span><span class="n">Infinite</span><span class="p">,</span> <span class="n">Timeout</span><span class="p">.</span><span class="n">Infinite</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
 
     <span class="k">private</span> <span class="k">void</span> <span class="n">Form3_Shown</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">_timer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Threading</span><span class="p">.</span><span class="n">Timer</span><span class="p">(</span><span class="n">UpdateCount</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="m">1</span><span class="m">0</span><span class="m">0</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="m">0</span><span class="m">0</span><span class="p">)</span><span class="p">;</span>
+        <span class="n">_timer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Threading</span><span class="p">.</span><span class="n">Timer</span><span class="p">(</span><span class="n">UpdateCount</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="m">1000</span><span class="p">,</span> <span class="m">100</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -430,33 +430,33 @@
 <pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">Form2</span> <span class="p">:</span> <span class="n">Form</span>
 <span class="p">{</span>
     <span class="k">private</span> <span class="kt">int</span> <span class="n">_count</span><span class="p">;</span>
-    <span class="k">private</span> <span class="k">readonly</span> <span class="n">System</span><span class="p">.</span><span class="n">Timers</span><span class="p">.</span><span class="n">Timer</span> <span class="n">_timer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Timers</span><span class="p">.</span><span class="n">Timer</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-    <span class="k">private</span> <span class="k">readonly</span> <span class="n">Label</span> <span class="n">_lblCount</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Label</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">System</span><span class="p">.</span><span class="n">Timers</span><span class="p">.</span><span class="n">Timer</span> <span class="n">_timer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Timers</span><span class="p">.</span><span class="n">Timer</span><span class="p">();</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">Label</span> <span class="n">_lblCount</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Label</span><span class="p">();</span>
 
-    <span class="k">public</span> <span class="n">Form2</span><span class="p">(</span><span class="p">)</span>
+    <span class="k">public</span> <span class="n">Form2</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="n">InitializeComponent</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-        <span class="n">Size</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Size</span><span class="p">(</span><span class="m">4</span><span class="m">5</span><span class="m">0</span><span class="p">,</span><span class="m">4</span><span class="m">5</span><span class="m">0</span><span class="p">)</span><span class="p">;</span>
-        <span class="n">Controls</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">_lblCount</span><span class="p">)</span><span class="p">;</span>
-        <span class="n">_lblCount</span><span class="p">.</span><span class="n">Location</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="m">2</span><span class="m">0</span><span class="m">0</span><span class="p">,</span> <span class="m">2</span><span class="m">0</span><span class="m">0</span><span class="p">)</span><span class="p">;</span>
-        <span class="n">_timer</span><span class="p">.</span><span class="n">Interval</span> <span class="p">=</span> <span class="m">1</span><span class="m">0</span><span class="m">0</span><span class="p">;</span>
+        <span class="n">InitializeComponent</span><span class="p">();</span>
+        <span class="n">Size</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Size</span><span class="p">(</span><span class="m">450</span><span class="p">,</span><span class="m">450</span><span class="p">);</span>
+        <span class="n">Controls</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">_lblCount</span><span class="p">);</span>
+        <span class="n">_lblCount</span><span class="p">.</span><span class="n">Location</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="m">200</span><span class="p">,</span> <span class="m">200</span><span class="p">);</span>
+        <span class="n">_timer</span><span class="p">.</span><span class="n">Interval</span> <span class="p">=</span> <span class="m">100</span><span class="p">;</span>
         <span class="n">_timer</span><span class="p">.</span><span class="n">SynchronizingObject</span> <span class="p">=</span> <span class="k">this</span><span class="p">;</span>
-        <span class="n">_timer</span><span class="p">.</span><span class="n">Elapsed</span> <span class="p">+</span><span class="p">=</span> <span class="n">_timer_Elapsed</span><span class="p">;</span>
+        <span class="n">_timer</span><span class="p">.</span><span class="n">Elapsed</span> <span class="p">+=</span> <span class="n">_timer_Elapsed</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="k">private</span> <span class="k">void</span> <span class="n">_timer_Elapsed</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">System</span><span class="p">.</span><span class="n">Timers</span><span class="p">.</span><span class="n">ElapsedEventArgs</span> <span class="n">e</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">_count</span><span class="p">+</span><span class="p">+</span><span class="p">;</span>
-        <span class="n">_lblCount</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">_count</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&#34;0000&#34;</span><span class="p">)</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">_count</span> <span class="p">&gt;</span><span class="p">=</span> <span class="m">3</span><span class="m">0</span><span class="p">)</span>
+        <span class="n">_count</span><span class="p">++;</span>
+        <span class="n">_lblCount</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">_count</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&#34;0000&#34;</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">_count</span> <span class="p">&gt;=</span> <span class="m">30</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="n">_timer</span><span class="p">.</span><span class="n">Stop</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+            <span class="n">_timer</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
         <span class="p">}</span>
     <span class="p">}</span>
 
     <span class="k">private</span> <span class="k">void</span> <span class="n">Form1_Load</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">_timer</span><span class="p">.</span><span class="n">Start</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+        <span class="n">_timer</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -496,25 +496,25 @@
 <pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">private</span> <span class="k">void</span> <span class="n">MyTimerCallback</span><span class="p">(</span><span class="kt">object</span> <span class="n">state</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// System.Threading.Timer will not cancel the work item queued before the timer is stopped.
 </span><span class="c1"></span>    <span class="c1">// We don&#39;t want to handle the callback after a timer is stopped.
-</span><span class="c1"></span>    <span class="k">if</span><span class="p">(</span> <span class="n">state</span> <span class="p">!</span><span class="p">=</span> <span class="n">cookie</span><span class="p">)</span> <span class="p">{</span> 
+</span><span class="c1"></span>    <span class="k">if</span><span class="p">(</span> <span class="n">state</span> <span class="p">!=</span> <span class="n">cookie</span><span class="p">)</span> <span class="p">{</span> 
         <span class="k">return</span><span class="p">;</span>
     <span class="p">}</span> 
     
-    <span class="k">if</span> <span class="p">(</span><span class="p">!</span><span class="k">this</span><span class="p">.</span><span class="n">autoReset</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(!</span><span class="k">this</span><span class="p">.</span><span class="n">autoReset</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">enabled</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="n">FILE_TIME</span> <span class="n">filetime</span> <span class="p">=</span> <span class="k">new</span> <span class="n">FILE_TIME</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-    <span class="n">GetSystemTimeAsFileTime</span><span class="p">(</span><span class="k">ref</span> <span class="n">filetime</span><span class="p">)</span><span class="p">;</span>
-    <span class="n">ElapsedEventArgs</span> <span class="n">elapsedEventArgs</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ElapsedEventArgs</span><span class="p">(</span><span class="n">filetime</span><span class="p">.</span><span class="n">ftTimeLow</span><span class="p">,</span> <span class="n">filetime</span><span class="p">.</span><span class="n">ftTimeHigh</span><span class="p">)</span><span class="p">;</span> 
+    <span class="n">FILE_TIME</span> <span class="n">filetime</span> <span class="p">=</span> <span class="k">new</span> <span class="n">FILE_TIME</span><span class="p">();</span>
+    <span class="n">GetSystemTimeAsFileTime</span><span class="p">(</span><span class="k">ref</span> <span class="n">filetime</span><span class="p">);</span>
+    <span class="n">ElapsedEventArgs</span> <span class="n">elapsedEventArgs</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ElapsedEventArgs</span><span class="p">(</span><span class="n">filetime</span><span class="p">.</span><span class="n">ftTimeLow</span><span class="p">,</span> <span class="n">filetime</span><span class="p">.</span><span class="n">ftTimeHigh</span><span class="p">);</span> 
     <span class="k">try</span> <span class="p">{</span>                                            
         <span class="c1">// To avoid ---- between remove handler and raising the event
 </span><span class="c1"></span>        <span class="n">ElapsedEventHandler</span> <span class="n">intervalElapsed</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">onIntervalElapsed</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">intervalElapsed</span> <span class="p">!</span><span class="p">=</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">SynchronizingObject</span> <span class="p">!</span><span class="p">=</span> <span class="k">null</span> <span class="p">&amp;</span><span class="p">&amp;</span> <span class="k">this</span><span class="p">.</span><span class="n">SynchronizingObject</span><span class="p">.</span><span class="n">InvokeRequired</span><span class="p">)</span>
-                <span class="k">this</span><span class="p">.</span><span class="n">SynchronizingObject</span><span class="p">.</span><span class="n">BeginInvoke</span><span class="p">(</span><span class="n">intervalElapsed</span><span class="p">,</span> <span class="k">new</span> <span class="kt">object</span><span class="p">[</span><span class="p">]</span><span class="p">{</span><span class="k">this</span><span class="p">,</span> <span class="n">elapsedEventArgs</span><span class="p">}</span><span class="p">)</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">intervalElapsed</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">SynchronizingObject</span> <span class="p">!=</span> <span class="k">null</span> <span class="p">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="n">SynchronizingObject</span><span class="p">.</span><span class="n">InvokeRequired</span><span class="p">)</span>
+                <span class="k">this</span><span class="p">.</span><span class="n">SynchronizingObject</span><span class="p">.</span><span class="n">BeginInvoke</span><span class="p">(</span><span class="n">intervalElapsed</span><span class="p">,</span> <span class="k">new</span> <span class="kt">object</span><span class="p">[]{</span><span class="k">this</span><span class="p">,</span> <span class="n">elapsedEventArgs</span><span class="p">});</span>
             <span class="k">else</span>                        
-                <span class="n">intervalElapsed</span><span class="p">(</span><span class="k">this</span><span class="p">,</span>  <span class="n">elapsedEventArgs</span><span class="p">)</span><span class="p">;</span>                                   
+                <span class="n">intervalElapsed</span><span class="p">(</span><span class="k">this</span><span class="p">,</span>  <span class="n">elapsedEventArgs</span><span class="p">);</span>                                   
         <span class="p">}</span>
     <span class="p">}</span>
     <span class="k">catch</span> <span class="p">{</span>             
@@ -524,7 +524,7 @@
 </div>
 </div><h2 id="systemwebuitimer">System.Web.UI.Timer</h2>
 <p>略</p>
-<h2 id="heading-1">源码</h2>
+<h2 id="源码">源码</h2>
 <p><a href="https://github.com/prime167/DotNetTimers">prime167/DotNetTimers</a></p>
     </div>
 

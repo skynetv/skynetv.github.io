@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.61.0 with theme even" />
+<meta name="generator" content="Hugo 0.69.2 with theme even" />
 
 
 <link rel="canonical" href="https://prime167.github.io/post/2019/12/16/doubleendedlist/" />
@@ -140,8 +140,8 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">定义</a></li>
-    <li><a href="#c-">C# 实现</a></li>
+    <li><a href="#定义">定义</a></li>
+    <li><a href="#c-实现">C# 实现</a></li>
   </ul>
 </nav>
   </div>
@@ -153,9 +153,9 @@
   </div>
     <div class="post-content">
       <p>双端链表</p>
-<h2 id="heading">定义</h2>
+<h2 id="定义">定义</h2>
 <p>双端链表和单链表类似，只不过需要多维护一个指向最后一个节点的指针 Tail，方便从最后插入数据</p>
-<h2 id="c-">C# 实现</h2>
+<h2 id="c-实现">C# 实现</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">  1
@@ -343,54 +343,54 @@
 </span><span class="lnt">183
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">void</span> <span class="n">Main</span><span class="p">(</span><span class="p">)</span>
+<pre class="chroma"><code class="language-csharp" data-lang="csharp"><span class="k">void</span> <span class="n">Main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="n">DoubleEndedList</span> <span class="n">list</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DoubleEndedList</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-    <span class="n">list</span><span class="p">.</span><span class="n">InsertHead</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="p">;</span>
-    <span class="n">list</span><span class="p">.</span><span class="n">InsertHead</span><span class="p">(</span><span class="m">1</span><span class="p">)</span><span class="p">;</span>
-    <span class="n">list</span><span class="p">.</span><span class="n">InsertTail</span><span class="p">(</span><span class="m">3</span><span class="p">)</span><span class="p">;</span>
-    <span class="n">list</span><span class="p">.</span><span class="n">InsertTail</span><span class="p">(</span><span class="m">4</span><span class="p">)</span><span class="p">;</span>
-    <span class="n">list</span><span class="p">.</span><span class="n">DisplayList</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="n">DoubleEndedList</span> <span class="n">list</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DoubleEndedList</span><span class="p">();</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">InsertHead</span><span class="p">(</span><span class="m">2</span><span class="p">);</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">InsertHead</span><span class="p">(</span><span class="m">1</span><span class="p">);</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">InsertTail</span><span class="p">(</span><span class="m">3</span><span class="p">);</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">InsertTail</span><span class="p">(</span><span class="m">4</span><span class="p">);</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">DisplayList</span><span class="p">();</span>
 
-    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;======Delete tail======&#34;</span><span class="p">)</span><span class="p">;</span>
+    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;======Delete tail======&#34;</span><span class="p">);</span>
 
-    <span class="n">list</span><span class="p">.</span><span class="n">DeleteTail</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-    <span class="n">list</span><span class="p">.</span><span class="n">DisplayList</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">DeleteTail</span><span class="p">();</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">DisplayList</span><span class="p">();</span>
 
-    <span class="n">list</span><span class="p">.</span><span class="n">DeleteTail</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-    <span class="n">list</span><span class="p">.</span><span class="n">DisplayList</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">DeleteTail</span><span class="p">();</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">DisplayList</span><span class="p">();</span>
 
-    <span class="n">list</span><span class="p">.</span><span class="n">DeleteTail</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-    <span class="n">list</span><span class="p">.</span><span class="n">DisplayList</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">DeleteTail</span><span class="p">();</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">DisplayList</span><span class="p">();</span>
 
-    <span class="n">list</span><span class="p">.</span><span class="n">DeleteTail</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-    <span class="n">list</span><span class="p">.</span><span class="n">DisplayList</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">DeleteTail</span><span class="p">();</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">DisplayList</span><span class="p">();</span>
 
-    <span class="n">list</span><span class="p">.</span><span class="n">DeleteTail</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-    <span class="n">list</span><span class="p">.</span><span class="n">DisplayList</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">DeleteTail</span><span class="p">();</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">DisplayList</span><span class="p">();</span>
 
-    <span class="n">list</span><span class="p">.</span><span class="n">InsertHead</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="p">;</span>
-    <span class="n">list</span><span class="p">.</span><span class="n">InsertHead</span><span class="p">(</span><span class="m">1</span><span class="p">)</span><span class="p">;</span>
-    <span class="n">list</span><span class="p">.</span><span class="n">InsertTail</span><span class="p">(</span><span class="m">3</span><span class="p">)</span><span class="p">;</span>
-    <span class="n">list</span><span class="p">.</span><span class="n">InsertTail</span><span class="p">(</span><span class="m">4</span><span class="p">)</span><span class="p">;</span>
-    <span class="n">list</span><span class="p">.</span><span class="n">DisplayList</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">InsertHead</span><span class="p">(</span><span class="m">2</span><span class="p">);</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">InsertHead</span><span class="p">(</span><span class="m">1</span><span class="p">);</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">InsertTail</span><span class="p">(</span><span class="m">3</span><span class="p">);</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">InsertTail</span><span class="p">(</span><span class="m">4</span><span class="p">);</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">DisplayList</span><span class="p">();</span>
 
-    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;======Delete head======&#34;</span><span class="p">)</span><span class="p">;</span>
+    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;======Delete head======&#34;</span><span class="p">);</span>
 
-    <span class="n">list</span><span class="p">.</span><span class="n">DeleteHead</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-    <span class="n">list</span><span class="p">.</span><span class="n">DisplayList</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">DeleteHead</span><span class="p">();</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">DisplayList</span><span class="p">();</span>
 
-    <span class="n">list</span><span class="p">.</span><span class="n">DeleteHead</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-    <span class="n">list</span><span class="p">.</span><span class="n">DisplayList</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">DeleteHead</span><span class="p">();</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">DisplayList</span><span class="p">();</span>
 
-    <span class="n">list</span><span class="p">.</span><span class="n">DeleteHead</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-    <span class="n">list</span><span class="p">.</span><span class="n">DisplayList</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">DeleteHead</span><span class="p">();</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">DisplayList</span><span class="p">();</span>
 
-    <span class="n">list</span><span class="p">.</span><span class="n">DeleteHead</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-    <span class="n">list</span><span class="p">.</span><span class="n">DisplayList</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">DeleteHead</span><span class="p">();</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">DisplayList</span><span class="p">();</span>
 
-    <span class="n">list</span><span class="p">.</span><span class="n">DeleteHead</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-    <span class="n">list</span><span class="p">.</span><span class="n">DisplayList</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">DeleteHead</span><span class="p">();</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">DisplayList</span><span class="p">();</span>
 <span class="p">}</span>
 
 <span class="k">public</span> <span class="k">class</span> <span class="nc">DoubleEndedList</span>
@@ -399,22 +399,22 @@
 
     <span class="k">public</span> <span class="n">Node</span><span class="p">?</span> <span class="n">Tail</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
 
-    <span class="k">public</span> <span class="n">DoubleEndedList</span><span class="p">(</span><span class="p">)</span>
+    <span class="k">public</span> <span class="n">DoubleEndedList</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="n">Head</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
         <span class="n">Tail</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsEmpty</span><span class="p">(</span><span class="p">)</span>
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsEmpty</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="n">Head</span> <span class="p">=</span><span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">Head</span> <span class="p">==</span> <span class="k">null</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="c1">// 表头插入
 </span><span class="c1"></span>    <span class="k">public</span> <span class="k">void</span> <span class="n">InsertHead</span><span class="p">(</span><span class="kt">int</span> <span class="n">dd</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">Node</span> <span class="n">newNode</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">dd</span><span class="p">)</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">IsEmpty</span><span class="p">(</span><span class="p">)</span><span class="p">)</span>
+        <span class="n">Node</span> <span class="n">newNode</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">dd</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">IsEmpty</span><span class="p">())</span>
         <span class="p">{</span>
             <span class="n">Tail</span> <span class="p">=</span> <span class="n">newNode</span><span class="p">;</span>
         <span class="p">}</span>
@@ -426,8 +426,8 @@
     <span class="c1">// 表尾插入
 </span><span class="c1"></span>    <span class="k">public</span> <span class="k">void</span> <span class="n">InsertTail</span><span class="p">(</span><span class="kt">int</span> <span class="n">dd</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">Node</span> <span class="n">newNode</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">dd</span><span class="p">)</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">IsEmpty</span><span class="p">(</span><span class="p">)</span><span class="p">)</span>
+        <span class="n">Node</span> <span class="n">newNode</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">dd</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">IsEmpty</span><span class="p">())</span>
         <span class="p">{</span>
             <span class="n">Head</span> <span class="p">=</span> <span class="n">newNode</span><span class="p">;</span>
         <span class="p">}</span>
@@ -440,32 +440,32 @@
     <span class="p">}</span>
 
     <span class="c1">// 删除表头
-</span><span class="c1"></span>    <span class="k">public</span> <span class="k">void</span> <span class="n">DeleteHead</span><span class="p">(</span><span class="p">)</span>
+</span><span class="c1"></span>    <span class="k">public</span> <span class="k">void</span> <span class="n">DeleteHead</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">Head</span> <span class="p">=</span><span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">Head</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="k">return</span><span class="p">;</span>
         <span class="p">}</span>
 
-        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;Delete {Head.Value}&#34;</span><span class="p">)</span><span class="p">;</span>
+        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;Delete {Head.Value}&#34;</span><span class="p">);</span>
         <span class="n">Head</span> <span class="p">=</span> <span class="n">Head</span><span class="p">.</span><span class="n">Next</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">Head</span> <span class="p">=</span><span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">Head</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="n">Tail</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span>
 
     <span class="c1">// 删除表尾
-</span><span class="c1"></span>    <span class="k">public</span> <span class="k">void</span> <span class="n">DeleteTail</span><span class="p">(</span><span class="p">)</span>
+</span><span class="c1"></span>    <span class="k">public</span> <span class="k">void</span> <span class="n">DeleteTail</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">Tail</span> <span class="p">=</span><span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">Tail</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="k">return</span><span class="p">;</span>
         <span class="p">}</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="n">Head</span> <span class="p">=</span><span class="p">=</span> <span class="n">Tail</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">Head</span> <span class="p">==</span> <span class="n">Tail</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;Delete {Tail.Value}&#34;</span><span class="p">)</span><span class="p">;</span>
+            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;Delete {Tail.Value}&#34;</span><span class="p">);</span>
             <span class="n">Head</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
             <span class="n">Tail</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
         <span class="p">}</span>
@@ -473,7 +473,7 @@
         <span class="p">{</span>
             <span class="n">Node</span><span class="p">?</span> <span class="n">before</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
             <span class="n">Node</span><span class="p">?</span> <span class="n">current</span> <span class="p">=</span> <span class="n">Head</span><span class="p">;</span>
-            <span class="k">while</span> <span class="p">(</span><span class="n">current</span> <span class="p">!</span><span class="p">=</span> <span class="n">Tail</span><span class="p">)</span>
+            <span class="k">while</span> <span class="p">(</span><span class="n">current</span> <span class="p">!=</span> <span class="n">Tail</span><span class="p">)</span>
             <span class="p">{</span>
                 <span class="n">before</span> <span class="p">=</span> <span class="n">current</span><span class="p">;</span>
                 <span class="n">current</span> <span class="p">=</span> <span class="n">current</span><span class="p">.</span><span class="n">Next</span><span class="p">;</span>
@@ -481,22 +481,22 @@
 
             <span class="n">Tail</span> <span class="p">=</span> <span class="n">before</span><span class="p">;</span>
             <span class="n">Tail</span><span class="p">.</span><span class="n">Next</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
-            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;Delete {current.Value}&#34;</span><span class="p">)</span><span class="p">;</span>
+            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;Delete {current.Value}&#34;</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
 
-    <span class="k">public</span> <span class="k">void</span> <span class="n">DisplayList</span><span class="p">(</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="n">DisplayList</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="n">Node</span><span class="p">?</span> <span class="n">current</span> <span class="p">=</span> <span class="n">Head</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">current</span> <span class="p">=</span><span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">current</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;(Empty)&#34;</span><span class="p">)</span><span class="p">;</span>
+            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;(Empty)&#34;</span><span class="p">);</span>
             <span class="k">return</span><span class="p">;</span>
         <span class="p">}</span>
 
-        <span class="k">while</span> <span class="p">(</span><span class="n">current</span> <span class="p">!</span><span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">current</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="n">current</span><span class="p">.</span><span class="n">DisplayNode</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+            <span class="n">current</span><span class="p">.</span><span class="n">DisplayNode</span><span class="p">();</span>
             <span class="n">current</span> <span class="p">=</span> <span class="n">current</span><span class="p">.</span><span class="n">Next</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span>
@@ -513,16 +513,16 @@
         <span class="n">Value</span> <span class="p">=</span> <span class="n">v</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="k">internal</span> <span class="k">void</span> <span class="n">DisplayNode</span><span class="p">(</span><span class="p">)</span>
+    <span class="k">internal</span> <span class="k">void</span> <span class="n">DisplayNode</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">Value</span><span class="p">)</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">Next</span> <span class="p">!</span><span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">Value</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">Next</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="s">&#34;-&gt;&#34;</span><span class="p">)</span><span class="p">;</span>
+            <span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="s">&#34;-&gt;&#34;</span><span class="p">);</span>
         <span class="p">}</span>
         <span class="k">else</span>
         <span class="p">{</span>
-            <span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">Environment</span><span class="p">.</span><span class="n">NewLine</span><span class="p">)</span><span class="p">;</span>
+            <span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">Environment</span><span class="p">.</span><span class="n">NewLine</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>

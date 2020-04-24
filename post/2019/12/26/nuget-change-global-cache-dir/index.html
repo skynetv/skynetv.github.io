@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.61.0 with theme even" />
+<meta name="generator" content="Hugo 0.69.2 with theme even" />
 
 
 <link rel="canonical" href="https://prime167.github.io/post/2019/12/26/nuget-change-global-cache-dir/" />
@@ -140,8 +140,8 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">通过环境变量</a></li>
-    <li><a href="#nugetconfig">修改用户nuget.config</a></li>
+    <li><a href="#通过环境变量">通过环境变量</a></li>
+    <li><a href="#修改用户nugetconfig">修改用户nuget.config</a></li>
   </ul>
 </nav>
   </div>
@@ -154,9 +154,9 @@
     <div class="post-content">
       <p>修改NuGet全局缓存路径</p>
 <p>Nuget的全局缓存路径默认在%userprofile%.nuget\packages 即C:\Users[your login name].nuget\packages。随着时间的推移，这个文件夹会占用大量的磁盘。可以通过配置把它移到其他的盘下：</p>
-<h2 id="heading">通过环境变量</h2>
+<h2 id="通过环境变量">通过环境变量</h2>
 <p>添加新变量 <strong>NUGET_PACKAGES</strong> 值设置为新位置，如 &ldquo;D:\NugetCache&rdquo;。重启系统</p>
-<h2 id="nugetconfig">修改用户nuget.config</h2>
+<h2 id="修改用户nugetconfig">修改用户nuget.config</h2>
 <p>修改 %appdata%/nuget下的nuget.config</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -169,8 +169,8 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
-<span class="nt">&lt;configuration</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;config</span><span class="nt">&gt;</span>
+<span class="nt">&lt;configuration&gt;</span>
+  <span class="nt">&lt;config&gt;</span>
     <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&#34;globalPackagesFolder&#34;</span> <span class="na">value=</span><span class="s">&#34;D:\NugetCache&#34;</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;/config&gt;</span>
 <span class="nt">&lt;/configuration&gt;</span>
