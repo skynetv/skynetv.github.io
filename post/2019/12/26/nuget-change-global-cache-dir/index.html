@@ -50,7 +50,7 @@
 <meta itemprop="description" content="修改NuGet全局缓存路径">
 <meta itemprop="datePublished" content="2019-12-26T14:56:42&#43;08:00" />
 <meta itemprop="dateModified" content="2019-12-26T14:56:42&#43;08:00" />
-<meta itemprop="wordCount" content="280">
+<meta itemprop="wordCount" content="208">
 
 
 
@@ -130,7 +130,7 @@
         <div class="post-category">
             <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
             </div>
-          <span class="more-meta"> 约 280 字 </span>
+          <span class="more-meta"> 约 208 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
@@ -154,9 +154,22 @@
   </div>
     <div class="post-content">
       <p>修改NuGet全局缓存路径</p>
-<p>Nuget的全局缓存路径默认在%userprofile%.nuget\packages 即C:\Users[your login name].nuget\packages。随着时间的推移，这个文件夹会占用大量的磁盘。可以通过配置把它移到其他的盘下：</p>
+<p>Nuget的全局缓存路径默认在</p>
+<ul>
+<li>%userprofile%.nuget\packages</li>
+<li>%localappdata%\NuGet\v3-cache</li>
+</ul>
+<p>随着时间的推移，这个文件夹会占用大量的磁盘。可以通过配置把它移到其他的盘下：</p>
 <h2 id="通过环境变量">通过环境变量</h2>
-<p>添加新变量 <strong>NUGET_PACKAGES</strong> 值设置为新位置，如 &ldquo;D:\NugetCache&rdquo;。重启系统</p>
+<ul>
+<li>
+<p>添加新变量 <strong>NUGET_PACKAGES</strong> 值设置为新位置，如 &ldquo;D:\NugetCache&rdquo;</p>
+</li>
+<li>
+<p>添加新变量 <strong>NUGET_HTTP_CACHE_PATH</strong> 值设置为新位置，如 &ldquo;D:\NugetHttpCache&rdquo;</p>
+</li>
+</ul>
+<p>。重启系统</p>
 <h2 id="修改用户nugetconfig">修改用户nuget.config</h2>
 <p>修改 %appdata%/nuget下的nuget.config</p>
 <div class="highlight"><div class="chroma">
