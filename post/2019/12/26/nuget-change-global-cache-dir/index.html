@@ -50,7 +50,7 @@
 <meta itemprop="description" content="修改NuGet全局缓存路径">
 <meta itemprop="datePublished" content="2019-12-26T14:56:42&#43;08:00" />
 <meta itemprop="dateModified" content="2019-12-26T14:56:42&#43;08:00" />
-<meta itemprop="wordCount" content="208">
+<meta itemprop="wordCount" content="249">
 
 
 
@@ -130,7 +130,7 @@
         <div class="post-category">
             <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
             </div>
-          <span class="more-meta"> 约 208 字 </span>
+          <span class="more-meta"> 约 249 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
@@ -142,7 +142,9 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#通过环境变量">通过环境变量</a></li>
-    <li><a href="#修改用户nugetconfig">修改用户nuget.config</a></li>
+    <li><a href="#修改-appdatanuget下的nugetconfig">修改 %appdata%/nuget下的nuget.config</a></li>
+    <li><a href="#注意">注意</a></li>
+    <li><a href="#参考">参考</a></li>
   </ul>
 </nav>
   </div>
@@ -159,7 +161,7 @@
 <li>%userprofile%.nuget\packages</li>
 <li>%localappdata%\NuGet\v3-cache</li>
 </ul>
-<p>随着时间的推移，这个文件夹会占用大量的磁盘。可以通过配置把它移到其他的盘下：</p>
+<p>随着时间的推移，这个文件夹会占用大量的磁盘。可以通过添加环境变量的方式把它移到其他的盘下：</p>
 <h2 id="通过环境变量">通过环境变量</h2>
 <ul>
 <li>
@@ -169,9 +171,10 @@
 <p>添加新变量 <strong>NUGET_HTTP_CACHE_PATH</strong> 值设置为新位置，如 &ldquo;D:\NugetHttpCache&rdquo;</p>
 </li>
 </ul>
-<p>。重启系统</p>
-<h2 id="修改用户nugetconfig">修改用户nuget.config</h2>
-<p>修改 %appdata%/nuget下的nuget.config</p>
+<p>重启系统后将原文件夹内的内容移到新位置</p>
+<h2 id="修改-appdatanuget下的nugetconfig">修改 %appdata%/nuget下的nuget.config</h2>
+<p>%userprofile%.nuget\packages 还可以通过修改用户nuget.config实现</p>
+<p>添加 <strong>globalPackagesFolder</strong> 节点</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -190,8 +193,10 @@
 <span class="nt">&lt;/configuration&gt;</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>添加 <strong>globalPackagesFolder</strong> 节点</p>
+</div><h2 id="注意">注意</h2>
 <p>环境变量的优先级较高，二者同时存在的话，前者会覆盖后者。</p>
+<h2 id="参考">参考</h2>
+<p><a href="https://docs.microsoft.com/en-us/nuget/consume-packages/managing-the-global-packages-and-cache-folders">Managing the global packages, cache, and temp folders</a></p>
     </div>
 
     <div class="post-copyright">
