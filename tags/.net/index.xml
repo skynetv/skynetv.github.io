@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>修改NuGet全局缓存路径</title>
+      <link>https://prime167.github.io/post/2019/12/26/nuget-change-global-cache-dir/</link>
+      <pubDate>Thu, 26 Dec 2019 08:01:42 +0800</pubDate>
+      
+      <guid>https://prime167.github.io/post/2019/12/26/nuget-change-global-cache-dir/</guid>
+      <description>&lt;p&gt;修改NuGet全局缓存路径&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>局域网搭建私有nuget服务器</title>
       <link>https://prime167.github.io/post/2019/12/25/local-nuget-server/</link>
       <pubDate>Tue, 24 Dec 2019 11:50:58 +0800</pubDate>
@@ -45,15 +54,6 @@
       
       <guid>https://prime167.github.io/post/2019/09/06/dotnet-safe-ui-app/</guid>
       <description>&lt;p&gt;本篇讲一下如何编写线程安全的Winform 程序&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>修改NuGet全局缓存路径</title>
-      <link>https://prime167.github.io/post/2019/12/26/nuget-change-global-cache-dir/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://prime167.github.io/post/2019/12/26/nuget-change-global-cache-dir/</guid>
-      <description>&lt;p&gt;修改NuGet全局缓存路径&lt;/p&gt;</description>
     </item>
     
   </channel>
