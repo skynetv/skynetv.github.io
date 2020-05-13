@@ -13,10 +13,10 @@
     
     <item>
       <title>git worktree 命令的使用</title>
-      <link>https://prime167.github.io/post/2019/07/26/git-worktree-usage/</link>
+      <link>https://prime167.github.io/post/git-worktree-usage/</link>
       <pubDate>Fri, 26 Jul 2019 14:05:29 +0800</pubDate>
       
-      <guid>https://prime167.github.io/post/2019/07/26/git-worktree-usage/</guid>
+      <guid>https://prime167.github.io/post/git-worktree-usage/</guid>
       <description>&lt;p&gt;使用 git worktree &lt;strong&gt;同时&lt;/strong&gt; 签出多个分支，提高开发效率，节省磁盘空间。&lt;/p&gt;</description>
     </item>
     

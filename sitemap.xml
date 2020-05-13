@@ -37,7 +37,7 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/2020/01/15/intall-netfx4.x-offline/</loc>
+    <loc>https://prime167.github.io/post/intall-netfx4.x-offline/</loc>
     <lastmod>2020-01-15T14:40:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -58,7 +58,7 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/2019/12/31/a-math-inequality/</loc>
+    <loc>https://prime167.github.io/post/a-math-inequality/</loc>
     <lastmod>2019-12-31T11:39:51+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -79,14 +79,14 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/2019/12/26/nuget-change-global-cache-dir/</loc>
+    <loc>https://prime167.github.io/post/nuget-change-global-cache-dir/</loc>
     <lastmod>2020-04-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/2019/12/25/local-nuget-server/</loc>
+    <loc>https://prime167.github.io/post/local-nuget-server/</loc>
     <lastmod>2019-12-24T11:50:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -107,14 +107,14 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/2019/12/23/fix-win10-search/</loc>
+    <loc>https://prime167.github.io/post/fix-win10-search/</loc>
     <lastmod>2019-12-23T17:43:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/2019/12/16/doubleendedlist/</loc>
+    <loc>https://prime167.github.io/post/doubleendedlist/</loc>
     <lastmod>2019-12-16T17:01:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -142,7 +142,7 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/2019/08/07/hugo-setup/</loc>
+    <loc>https://prime167.github.io/post/hugo-setup/</loc>
     <lastmod>2019-11-25T13:36:46+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -156,7 +156,7 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/2019/11/21/dotnet-knowledge/</loc>
+    <loc>https://prime167.github.io/post/dotnet-knowledge/</loc>
     <lastmod>2019-11-21T19:56:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -170,7 +170,7 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/2019/10/23/config-firefox/</loc>
+    <loc>https://prime167.github.io/post/config-firefox/</loc>
     <lastmod>2019-10-23T18:49:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -184,14 +184,14 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/2019/10/17/my-favorite-software-2019/</loc>
+    <loc>https://prime167.github.io/post/my-favorite-software-2019/</loc>
     <lastmod>2019-10-17T08:57:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/2019/10/08/covariance-and-contravariance-of-csharp/</loc>
+    <loc>https://prime167.github.io/post/covariance-and-contravariance-of-csharp/</loc>
     <lastmod>2019-10-08T10:09:44+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -219,7 +219,7 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/2019/09/23/dotnet-timers/</loc>
+    <loc>https://prime167.github.io/post/dotnet-timers/</loc>
     <lastmod>2019-09-23T17:21:55+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -240,14 +240,14 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/2019/09/06/dotnet-safe-ui-app/</loc>
+    <loc>https://prime167.github.io/post/dotnet-safe-ui-app/</loc>
     <lastmod>2019-09-06T12:55:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/2019/08/16/csharp-struct-parameter/</loc>
+    <loc>https://prime167.github.io/post/csharp-struct-parameter/</loc>
     <lastmod>2019-08-16T16:36:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -261,7 +261,7 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/2019/07/30/csharp-error-cs1612/</loc>
+    <loc>https://prime167.github.io/post/csharp-error-cs1612/</loc>
     <lastmod>2019-07-30T15:51:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -282,7 +282,7 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/2019/07/26/about-fix-bugs/</loc>
+    <loc>https://prime167.github.io/post/about-fix-bugs/</loc>
     <lastmod>2019-07-26T14:57:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -303,7 +303,7 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/2019/07/26/git-worktree-usage/</loc>
+    <loc>https://prime167.github.io/post/git-worktree-usage/</loc>
     <lastmod>2019-07-26T14:05:29+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -331,7 +331,7 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/2019/07/11/fix-windows10-share/</loc>
+    <loc>https://prime167.github.io/post/fix-windows10-share/</loc>
     <lastmod>2019-07-11T17:40:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -345,14 +345,14 @@
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/2019/07/10/hello-world/</loc>
+    <loc>https://prime167.github.io/post/hello-world/</loc>
     <lastmod>2019-07-10T17:32:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://prime167.github.io/post/2020/02/21/sars-cov-2/</loc>
+    <loc>https://prime167.github.io/post/sars-cov-2/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
