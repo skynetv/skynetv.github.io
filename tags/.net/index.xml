@@ -13,46 +13,46 @@
     
     <item>
       <title>在Windows 7 SP1 下离线安装 .NET Framework 4.8</title>
-      <link>https://prime167.github.io/post/intall-netfx4.x-offline/</link>
+      <link>https://prime167.github.io/post/2020-01-15-intall-netfx4.x-offline/</link>
       <pubDate>Wed, 15 Jan 2020 14:40:15 +0800</pubDate>
       
-      <guid>https://prime167.github.io/post/intall-netfx4.x-offline/</guid>
+      <guid>https://prime167.github.io/post/2020-01-15-intall-netfx4.x-offline/</guid>
       <description>&lt;p&gt;在未联网的计算机上安装.NET Framework 4.6.1, 4.6.2, 4.7, 4.8 可能会因为缺少根证书失败&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>修改NuGet全局缓存路径</title>
-      <link>https://prime167.github.io/post/nuget-change-global-cache-dir/</link>
+      <link>https://prime167.github.io/post/2019-12-26-nuget-change-global-cache-dir/</link>
       <pubDate>Thu, 26 Dec 2019 08:01:42 +0800</pubDate>
       
-      <guid>https://prime167.github.io/post/nuget-change-global-cache-dir/</guid>
+      <guid>https://prime167.github.io/post/2019-12-26-nuget-change-global-cache-dir/</guid>
       <description>&lt;p&gt;修改NuGet全局缓存路径&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>局域网搭建私有nuget服务器</title>
-      <link>https://prime167.github.io/post/local-nuget-server/</link>
+      <link>https://prime167.github.io/post/2019-12-24-local-nuget-server/</link>
       <pubDate>Tue, 24 Dec 2019 11:50:58 +0800</pubDate>
       
-      <guid>https://prime167.github.io/post/local-nuget-server/</guid>
+      <guid>https://prime167.github.io/post/2019-12-24-local-nuget-server/</guid>
       <description>&lt;p&gt;昨天在公司局域网搭建了一个nuget服务器，记录一下过程&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>.NET 中的 timer</title>
-      <link>https://prime167.github.io/post/dotnet-timers/</link>
+      <link>https://prime167.github.io/post/2019-09-23-dotnet-timers/</link>
       <pubDate>Mon, 23 Sep 2019 17:21:55 +0800</pubDate>
       
-      <guid>https://prime167.github.io/post/dotnet-timers/</guid>
+      <guid>https://prime167.github.io/post/2019-09-23-dotnet-timers/</guid>
       <description>&lt;p&gt;今天简单介绍一下 .NET framework中的timer&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>编写线程安全的UI程序</title>
-      <link>https://prime167.github.io/post/dotnet-safe-ui-app/</link>
+      <link>https://prime167.github.io/post/2019-09-06-dotnet-safe-ui-app/</link>
       <pubDate>Fri, 06 Sep 2019 12:55:14 +0800</pubDate>
       
-      <guid>https://prime167.github.io/post/dotnet-safe-ui-app/</guid>
+      <guid>https://prime167.github.io/post/2019-09-06-dotnet-safe-ui-app/</guid>
       <description>&lt;p&gt;本篇讲一下如何编写线程安全的Winform 程序&lt;/p&gt;</description>
     </item>
     
