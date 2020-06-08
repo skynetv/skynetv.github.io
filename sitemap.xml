@@ -51,6 +51,13 @@
   </url>
   
   <url>
+    <loc>https://prime167.github.io/</loc>
+    <lastmod>2020-04-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://prime167.github.io/tags/math/</loc>
     <lastmod>2019-12-31T11:39:51+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -333,13 +340,6 @@
   <url>
     <loc>https://prime167.github.io/post/2019-07-11-fix-windows10-share/</loc>
     <lastmod>2019-07-11T17:40:12+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/</loc>
-    <lastmod>2019-07-10T21:41:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
