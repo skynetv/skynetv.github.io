@@ -10,28 +10,49 @@
   
   <url>
     <loc>https://prime167.github.io/tags/.net/</loc>
-    <lastmod>2020-04-27T00:00:00+00:00</lastmod>
+    <lastmod>2020-06-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://prime167.github.io/categories/</loc>
-    <lastmod>2020-04-27T00:00:00+00:00</lastmod>
+    <lastmod>2020-06-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://prime167.github.io/post/</loc>
-    <lastmod>2020-04-27T00:00:00+00:00</lastmod>
+    <lastmod>2020-06-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://prime167.github.io/tags/</loc>
-    <lastmod>2020-04-27T00:00:00+00:00</lastmod>
+    <lastmod>2020-06-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/categories/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2020-06-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/post/2020-06-12-sln-file-notes/</loc>
+    <lastmod>2020-06-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://prime167.github.io/</loc>
+    <lastmod>2020-06-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -39,20 +60,6 @@
   <url>
     <loc>https://prime167.github.io/post/2020-01-15-intall-netfx4.x-offline/</loc>
     <lastmod>2020-01-15T14:40:15+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/categories/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2020-04-27T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://prime167.github.io/</loc>
-    <lastmod>2020-04-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -136,28 +143,28 @@
   
   <url>
     <loc>https://prime167.github.io/categories/blog/</loc>
-    <lastmod>2019-11-25T13:36:46+08:00</lastmod>
+    <lastmod>2020-06-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://prime167.github.io/tags/hugo/</loc>
-    <lastmod>2019-11-25T13:36:46+08:00</lastmod>
+    <lastmod>2020-06-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://prime167.github.io/post/2019-11-25-hugo-setup/</loc>
-    <lastmod>2019-11-25T13:36:46+08:00</lastmod>
+    <lastmod>2020-06-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://prime167.github.io/tags/meta/</loc>
-    <lastmod>2019-11-25T13:36:46+08:00</lastmod>
+    <lastmod>2020-06-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -199,28 +206,28 @@
   
   <url>
     <loc>https://prime167.github.io/post/2019-10-08-covariance-and-contravariance-of-csharp/</loc>
-    <lastmod>2019-10-08T10:09:44+08:00</lastmod>
+    <lastmod>2020-06-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://prime167.github.io/tags/contravariance/</loc>
-    <lastmod>2019-10-08T10:09:44+08:00</lastmod>
+    <lastmod>2020-06-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://prime167.github.io/tags/covariance/</loc>
-    <lastmod>2019-10-08T10:09:44+08:00</lastmod>
+    <lastmod>2020-06-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://prime167.github.io/tags/csharp/</loc>
-    <lastmod>2019-10-08T10:09:44+08:00</lastmod>
+    <lastmod>2020-06-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

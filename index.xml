@@ -6,7 +6,7 @@
     <description>Recent content on 静静地坐着</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 15 Jan 2020 14:40:15 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://prime167.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -18,6 +18,15 @@
       
       <guid>https://prime167.github.io/about/</guid>
       <description>NullReferenceException</description>
+    </item>
+    
+    <item>
+      <title>解决方案文件格式拾遗</title>
+      <link>https://prime167.github.io/post/2020-06-12-sln-file-notes/</link>
+      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://prime167.github.io/post/2020-06-12-sln-file-notes/</guid>
+      <description>&lt;p&gt;关于解决方案文件sln的说明，官方文档已经说的很清楚的，这里不再重复，只说几个细节的地方&lt;/p&gt;</description>
     </item>
     
     <item>
