@@ -6,11 +6,7 @@
     <description>Recent content in firefox on 静静地坐着</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 23 Oct 2019 18:49:11 +0800</lastBuildDate>
-    
-	<atom:link href="https://prime167.github.io/tags/firefox/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 23 Oct 2019 18:49:11 +0800</lastBuildDate><atom:link href="https://prime167.github.io/tags/firefox/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Firefox 70 配置记录</title>
       <link>https://prime167.github.io/post/2019-10-23-config-firefox/</link>
