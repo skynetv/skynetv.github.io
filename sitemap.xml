@@ -358,10 +358,4 @@
     <priority>0.5</priority>
   </url>
   
-  <url>
-    <loc>https://prime167.github.io/post/sars-cov-2/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
 </urlset>
