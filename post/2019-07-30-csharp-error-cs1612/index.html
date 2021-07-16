@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0 with theme even" />
+<meta name="generator" content="Hugo 0.85.0 with theme even" />
 
 
 <link rel="canonical" href="https://prime167.github.io/post/2019-07-30-csharp-error-cs1612/" />
@@ -43,19 +43,15 @@
 <meta property="og:title" content="C# 编译错误 CS1612：无法修改“xxx”的返回值，因为它不是变量" />
 <meta property="og:description" content="看似简单的问题，背后涉及了很多基础知识。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://prime167.github.io/post/2019-07-30-csharp-error-cs1612/" />
+<meta property="og:url" content="https://prime167.github.io/post/2019-07-30-csharp-error-cs1612/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2019-07-30T15:51:59+08:00" />
 <meta property="article:modified_time" content="2019-07-30T15:51:59+08:00" />
+
 <meta itemprop="name" content="C# 编译错误 CS1612：无法修改“xxx”的返回值，因为它不是变量">
-<meta itemprop="description" content="看似简单的问题，背后涉及了很多基础知识。">
-<meta itemprop="datePublished" content="2019-07-30T15:51:59+08:00" />
+<meta itemprop="description" content="看似简单的问题，背后涉及了很多基础知识。"><meta itemprop="datePublished" content="2019-07-30T15:51:59+08:00" />
 <meta itemprop="dateModified" content="2019-07-30T15:51:59+08:00" />
 <meta itemprop="wordCount" content="898">
-
-
-
-<meta itemprop="keywords" content="csharp,CS1612," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="csharp,CS1612," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="C# 编译错误 CS1612：无法修改“xxx”的返回值，因为它不是变量"/>
 <meta name="twitter:description" content="看似简单的问题，背后涉及了很多基础知识。"/>
 
@@ -214,9 +210,9 @@
             <span class="n">p</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">x</span> <span class="p">=</span> <span class="m">6</span><span class="p">;</span> <span class="c1">// CS1612
 </span><span class="c1"></span>            <span class="n">p</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">y</span> <span class="p">=</span> <span class="m">2</span><span class="p">;</span> <span class="c1">// CS1612
 </span><span class="c1"></span>            <span class="n">p</span><span class="p">.</span><span class="n">ShowLocation</span><span class="p">();</span>
-            <span class="n">List</span><span class="p">&lt;</span><span class="n">Point</span><span class="p">&gt;</span> <span class="n">_locations</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Point</span><span class="p">&gt;();</span>
+            <span class="n">List</span><span class="p">&lt;</span><span class="n">Point</span><span class="p">&gt;</span> <span class="m">_l</span><span class="n">ocations</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Point</span><span class="p">&gt;();</span>
             <span class="c1">// add..
-</span><span class="c1"></span>            <span class="n">_locations</span><span class="p">[</span><span class="m">0</span><span class="p">].</span><span class="n">x</span> <span class="p">=</span> <span class="m">3</span><span class="p">;</span><span class="c1">// CS1612
+</span><span class="c1"></span>            <span class="m">_l</span><span class="n">ocations</span><span class="p">[</span><span class="m">0</span><span class="p">].</span><span class="n">x</span> <span class="p">=</span> <span class="m">3</span><span class="p">;</span><span class="c1">// CS1612
 </span><span class="c1"></span>        <span class="p">}</span>
     <span class="p">}</span>
 
@@ -289,9 +285,9 @@
  <span class="n">location</span><span class="p">.</span><span class="n">y</span> <span class="p">=</span> <span class="m">2</span><span class="p">;</span>
  <span class="n">p</span><span class="p">.</span><span class="n">Location</span> <span class="p">=</span> <span class="n">location</span><span class="p">;</span>
 
- <span class="kt">var</span> <span class="n">temp</span> <span class="p">=</span> <span class="n">_locations</span><span class="p">[</span><span class="m">0</span><span class="p">];</span>
+ <span class="kt">var</span> <span class="n">temp</span> <span class="p">=</span> <span class="m">_l</span><span class="n">ocations</span><span class="p">[</span><span class="m">0</span><span class="p">];</span>
  <span class="n">temp</span><span class="p">.</span><span class="n">x</span> <span class="p">=</span> <span class="m">3</span><span class="p">;</span>
- <span class="n">_locations</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">=</span> <span class="n">temp</span><span class="p">;</span>
+ <span class="m">_l</span><span class="n">ocations</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">=</span> <span class="n">temp</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -358,9 +354,9 @@
 
      <span class="k">class</span> <span class="nc">Player</span>
      <span class="p">{</span>
-         <span class="n">Point</span> <span class="n">_location</span><span class="p">;</span>
+         <span class="n">Point</span> <span class="m">_l</span><span class="n">ocation</span><span class="p">;</span>
 
-         <span class="k">public</span> <span class="k">ref</span> <span class="n">Point</span> <span class="n">Location</span> <span class="p">{</span> <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="k">ref</span> <span class="n">_location</span><span class="p">;</span> <span class="p">}</span> <span class="p">}</span>
+         <span class="k">public</span> <span class="k">ref</span> <span class="n">Point</span> <span class="n">Location</span> <span class="p">{</span> <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="k">ref</span> <span class="m">_l</span><span class="n">ocation</span><span class="p">;</span> <span class="p">}</span> <span class="p">}</span>
 
          <span class="k">public</span> <span class="k">void</span> <span class="n">ShowLocation</span><span class="p">()</span>
          <span class="p">{</span>
@@ -481,7 +477,7 @@
 
 
 
-<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
 
 
 
